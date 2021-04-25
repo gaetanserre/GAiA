@@ -1,0 +1,9 @@
+.DS_Store
+*.o
+out/
+.vscode/
+.idea/
+cmake-build-debug/
+build/
+notebooks/Datasets/
+.ipynb_checkpoints/

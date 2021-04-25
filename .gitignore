@@ -6,8 +6,4 @@ out/
 cmake-build-debug/
 notebooks/Datasets/
 .ipynb_checkpoints/
-build/CMakeFiles/
-build/cmake_install.cmake
-build/Makefile
-build/CMakeCache.txt
-build/Deep_ViCTORIA
+build/

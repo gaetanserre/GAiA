@@ -1,7 +1,7 @@
 #include "engine.h"
 
-Engine::Engine(string path, const Evaluator& evaluator) : evaluator(evaluator) {
-    this->name = "ViCTORIA chess engine";
+Engine::Engine(string dir_path, const Evaluator& evaluator) : evaluator(evaluator) {
+    this->name = "Deep ViCTORIA";
     this->board = new Board();
     this->board->init();
     this->evaluator = evaluator;
@@ -13,7 +13,6 @@ Engine::Engine(string path, const Evaluator& evaluator) : evaluator(evaluator) {
     initRandomKeys();
     this->zobrist_hash_key = generateHashKey(this->board);
 
-    string dir_path = transform_path(std::move(path));
     this->opening_table_path = "";
     this->logs_path = dir_path + "/logs/logs.txt";
 
@@ -26,16 +25,6 @@ Engine::~Engine() {
     delete this->board;
 }
 
-string Engine::transform_path(string path) {
-    int count = 0;
-    for (int i = path.size() - 1; i >= 0; i--) {
-        if (path[i] == '/' || path[i] == '\\')
-            count++;
-        path.pop_back();
-        if (count == 2) break;
-    }
-    return path;
-}
 
 /*************** Begin search in opening book functions ***************/
 

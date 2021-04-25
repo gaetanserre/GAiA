@@ -22,7 +22,7 @@ struct Move
 
 class Engine {
     public:
-        Engine(string path, const Evaluator& evaluator);
+        Engine(string dir_path, const Evaluator& evaluator);
         ~Engine();
         void parseExpr(string expr);
 
@@ -63,8 +63,6 @@ class Engine {
         /*************** Thread attributes ***************/
         bool terminate_thread = false;
         bool is_terminated;
-
-        static string transform_path (string path);
 
         /*************** Begin time mesuring funcs ***************/
         static u_int64_t millis() {

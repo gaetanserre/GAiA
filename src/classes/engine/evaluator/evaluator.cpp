@@ -62,11 +62,21 @@ vector<float> Evaluator::encodeBoard(Board *board) {
 }
 
 Score Evaluator::evalPosition(Board *board) {
-    vector<float> encoded = encodeBoard(board);
-    auto input = cppflow::tensor(encoded, {1, 131});
-    auto output = this->model(input);
-    int score = (int) output.get_data<float>()[0];
-    return Score(score);
+    vector<Ply> legal_moves = board->getLegalMoves();
+    int size = legal_moves.size();
+    bool white = board->isWhite();
+
+    if (size == 0 || board->nb_plies_50_rule == 100) {
+        if (board->isCheck())
+            return Score( (white ? -mate_value : mate_value) );
+        else return Score();
+    } else {
+        vector<float> encoded = encodeBoard(board);
+        auto input = cppflow::tensor(encoded, {1, 131});
+        auto output = this->model(input);
+        int score = (int) output.get_data<float>()[0];
+        return Score(score);
+    }
 }
 
 

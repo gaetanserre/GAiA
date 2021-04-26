@@ -135,7 +135,7 @@ void Engine::parseExpr(string expr) {
         u_int64_t start = millis();
         Score s = this->evaluator.evalPosition(this->board);
         u_int64_t dur = millis() - start;
-        float score = this->board->isWhite() ? (float) s.score / 100.f : (float) -s.score / 100.f;
+        float score = s.score / 100.f;
         cout << "Took " << dur << " ms" << endl;
         cout << "Final evaluation: " << score << " (white side)" << endl;
     }

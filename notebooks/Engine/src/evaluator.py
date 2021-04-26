@@ -1,4 +1,6 @@
 import chess
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 from tensorflow import keras
 from dataset_utils import encodeBoard
 from LiteModel import LiteModel

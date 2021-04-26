@@ -7,3 +7,4 @@ cmake-build-debug/
 notebooks/Datasets/
 .ipynb_checkpoints/
 build/
+__pycache__/

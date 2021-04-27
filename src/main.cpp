@@ -15,7 +15,7 @@ int main (int argc, char** argv) {
 
     setenv("TF_CPP_MIN_LOG_LEVEL","3",1);
 
-    Evaluator evaluator(cppflow::model( "/Users/gaetanserre/Documents/Projets/Chess/Engines/Deep-ViCTORIA/model"));
+    Evaluator evaluator(cppflow::model( "/home/gaetan/Téléchargements/Deep-ViCTORIA/Models/model_batch_10M"));
     Engine engine(transform_path(argv[0]), evaluator);
 
     string input;

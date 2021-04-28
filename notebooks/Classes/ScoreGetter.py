@@ -65,17 +65,3 @@ class ScoreGetter:
   def __del__(self):
     self.quit()
   
-
-
-
-if __name__ == '__main__':
-  score_getter = ScoreGetter('/usr/local/bin/stockfish', 'eval', 'go depth 1')
-
-  nb = 1
-  start = time.time()
-  for i in range(nb):
-    score_getter.getScore('3r1k2/pp2bp1p/q7/1Qp1P1p1/P5P1/5PB1/1PP4P/2KR4 b - - 3 22')
-  print(f'{(time.time() - start) / nb * 1000} ms per position.')
-
-
-

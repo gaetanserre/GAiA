@@ -89,7 +89,3 @@ def getColumns():
     columns.append('castling rights')
     columns.append('en passant square')
     return columns
-
-
-if __name__ == '__main__':
-    print(checkIfEarlyMidEnd('3r1k2/pp2bp1p/q7/1Qp1P1p1/P5P1/5PB1/1PP4P/2KR4 b - - 3 22'))

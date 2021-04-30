@@ -127,16 +127,16 @@ void Engine::parseExpr(string expr) {
         this->board->computeLegalMoves();
         u_int64_t dur = millis() - start;
         this->board->printLegalMoves();
-        printf("%lu millisecond(s)\n", dur);
+        cout << dur << " ms" << endl;
     }
 
     else if (expr == "eval") {
         this->board->computeLegalMoves();
-        u_int64_t start = millis();
+        u_int64_t start = micros();
         Score s = this->evaluator.evalPosition(this->board);
-        u_int64_t dur = millis() - start;
+        u_int64_t dur = micros() - start;
         float score = s.score / 100.f;
-        cout << "Took " << dur << " ms" << endl;
+        cout << "Took " << dur << " µs" << endl;
         cout << "Final evaluation: " << score << " (white side)" << endl;
     }
 

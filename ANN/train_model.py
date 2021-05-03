@@ -1,20 +1,17 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import r2_score
-
 
 import tensorflow as tf
 
 from tensorflow import keras
 from tensorflow.keras import layers
-from tensorflow.keras.layers.experimental import preprocessing
 
 print(tf.__version__)
 physical_devices = tf.config.list_physical_devices('GPU')
-print(physical_devices)
 try:
     tf.config.experimental.set_memory_growth(physical_devices[0], True)
+    print(physical_devices)
 except:
     print('No Cuda GPU detected.')
     
@@ -22,22 +19,9 @@ except:
     
 mode = 'batch'
 offset = 0
-max_idx = 32
+max_idx = 10
 engine = 'Stockfish 13'
-model_path = '../Models/SF_model_batch_32M'
-    
-    
-    
-    
-def plotPred (y_true, preds):
-    ymin = np.min(y_true)
-    ymax = np.max(y_true)
-    plt.scatter(y_true, preds, label=f'score: {r2_score(y_true, preds)}')
-    plt.plot([ymin, ymax], [ymin, ymax], '-.', color='red', label="predicted values = true values")
-    plt.xlabel('True values')
-    plt.ylabel('Predicted values')
-    plt.legend()
-    
+model_path = '../Models/SF_model_test'
     
 def buildAndCompile(shape):
     input = tf.keras.Input(shape=(shape,))
@@ -49,7 +33,7 @@ def buildAndCompile(shape):
     return model
 
 
-def plot_loss(history):
+def save_loss(history):
     plt.plot(history.history['loss'], label='loss')
     plt.plot(history.history['val_loss'], label='val_loss')
     plt.ylim([0, 300])
@@ -57,7 +41,7 @@ def plot_loss(history):
     plt.ylabel('Error')
     plt.legend()
     plt.grid(True)
-    plt.show()
+    plt.savefig('history.png')
 
 
 rebuild = True
@@ -91,7 +75,7 @@ if mode == 'all':
     print(X.shape, y.shape)
 
     history = model.fit(X, y, validation_split=0.1, verbose=0, epochs=50)
-    plot_loss(history)
+    save_loss(history)
     model.save(model_path, save_format='tf')
     
 else:
@@ -104,8 +88,9 @@ else:
         y = dataframe_encoded[cps].values
 
         history = model.fit(X, y, validation_split=0.1, verbose=0, epochs=50)
-        print(f'Training finished on dataset: dataset{i+1}.csv')
         model.save(model_path, save_format='tf')
+        print(f'Training finished on dataset: dataset{i+1}.csv')
     
-    plot_loss(history)
+    save_loss(history)
+    print("Model saved in: ", model_path)
     

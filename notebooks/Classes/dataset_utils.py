@@ -15,8 +15,6 @@ def getNbPieceMaj(fen_splitted):
 def getNbMoves(fen_splitted):
     return int(fen_splitted[-1])
 
-
-
 def checkIfEarlyMidEnd(fen):
     fen_splitted = fen.split(' ')
     nb_piece_maj = getNbPieceMaj(fen_splitted)

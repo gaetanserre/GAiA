@@ -25,7 +25,7 @@ def parseFromPGN(pgn_path, nb_fens):
         data.append(fen)
         for move in game.mainline_moves():
             board.push(move)     
-            fen = board.fen()
+            fen = ' '.join(board.fen().split()[:-2])
             
             count += 1
             pbar.update(1)

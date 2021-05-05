@@ -49,9 +49,21 @@ def encodeBatch(dataset_path, batch_size, nb_sample, offset, engine, score_gette
 
     pbar.close()
     
-    
+
+def concatDatasets (datasets_path, output_path):
+    dfs = []
+    for path in datasets_path:
+        dfs.append(pd.read_csv(path))
+
+    pd.concat(dfs).to_csv(output_path, index=False)
+
     
 #parsePgn('Datasets/lichess_db_standard_rated_2020-02.pgn', 40 * MILLION, 'Datasets/raw_dataset.csv')
 
 score_getter = ScoreGetter('/usr/local/bin/stockfish', 'eval', 'go depth 1')
 encodeBatch('Datasets/raw_dataset.csv', 1000, 34, 0, 'Stockfish 13', score_getter)
+
+concatDatasets (
+    ['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'],
+    'Datasets/Stockfish 13/test_dataset.csv')
+

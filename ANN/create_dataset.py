@@ -60,8 +60,8 @@ def concatDatasets (datasets_path, output_path):
     
 #parsePgn('Datasets/lichess_db_standard_rated_2020-02.pgn', 40 * MILLION, 'Datasets/raw_dataset.csv')
 
-score_getter = ScoreGetter('/usr/local/bin/stockfish', 'eval', 'go depth 1')
-encodeBatch('Datasets/raw_dataset.csv', 1000, 34, 0, 'Stockfish 13', score_getter)
+#score_getter = ScoreGetter('/usr/local/bin/stockfish', 'eval', 'go depth 1')
+#encodeBatch('Datasets/raw_dataset.csv', 1000, 34, 0, 'Stockfish 13', score_getter)
 
 concatDatasets (
     ['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'],

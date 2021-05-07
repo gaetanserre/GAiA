@@ -4,7 +4,7 @@ out/
 .vscode/
 .idea/
 cmake-build-debug/
-notebooks/Datasets/
+Datasets/
 .ipynb_checkpoints/
 build/
 __pycache__/

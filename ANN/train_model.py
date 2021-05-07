@@ -18,10 +18,10 @@ except:
     
     
 mode = 'batch'
-offset = 0
-max_idx = 10
+offset = 53
+max_idx = 55
 engine = 'Stockfish 13'
-model_path = '../Models/SF_model_test'
+model_path = '../Models/SF_model_batch_55M'
     
 def buildAndCompile(shape):
     input = tf.keras.Input(shape=(shape,))
@@ -44,13 +44,13 @@ def save_loss(history):
     plt.savefig('history.png')
 
 
-rebuild = True
+rebuild = False
 model = None
 
 if rebuild:
     model = buildAndCompile(131)
 else:
-    model = keras.models.load_model('../Models/SF_model_batch_32M')
+    model = keras.models.load_model('../Models/SF_model_batch_55M')
     
 print(model.summary())
 

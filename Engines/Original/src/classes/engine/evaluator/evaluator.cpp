@@ -29,7 +29,7 @@ float getPieceID(char c) {
         case 'n': case 'N': return 2.f;
         case 'b': case 'B': return 3.f;
         case 'q': case 'Q': return 5.f;
-        default: return 6;
+        default: return 6.f;
     }
 }
 

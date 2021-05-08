@@ -87,3 +87,5 @@ def getColumns():
     columns.append('castling rights')
     columns.append('en passant square')
     return columns
+
+print(encodeBoard('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1'))

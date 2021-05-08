@@ -59,6 +59,73 @@ using namespace std;
 
 namespace Stockfish {
 
+    float getCastlingRights(const Position& pos) {
+      bool temp[] = {
+              pos.can_castle(WHITE_OO),
+              pos.can_castle(WHITE_OOO),
+              pos.can_castle(BLACK_OO),
+              pos.can_castle(BLACK_OOO)
+      };
+
+      float res = 0;
+      int coeff = 1;
+      for (int i = 0; i<4; i++) {
+        if(temp[1])
+          res += coeff;
+        coeff *= 2;
+      }
+      return res;
+    }
+
+    float getPieceID(Piece p) {
+      switch (p)
+      {
+        case W_PAWN: case B_PAWN: return 1.f;
+        case W_ROOK: case B_ROOK: return 4.f;
+        case W_KNIGHT: case B_KNIGHT: return 2.f;
+        case W_BISHOP: case B_BISHOP: return 3.f;
+        case W_QUEEN: case B_QUEEN: return 5.f;
+        default: return 6.f;
+      }
+    }
+
+    int convertIdx (int idx) {
+      int rank = idx % 8;
+      int file = int(idx/8) + 1;
+      return (8-file) * 8 + rank;
+    }
+
+    vector<float> encodeBoard(const Position& pos) {
+      vector<float> res;
+
+      for (int i = 0; i<64; i++) {
+
+        Square s = Square(convertIdx(i));
+        Piece p = pos.piece_on(s);
+
+        if (p != NO_PIECE) {
+          if (p < 9)
+            res.push_back(1.f);
+          else
+            res.push_back(-1.f);
+
+          res.push_back(getPieceID(p));
+        } else {
+          res.push_back(0.f);
+          res.push_back(0.f);
+        }
+      }
+
+      res.push_back(pos.side_to_move() == WHITE ? 1.f : -1.f);
+      res.push_back(getCastlingRights(pos));
+
+      if (pos.ep_square() < 64)
+        res.push_back(convertIdx(pos.ep_square()));
+      else
+        res.push_back(-1.f);
+      return res;
+    }
+
 namespace Eval {
 
   cppflow::model model (ModelFolderDefaultName);
@@ -110,7 +177,7 @@ namespace Eval {
     if (useNNUE)
         sync_cout << "info string NNUE evaluation using " << eval_file << " enabled" << sync_endl;
     else
-        sync_cout << "info string classical evaluation enabled" << sync_endl;
+        sync_cout << "info string Tensorflow evaluation enabled" << sync_endl;
   }
 }
 
@@ -828,105 +895,6 @@ namespace {
     return score;
   }
 
-
-  // Evaluation::winnable() adjusts the midgame and endgame score components, based on
-  // the known attacking/defending status of the players. The final value is derived
-  // by interpolation from the midgame and endgame values.
-
-  template<Tracing T>
-  Value Evaluation<T>::winnable(Score score) const {
-
-    int outflanking =  distance<File>(pos.square<KING>(WHITE), pos.square<KING>(BLACK))
-                    + int(rank_of(pos.square<KING>(WHITE)) - rank_of(pos.square<KING>(BLACK)));
-
-    bool pawnsOnBothFlanks =   (pos.pieces(PAWN) & QueenSide)
-                            && (pos.pieces(PAWN) & KingSide);
-
-    bool almostUnwinnable =   outflanking < 0
-                           && !pawnsOnBothFlanks;
-
-    bool infiltration =   rank_of(pos.square<KING>(WHITE)) > RANK_4
-                       || rank_of(pos.square<KING>(BLACK)) < RANK_5;
-
-    // Compute the initiative bonus for the attacking side
-    int complexity =   9 * pe->passed_count()
-                    + 12 * pos.count<PAWN>()
-                    +  9 * outflanking
-                    + 21 * pawnsOnBothFlanks
-                    + 24 * infiltration
-                    + 51 * !pos.non_pawn_material()
-                    - 43 * almostUnwinnable
-                    -110 ;
-
-    Value mg = mg_value(score);
-    Value eg = eg_value(score);
-
-    // Now apply the bonus: note that we find the attacking side by extracting the
-    // sign of the midgame or endgame values, and that we carefully cap the bonus
-    // so that the midgame and endgame scores do not change sign after the bonus.
-    int u = ((mg > 0) - (mg < 0)) * std::clamp(complexity + 50, -abs(mg), 0);
-    int v = ((eg > 0) - (eg < 0)) * std::max(complexity, -abs(eg));
-
-    mg += u;
-    eg += v;
-
-    // Compute the scale factor for the winning side
-    Color strongSide = eg > VALUE_DRAW ? WHITE : BLACK;
-    int sf = me->scale_factor(pos, strongSide);
-
-    // If scale factor is not already specific, scale down via general heuristics
-    if (sf == SCALE_FACTOR_NORMAL)
-    {
-        if (pos.opposite_bishops())
-        {
-            // For pure opposite colored bishops endgames use scale factor
-            // based on the number of passed pawns of the strong side.
-            if (   pos.non_pawn_material(WHITE) == BishopValueMg
-                && pos.non_pawn_material(BLACK) == BishopValueMg)
-                sf = 18 + 4 * popcount(pe->passed_pawns(strongSide));
-            // For every other opposite colored bishops endgames use scale factor
-            // based on the number of all pieces of the strong side.
-            else
-                sf = 22 + 3 * pos.count<ALL_PIECES>(strongSide);
-        }
-        // For rook endgames with strong side not having overwhelming pawn number advantage
-        // and its pawns being on one flank and weak side protecting its pieces with a king
-        // use lower scale factor.
-        else if (  pos.non_pawn_material(WHITE) == RookValueMg
-                && pos.non_pawn_material(BLACK) == RookValueMg
-                && pos.count<PAWN>(strongSide) - pos.count<PAWN>(~strongSide) <= 1
-                && bool(KingSide & pos.pieces(strongSide, PAWN)) != bool(QueenSide & pos.pieces(strongSide, PAWN))
-                && (attacks_bb<KING>(pos.square<KING>(~strongSide)) & pos.pieces(~strongSide, PAWN)))
-            sf = 36;
-        // For queen vs no queen endgames use scale factor
-        // based on number of minors of side that doesn't have queen.
-        else if (pos.count<QUEEN>() == 1)
-            sf = 37 + 3 * (pos.count<QUEEN>(WHITE) == 1 ? pos.count<BISHOP>(BLACK) + pos.count<KNIGHT>(BLACK)
-                                                        : pos.count<BISHOP>(WHITE) + pos.count<KNIGHT>(WHITE));
-        // In every other case use scale factor based on
-        // the number of pawns of the strong side reduced if pawns are on a single flank.
-        else
-            sf = std::min(sf, 36 + 7 * pos.count<PAWN>(strongSide)) - 4 * !pawnsOnBothFlanks;
-
-        // Reduce scale factor in case of pawns being on a single flank
-        sf -= 4 * !pawnsOnBothFlanks;
-    }
-
-    // Interpolate between the middlegame and (scaled by 'sf') endgame score
-    v =  mg * int(me->game_phase())
-       + eg * int(PHASE_MIDGAME - me->game_phase()) * ScaleFactor(sf) / SCALE_FACTOR_NORMAL;
-    v /= PHASE_MIDGAME;
-
-    if constexpr (T)
-    {
-        Trace::add(WINNABLE, make_score(u, eg * ScaleFactor(sf) / SCALE_FACTOR_NORMAL - eg_value(score)));
-        Trace::add(TOTAL, make_score(mg, eg * ScaleFactor(sf) / SCALE_FACTOR_NORMAL));
-    }
-
-    return Value(v);
-  }
-
-
   // Evaluation::value() is the main function of the class. It computes the various
   // parts of the evaluation and returns the value of the position from the point
   // of view of the side to move.
@@ -945,76 +913,6 @@ namespace {
 
 
 } // namespace Eval
-
-
-float getCastlingRights(const Position& pos) {
-  bool temp[] = {
-    pos.can_castle(WHITE_OO),
-    pos.can_castle(WHITE_OOO),
-    pos.can_castle(BLACK_OO),
-    pos.can_castle(BLACK_OOO)
-  };
-
-  float res = 0;
-  int coeff = 1;
-  for (int i = 0; i<4; i++) {
-    if(temp[1])
-      res += coeff;
-    coeff *= 2;
-  }
-  return res;
-}
-
-float getPieceID(Piece p) {
-  switch (p)
-  {
-    case W_PAWN: case B_PAWN: return 1.f;
-    case W_ROOK: case B_ROOK: return 4.f;
-    case W_KNIGHT: case B_KNIGHT: return 2.f;
-    case W_BISHOP: case B_BISHOP: return 3.f;
-    case W_QUEEN: case B_QUEEN: return 5.f;
-    default: return 6.f;
-  }
-}
-
-int convertIdx (int idx) {
-  int rank = idx % 8;
-  int file = int(idx/8) + 1;
-  return (8-file) * 8 + rank;
-}
-
-vector<float> encodeBoard(const Position& pos) {
-  vector<float> res;
-
-  for (int i = 0; i<64; i++) {
-
-    Square s = Square(convertIdx(i));
-    Piece p = pos.piece_on(s);
-
-    if (p != NO_PIECE) {
-      if (p < 9)
-        res.push_back(1.f);
-      else
-        res.push_back(-1.f);
-
-      res.push_back(getPieceID(p));
-    } else {
-      res.push_back(0.f);
-      res.push_back(0.f);
-    }
-  }
-
-  res.push_back(pos.side_to_move() == WHITE ? 1.f : -1.f);
-  res.push_back(getCastlingRights(pos));
-
-  if (pos.ep_square() < 64)
-    res.push_back(convertIdx(pos.ep_square()));
-  else
-    res.push_back(-1.f);
-  return res;
-}
-
-
 
 
 /// evaluate() is the evaluator for the outer world. It returns a static

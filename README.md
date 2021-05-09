@@ -43,17 +43,11 @@ make
 + `go wtime t1 btime t2 [winc t3 binc t4]`: Whites has `t1` ms on clock Blacks has `t2` ms on clock. Whites increment their time by `t3` ms and Blacks increment their time by `t4` ms
 + `go nodes n` search for n nodes (In fact, the number of nodes explored will be a bit greater than *n*)
 
-## Notes
-+ Since Deep_ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to change the evaluation function of my previous engine [ViCTORIA](https://github.com/LE10EENFAIT/ViCTORIA) but it was too slow. So I decided to use the [Stockfish](https://github.com/official-stockfish/Stockfish) search algorithm and board representation.
-  
-+ I use [cppflow](https://github.com/serizba/cppflow) as a wrapper for the Tensorflow API. In the future I will code my own library to interpret a neural network created on Tensorflow.
-
-
 ## Neural Network
 + I use Tensorflow and Python to create a neural network.
 + All the Python and Jupyter files to create the dataset and train the network are available in the `ANN` directory.
 + The goal of the network is to perform a regression to recreate the evaluation function of a chess engine.
-You can emulate any chess engine (I have chosen Stockfish 13, but it could be Leela or Komodo...): for each position in your dataset, you perform an evaluation with the engine of your choice, and you save the result along the position in a new dataset. Then you can perform regression.
+  You can emulate any chess engine (I have chosen Stockfish 13, but it could be Leela or Komodo...): for each position in your dataset, you perform an evaluation with the engine of your choice, and you save the result along the position in a new dataset. Then you can perform regression.
   
 + Currently, the network is trained on 55 million positions, recovered from the [Lichess database](https://database.lichess.org).
 + The position are encoded as vectors of dimensions 131: 64 * 2 (color of the piece + piece type: rook, pawn...) + castlings rights + en passant square + white to play.
@@ -78,6 +72,11 @@ _________________________________________________________________
 + Using the [R² metric](https://en.wikipedia.org/wiki/Coefficient_of_determination), the model has a score of about 0.85:
 
 ![](Images/model55M.jpg)
+
+## Notes
++ Since Deep_ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to change the evaluation function of my previous engine [ViCTORIA](https://github.com/LE10EENFAIT/ViCTORIA) but it was too slow. So I decided to use the [Stockfish](https://github.com/official-stockfish/Stockfish) search algorithm and board representation.
+  
++ I use [cppflow](https://github.com/serizba/cppflow) as a wrapper for the Tensorflow API. In the future I will code my own library to interpret a neural network created on Tensorflow.
 
 ## Credits
 + [Stockfish](https://github.com/official-stockfish/Stockfish)

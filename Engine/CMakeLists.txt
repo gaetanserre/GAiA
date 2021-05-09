@@ -12,7 +12,7 @@ include_directories(src/Stockfish/syzygy)
 
 
 
-add_executable(SFxDViCTORIA
+add_executable(Deep_ViCTORIA
 		src/Stockfish/benchmark.cpp
 		src/Stockfish/bitbase.cpp
 		src/Stockfish/bitboard.cpp
@@ -38,5 +38,5 @@ add_executable(SFxDViCTORIA
 		src/Stockfish/nnue/features/half_kp.cpp
 		src/Evaluator/evaluator.cpp)
 
-target_include_directories(SFxDViCTORIA PRIVATE src/Evaluator/cppflow $ENV{HOME}/libtensorflow/include/)
-target_link_libraries (SFxDViCTORIA "${TENSORFLOW_LIB}")
+target_include_directories(Deep_ViCTORIA PRIVATE src/Evaluator/cppflow $ENV{HOME}/libtensorflow/include/)
+target_link_libraries (Deep_ViCTORIA "${TENSORFLOW_LIB}")

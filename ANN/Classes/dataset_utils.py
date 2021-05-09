@@ -28,12 +28,6 @@ def checkIfEarlyMidEnd(fen):
     else:
         return 'mid_game'
     
-    
-def convertIdx(idx):
-    rank = idx % 8
-    file = int(idx/8) + 1
-    
-    return (8 - file) * 8 + rank
 
 '''
 We compute castling rights as if it were a 4-bit number.
@@ -63,15 +57,14 @@ def encodeBoard(fen):
     res = np.zeros((64, 2))
     board = chess.Board(fen)
     
-    for i in range(64):
-        square = convertIdx(i)
+    for square in range(64):
         piece_type = board.piece_type_at(square)
         if piece_type == None:
             continue
         else:
             piece_color = board.color_at(square)
             res[i] = [1 if piece_color else -1, piece_type]
-    ep_square = -1 if board.ep_square == None else convertIdx(board.ep_square)
+    ep_square = -1 if board.ep_square == None else board.ep_square
     
     res = np.append(res.flatten(), 1 if board.turn else 0)
     res = np.append(res, getCastlingRights(board))

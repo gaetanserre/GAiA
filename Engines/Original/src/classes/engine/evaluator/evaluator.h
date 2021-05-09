@@ -2,7 +2,6 @@
 #define VICTORIA_EVALUATOR_H
 
 #include <vector>
-#include <unordered_map>
 #include "../score/score.h"
 #include "cppflow/model.h"
 

@@ -16,40 +16,34 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <iostream>
+#ifndef EVALUATE_H_INCLUDED
+#define EVALUATE_H_INCLUDED
 
-#include "bitboard.h"
-#include "endgame.h"
-#include "position.h"
-#include "psqt.h"
-#include "search.h"
-#include "syzygy/tbprobe.h"
-#include "thread.h"
-#include "tt.h"
-#include "uci.h"
+#include <string>
 
-using namespace Stockfish;
+#include "types.h"
 
-int main(int argc, char* argv[]) {
+namespace Stockfish {
 
-  setenv("TF_CPP_MIN_LOG_LEVEL","3",1);
+class Position;
 
-  std::cout << engine_info() << std::endl;
+namespace Eval {
 
-  CommandLine::init(argc, argv);
-  UCI::init(Options);
-  Tune::init();
-  PSQT::init();
-  Bitboards::init();
-  Position::init();
-  Bitbases::init();
-  Endgames::init();
-  Threads.set(size_t(Options["Threads"]));
-  Search::clear(); // After threads are up
-  Eval::NNUE::init();
+  std::string trace(const Position& pos);
+  Value evaluate(const Position& pos);
 
-  UCI::loop(argc, argv);
+  extern bool useNNUE;
 
-  Threads.set(0);
-  return 0;
-}
+  namespace NNUE {
+
+    Value evaluate(const Position& pos);
+    void init();
+    void verify();
+
+  } // namespace NNUE
+
+} // namespace Eval
+
+} // namespace Stockfish
+
+#endif // #ifndef EVALUATE_H_INCLUDED

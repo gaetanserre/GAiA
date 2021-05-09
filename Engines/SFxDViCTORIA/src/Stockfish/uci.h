@@ -24,6 +24,7 @@
 
 #include "types.h"
 
+
 namespace Stockfish {
 
 class Position;

@@ -16,40 +16,37 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef EVALUATE_H_INCLUDED
-#define EVALUATE_H_INCLUDED
+#include <iostream>
 
-#include <string>
+#include "bitboard.h"
+#include "endgame.h"
+#include "position.h"
+#include "psqt.h"
+#include "search.h"
+#include "syzygy/tbprobe.h"
+#include "thread.h"
+#include "tt.h"
+#include "uci.h"
 
-#include "types.h"
-#include "model.h"
+using namespace Stockfish;
 
-namespace Stockfish {
+int main(int argc, char* argv[]) {
 
-class Position;
+  std::cout << engine_info() << std::endl;
 
-namespace Eval {
-  
-  std::string trace(const Position& pos);
-  Value evaluate(const Position& pos);
+  CommandLine::init(argc, argv);
+  UCI::init(Options);
+  Tune::init();
+  PSQT::init();
+  Bitboards::init();
+  Position::init();
+  Bitbases::init();
+  Endgames::init();
+  Threads.set(size_t(Options["Threads"]));
+  Search::clear(); // After threads are up
 
-  extern bool useNNUE;
-  extern std::string eval_file_loaded;
+  UCI::loop(argc, argv);
 
-  #define ModelFolderDefaultName "/Users/gaetanserre/Documents/Projets/Chess/Engines/Deep-ViCTORIA/Models/SF_model_batch_55M"
-
-  namespace NNUE {
-
-    Value evaluate(const Position& pos);
-    bool load_eval(std::string name, std::istream& stream);
-    void init();
-    void export_net();
-    void verify();
-
-  } // namespace NNUE
-
-} // namespace Eval
-
-} // namespace Stockfish
-
-#endif // #ifndef EVALUATE_H_INCLUDED
+  Threads.set(0);
+  return 0;
+}

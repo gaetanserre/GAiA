@@ -1,0 +1,89 @@
+//
+// Created by Gaëtan Serré on 09/05/2021.
+//
+
+#include "evaluator.h"
+#include "../Stockfish/uci.h"
+
+
+
+float Evaluator::getCastlingRights(const Position& pos) {
+  bool temp[] = {
+          pos.can_castle(WHITE_OO),
+          pos.can_castle(WHITE_OOO),
+          pos.can_castle(BLACK_OO),
+          pos.can_castle(BLACK_OOO)
+  };
+
+  float res = 0;
+  int coeff = 1;
+  for (int i = 0; i<4; i++) {
+    if(temp[1])
+      res += coeff;
+    coeff *= 2;
+  }
+  return res;
+}
+
+float Evaluator::getPieceID(Piece p) {
+  switch (p)
+  {
+    case W_PAWN: case B_PAWN: return 1.f;
+    case W_ROOK: case B_ROOK: return 4.f;
+    case W_KNIGHT: case B_KNIGHT: return 2.f;
+    case W_BISHOP: case B_BISHOP: return 3.f;
+    case W_QUEEN: case B_QUEEN: return 5.f;
+    default: return 6.f;
+  }
+}
+
+int Evaluator::convertIdx (int idx) {
+  int rank = idx % 8;
+  int file = int(idx/8) + 1;
+  return (8-file) * 8 + rank;
+}
+
+std::vector<float> Evaluator::encodeBoard(const Position& pos) {
+  std::vector<float> res;
+
+  for (int i = 0; i<64; i++) {
+
+    Square s = Square(convertIdx(i));
+    Piece p = pos.piece_on(s);
+
+    if (p != NO_PIECE) {
+      if (p < 9)
+        res.push_back(1.f);
+      else
+        res.push_back(-1.f);
+
+      res.push_back(getPieceID(p));
+    } else {
+      res.push_back(0.f);
+      res.push_back(0.f);
+    }
+  }
+
+  res.push_back(pos.side_to_move() == WHITE ? 1.f : -1.f);
+  res.push_back(getCastlingRights(pos));
+
+  if (pos.ep_square() < 64)
+    res.push_back(convertIdx(pos.ep_square()));
+  else
+    res.push_back(-1.f);
+  return res;
+}
+
+Value Evaluator::from_cp(double cp) {
+  return Value(cp * double(PawnValueEg));
+}
+
+Value Evaluator::evalPosition(const Position &pos) {
+  std::vector<float> encoded = encodeBoard(pos);
+  auto input = cppflow::tensor(encoded, {1, 131});
+  auto output = this->model(input);
+
+  Value v = from_cp(output.get_data<float>()[0] / 100.f);
+  return pos.side_to_move() == WHITE ? v : -v;
+}
+

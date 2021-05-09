@@ -18,24 +18,19 @@
 
 #include <algorithm>
 #include <cassert>
-#include <cstdlib>
 #include <cstring>   // For std::memset
-#include <fstream>
 #include <iomanip>
 #include <sstream>
 #include <iostream>
 #include <streambuf>
-#include <vector>
-
 #include "bitboard.h"
 #include "evaluate.h"
 #include "material.h"
 #include "misc.h"
 #include "pawns.h"
 #include "thread.h"
-#include "timeman.h"
 #include "uci.h"
-#include "incbin/incbin.h"
+#include "../Evaluator/evaluator.h"
 
 
 // Macro to embed the default efficiently updatable neural network (NNUE) file
@@ -59,125 +54,13 @@ using namespace std;
 
 namespace Stockfish {
 
-    float getCastlingRights(const Position& pos) {
-      bool temp[] = {
-              pos.can_castle(WHITE_OO),
-              pos.can_castle(WHITE_OOO),
-              pos.can_castle(BLACK_OO),
-              pos.can_castle(BLACK_OOO)
-      };
-
-      float res = 0;
-      int coeff = 1;
-      for (int i = 0; i<4; i++) {
-        if(temp[1])
-          res += coeff;
-        coeff *= 2;
-      }
-      return res;
-    }
-
-    float getPieceID(Piece p) {
-      switch (p)
-      {
-        case W_PAWN: case B_PAWN: return 1.f;
-        case W_ROOK: case B_ROOK: return 4.f;
-        case W_KNIGHT: case B_KNIGHT: return 2.f;
-        case W_BISHOP: case B_BISHOP: return 3.f;
-        case W_QUEEN: case B_QUEEN: return 5.f;
-        default: return 6.f;
-      }
-    }
-
-    int convertIdx (int idx) {
-      int rank = idx % 8;
-      int file = int(idx/8) + 1;
-      return (8-file) * 8 + rank;
-    }
-
-    vector<float> encodeBoard(const Position& pos) {
-      vector<float> res;
-
-      for (int i = 0; i<64; i++) {
-
-        Square s = Square(convertIdx(i));
-        Piece p = pos.piece_on(s);
-
-        if (p != NO_PIECE) {
-          if (p < 9)
-            res.push_back(1.f);
-          else
-            res.push_back(-1.f);
-
-          res.push_back(getPieceID(p));
-        } else {
-          res.push_back(0.f);
-          res.push_back(0.f);
-        }
-      }
-
-      res.push_back(pos.side_to_move() == WHITE ? 1.f : -1.f);
-      res.push_back(getCastlingRights(pos));
-
-      if (pos.ep_square() < 64)
-        res.push_back(convertIdx(pos.ep_square()));
-      else
-        res.push_back(-1.f);
-      return res;
-    }
-
 namespace Eval {
-
-  cppflow::model model (ModelFolderDefaultName);
-
-  bool useNNUE;
-  string eval_file_loaded = "None";
-
-  /// NNUE::init() tries to load a NNUE network at startup time, or when the engine
-  /// receives a UCI command "setoption name EvalFile value nn-[a-z0-9]{12}.nnue"
-  /// The name of the NNUE network is always retrieved from the EvalFile option.
-  /// We search the given network in three locations: internally (the default
-  /// network may be embedded in the binary), in the active working directory and
-  /// in the engine directory. Distro packagers may define the DEFAULT_NNUE_DIRECTORY
-  /// variable to have the engine search in a special directory in their distro.
-
-  void NNUE::init() {
-    useNNUE = false;
-    return;
-  }
-
-  void NNUE::export_net() {
-  }
+  Evaluator evaluator;
+  bool useNNUE = false;
 
   /// NNUE::verify() verifies that the last net used was loaded successfully
   void NNUE::verify() {
-
-    string eval_file = string(Options["EvalFile"]);
-
-    if (useNNUE && eval_file_loaded != eval_file)
-    {
-        UCI::OptionsMap defaults;
-        UCI::init(defaults);
-
-        string msg1 = "If the UCI option \"Use NNUE\" is set to true, network evaluation parameters compatible with the engine must be available.";
-        string msg2 = "The option is set to true, but the network file " + eval_file + " was not loaded successfully.";
-        string msg3 = "The UCI option EvalFile might need to specify the full path, including the directory name, to the network file.";
-        string msg4 = "The default net can be downloaded from: https://tests.stockfishchess.org/api/nn/" + string(defaults["EvalFile"]);
-        string msg5 = "The engine will be terminated now.";
-
-        sync_cout << "info string ERROR: " << msg1 << sync_endl;
-        sync_cout << "info string ERROR: " << msg2 << sync_endl;
-        sync_cout << "info string ERROR: " << msg3 << sync_endl;
-        sync_cout << "info string ERROR: " << msg4 << sync_endl;
-        sync_cout << "info string ERROR: " << msg5 << sync_endl;
-
-        exit(EXIT_FAILURE);
-    }
-
-    if (useNNUE)
-        sync_cout << "info string NNUE evaluation using " << eval_file << " enabled" << sync_endl;
-    else
-        sync_cout << "info string Tensorflow evaluation enabled" << sync_endl;
+    sync_cout << "info string Tensorflow evaluation enabled" << sync_endl;
   }
 }
 
@@ -901,14 +784,7 @@ namespace {
 
   template<Tracing T>
   Value Evaluation<T>::value() {
-
-    vector<float> encoded = encodeBoard(pos);
-    auto input = cppflow::tensor(encoded, {1, 131});
-    auto output = Eval::model(input);
-
-    Value v = from_cp(output.get_data<float>()[0] / 100.f);
-    v = (pos.side_to_move() == WHITE ? v : -v);
-    return v;
+    return Eval::evaluator.evalPosition(pos);
   }
 
 

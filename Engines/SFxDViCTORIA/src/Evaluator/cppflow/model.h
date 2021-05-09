@@ -44,7 +44,9 @@ namespace cppflow {
 namespace cppflow {
 
     inline model::model(const std::string &filename) {
-        this->graph = {TF_NewGraph(), TF_DeleteGraph};
+      setenv("TF_CPP_MIN_LOG_LEVEL","3",1);
+
+      this->graph = {TF_NewGraph(), TF_DeleteGraph};
 
         // Create the session.
         std::unique_ptr<TF_SessionOptions, decltype(&TF_DeleteSessionOptions)> session_options = {TF_NewSessionOptions(), TF_DeleteSessionOptions};

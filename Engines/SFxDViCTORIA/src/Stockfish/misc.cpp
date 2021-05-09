@@ -149,7 +149,7 @@ string engine_info(bool to_uci) {
   ss << "Deep ViCTORIA & Stockfish 13" << setfill('0');
 
   ss << (to_uci  ? "\nid author ": " by ")
-     << "the Stockfish developers & Gaëtan Serré";
+     << "Gaëtan Serré & the Stockfish developers";
 
   return ss.str();
 }

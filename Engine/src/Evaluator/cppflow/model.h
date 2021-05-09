@@ -19,7 +19,7 @@ namespace cppflow {
 
     class model {
     public:
-        explicit model(const std::string& filename);
+        void init(const std::string& filename);
 
         std::vector<std::string> get_operations() const;
         std::vector<int64_t> get_operation_shape(const std::string& operation) const;
@@ -28,8 +28,7 @@ namespace cppflow {
         tensor operator()(const tensor& input);
 
         ~model() = default;
-        model(const model &model) = default;
-        model(model &&model) = default;
+        model() = default;
         model &operator=(const model &other) = default;
         model &operator=(model &&other) = default;
 
@@ -43,7 +42,7 @@ namespace cppflow {
 
 namespace cppflow {
 
-    inline model::model(const std::string &filename) {
+    inline void model::init(const std::string &filename) {
       setenv("TF_CPP_MIN_LOG_LEVEL","3",1);
 
       this->graph = {TF_NewGraph(), TF_DeleteGraph};

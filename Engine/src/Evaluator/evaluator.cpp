@@ -3,9 +3,11 @@
 //
 
 #include "evaluator.h"
-#include "../Stockfish/uci.h"
 
 
+void Evaluator::setModel(const std::string& modelpath) {
+  this->model.init(modelpath);
+}
 
 float Evaluator::getCastlingRights(const Position& pos) {
   bool temp[] = {
@@ -79,6 +81,7 @@ Value Evaluator::from_cp(double cp) {
 }
 
 Value Evaluator::evalPosition(const Position &pos) {
+
   std::vector<float> encoded = encodeBoard(pos);
   auto input = cppflow::tensor(encoded, {1, 131});
   auto output = this->model(input);

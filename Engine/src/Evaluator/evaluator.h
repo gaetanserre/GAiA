@@ -4,20 +4,20 @@
 
 #ifndef DEEP_VICTORIA_EVALUATOR_H
 #define DEEP_VICTORIA_EVALUATOR_H
-#include <vector>
-#include "model.h"
-#include "../Stockfish/position.h"
 
-#define ModelFolderDefault "/Users/gaetanserre/Documents/Projets/Chess/Engines/Deep-ViCTORIA/Models/SF_model_batch_55M"
+#include "../Stockfish/position.h"
+#include "../Stockfish/uci.h"
+#include "model.h"
 
 using namespace Stockfish;
 
 class Evaluator {
   public:
+    void setModel (const std::string& modelpath);
     Value evalPosition(const Position& pos);
 
   private:
-    cppflow::model model = cppflow::model(ModelFolderDefault);
+    cppflow::model model;
 
     static float getCastlingRights (const Position& pos);
     static std::vector<float> encodeBoard (const Position& pos);

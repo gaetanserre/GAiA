@@ -23,14 +23,15 @@
 #include <sstream>
 #include <iostream>
 #include <streambuf>
+
 #include "bitboard.h"
 #include "evaluate.h"
 #include "material.h"
 #include "misc.h"
 #include "pawns.h"
 #include "thread.h"
-#include "uci.h"
 #include "../Evaluator/evaluator.h"
+
 
 
 // Macro to embed the default efficiently updatable neural network (NNUE) file
@@ -62,6 +63,11 @@ namespace Eval {
   void NNUE::verify() {
     sync_cout << "info string Tensorflow evaluation enabled" << sync_endl;
   }
+
+  void setEvaluator(std::string modelpath) {
+    evaluator.setModel(modelpath);
+  }
+
 }
 
 namespace Trace {

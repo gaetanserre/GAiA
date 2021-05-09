@@ -23,7 +23,6 @@
 #include "position.h"
 #include "psqt.h"
 #include "search.h"
-#include "syzygy/tbprobe.h"
 #include "thread.h"
 #include "tt.h"
 #include "uci.h"
@@ -32,10 +31,12 @@ using namespace Stockfish;
 
 int main(int argc, char* argv[]) {
 
+
   std::cout << engine_info() << std::endl;
 
   CommandLine::init(argc, argv);
   UCI::init(Options);
+  UCI::initEval(argv[0]);
   Tune::init();
   PSQT::init();
   Bitboards::init();

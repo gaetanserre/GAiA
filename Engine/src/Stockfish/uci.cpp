@@ -21,16 +21,15 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <filesystem>
 
 #include "evaluate.h"
 #include "movegen.h"
 #include "position.h"
 #include "search.h"
 #include "thread.h"
-#include "timeman.h"
 #include "tt.h"
 #include "uci.h"
-#include "syzygy/tbprobe.h"
 
 using namespace std;
 
@@ -283,7 +282,6 @@ void UCI::loop(int argc, char* argv[]) {
   } while (token != "quit" && argc == 1); // Command line args are one-shot
 }
 
-
 /// UCI::value() converts a Value to a string suitable for use with the UCI
 /// protocol specification:
 ///
@@ -370,6 +368,14 @@ Move UCI::to_move(const Position& pos, string& str) {
           return m;
 
   return MOVE_NONE;
+}
+
+void UCI::initEval(std::string argv0) {
+  std::string dir = weakly_canonical(std::filesystem::path(argv0)).parent_path().c_str();
+  dir = dir.substr(0, dir.find_last_of("/\\"));
+  dir = dir.substr(0, dir.find_last_of("/\\"));
+  dir += "/Models/SF_model_batch_55M";
+  Eval::setEvaluator(dir);
 }
 
 } // namespace Stockfish

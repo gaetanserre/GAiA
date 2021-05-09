@@ -19,8 +19,6 @@ In order to build Deep ViCTORIA, you need [CMake](https://cmake.org/) and the C 
 + Download it from [here](https://www.tensorflow.org/install/lang_c)
 + Unzip the directory into a folder named `libtensorflow` and place it in your `$HOME` directory.
 
-Furthermore, you have to change the path of the model folder in the file `src/Evaluator/evaluator.h`
-
 Then:
 ```bash
 mkdir build
@@ -76,7 +74,7 @@ _________________________________________________________________
 ## Notes
 + Since Deep_ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to change the evaluation function of my previous engine [ViCTORIA](https://github.com/LE10EENFAIT/ViCTORIA) but it was too slow. So I decided to use the [Stockfish](https://github.com/official-stockfish/Stockfish) search algorithm and board representation.
   
-+ I use [cppflow](https://github.com/serizba/cppflow) as a wrapper for the Tensorflow API. In the future I will code my own library to interpret a neural network created on Tensorflow.
++ I use a customized [cppflow](https://github.com/serizba/cppflow) version as a wrapper for the Tensorflow API. In the future I will code my own library to interpret a neural network created on Tensorflow.
 
 ## Credits
 + [Stockfish](https://github.com/official-stockfish/Stockfish)

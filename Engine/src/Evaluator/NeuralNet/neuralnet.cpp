@@ -53,8 +53,8 @@ void NeuralNetwork::init(const string& modelpath) {
     if (line == "layer") {
       if (nb_layer > 0) {
         this->layers.emplace_back(createLayer(weights, bias));
-        weights = vector<vector<double>>();
-        bias = vector<double>();
+        weights.clear();
+        bias.clear();
       }
       nb_layer++;
     } else {

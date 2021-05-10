@@ -375,7 +375,7 @@ void UCI::initEval(std::string argv0) {
   /*dir = dir.substr(0, dir.find_last_of("/\\"));
   dir = dir.substr(0, dir.find_last_of("/\\"));
   dir += "/Models/SF_model_batch_55M";*/
-  dir += "/Model";
+  dir += "/model.dv";
   Eval::setEvaluator(dir);
 }
 

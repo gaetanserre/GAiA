@@ -61,7 +61,7 @@ namespace Eval {
 
   /// NNUE::verify() verifies that the last net used was loaded successfully
   void NNUE::verify() {
-    sync_cout << "info string Tensorflow evaluation enabled" << sync_endl;
+    sync_cout << "info string Neural network evaluation enabled" << sync_endl;
   }
 
   void setEvaluator(std::string modelpath) {

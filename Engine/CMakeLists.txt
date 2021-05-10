@@ -4,7 +4,6 @@ project(Deep_ViCTORIA)
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread")
-find_library(TENSORFLOW_LIB tensorflow HINT $ENV{HOME}/libtensorflow/lib/)
 
 include_directories(src/Stockfish/incbin)
 include_directories(src/Stockfish/nnue)
@@ -36,7 +35,6 @@ add_executable(Deep_ViCTORIA
 		src/Stockfish/syzygy/tbprobe.cpp
 		src/Stockfish/nnue/evaluate_nnue.cpp
 		src/Stockfish/nnue/features/half_kp.cpp
-		src/Evaluator/evaluator.cpp)
-
-target_include_directories(Deep_ViCTORIA PRIVATE src/Evaluator/cppflow $ENV{HOME}/libtensorflow/include/)
-target_link_libraries (Deep_ViCTORIA "${TENSORFLOW_LIB}")
+		src/Evaluator/evaluator.cpp
+		src/Evaluator/NeuralNet/neuralnet.cpp
+		)

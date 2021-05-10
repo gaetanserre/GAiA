@@ -15,10 +15,7 @@ Shredder, Chess Partner or Fritz) in order to be used comfortably.
 ## Build
 `cd Engine`
 
-In order to build Deep ViCTORIA, you need [CMake](https://cmake.org/) and the C API of Tensorflow:
-+ Download it from [here](https://www.tensorflow.org/install/lang_c)
-+ Unzip the directory into a folder named `libtensorflow` and place it in your `$HOME` directory.
-
+In order to build Deep ViCTORIA, you need [CMake](https://cmake.org/).
 Then:
 ```bash
 cd build
@@ -73,12 +70,10 @@ _________________________________________________________________
 ## Notes
 + Since Deep_ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to use those from my previous engine [ViCTORIA](https://github.com/LE10EENFAIT/ViCTORIA) but it was too slow. So I decided to use those from [Stockfish](https://github.com/official-stockfish/Stockfish).
   
-+ I use a customized [cppflow](https://github.com/serizba/cppflow) version as a wrapper for the Tensorflow API. In the future I will code my own library to interpret a neural network created on Tensorflow.
++ I use my own implementation of neural network in C++ called [Neural Net](https://github.com/LE10EENFAIT/NeuralNet).
 
 ## Credits
 + [Stockfish](https://github.com/official-stockfish/Stockfish)
-+ [cppflow](https://github.com/serizba/cppflow)
-+ [Tensorflow](https://github.com/tensorflow/tensorflow)
 
 ## License
 [GPL v3](https://choosealicense.com/licenses/gpl-3.0/)

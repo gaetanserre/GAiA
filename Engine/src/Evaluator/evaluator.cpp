@@ -6,7 +6,7 @@
 
 
 void Evaluator::setModel(const std::string& modelpath) {
-  this->model.init(modelpath);
+  this->network.init(modelpath);
 }
 
 float Evaluator::getCastlingRights(const Position& pos) {
@@ -27,15 +27,15 @@ float Evaluator::getCastlingRights(const Position& pos) {
   return res;
 }
 
-float Evaluator::getPieceID(Piece p) {
+double Evaluator::getPieceID(Piece p) {
   switch (p)
   {
-    case W_PAWN: case B_PAWN: return 1.f;
-    case W_ROOK: case B_ROOK: return 4.f;
-    case W_KNIGHT: case B_KNIGHT: return 2.f;
-    case W_BISHOP: case B_BISHOP: return 3.f;
-    case W_QUEEN: case B_QUEEN: return 5.f;
-    default: return 6.f;
+    case W_PAWN: case B_PAWN: return 1.0;
+    case W_ROOK: case B_ROOK: return 4.0;
+    case W_KNIGHT: case B_KNIGHT: return 2.0;
+    case W_BISHOP: case B_BISHOP: return 3.0;
+    case W_QUEEN: case B_QUEEN: return 5.0;
+    default: return 6.0;
   }
 }
 
@@ -45,8 +45,8 @@ int Evaluator::convertIdx (int idx) {
   return (8-file) * 8 + rank;
 }
 
-std::vector<float> Evaluator::encodeBoard(const Position& pos) {
-  std::vector<float> res;
+std::vector<double> Evaluator::encodeBoard(const Position& pos) {
+  std::vector<double> res;
 
   for (int i = 0; i<64; i++) {
 
@@ -55,24 +55,24 @@ std::vector<float> Evaluator::encodeBoard(const Position& pos) {
 
     if (p != NO_PIECE) {
       if (p < 9)
-        res.push_back(1.f);
+        res.push_back(1.0);
       else
-        res.push_back(-1.f);
+        res.push_back(-1.0);
 
       res.push_back(getPieceID(p));
     } else {
-      res.push_back(0.f);
-      res.push_back(0.f);
+      res.push_back(0.0);
+      res.push_back(0.0);
     }
   }
 
-  res.push_back(pos.side_to_move() == WHITE ? 1.f : -1.f);
+  res.push_back(pos.side_to_move() == WHITE ? 1.0 : -1.0);
   res.push_back(getCastlingRights(pos));
 
   if (pos.ep_square() < 64)
     res.push_back(convertIdx(pos.ep_square()));
   else
-    res.push_back(-1.f);
+    res.push_back(-1.0);
   return res;
 }
 
@@ -81,12 +81,9 @@ Value Evaluator::from_cp(double cp) {
 }
 
 Value Evaluator::evalPosition(const Position &pos) {
-
-  std::vector<float> encoded = encodeBoard(pos);
-  auto input = cppflow::tensor(encoded, {1, 131});
-  auto output = this->model(input);
-
-  Value v = from_cp(output.get_data<float>()[0] / 100.f);
+  std::vector<double> encoded = encodeBoard(pos);
+  double pred = this->network.single_predict(encoded) / 100.0;
+  Value v = from_cp(pred);
   return pos.side_to_move() == WHITE ? v : -v;
 }
 

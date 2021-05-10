@@ -7,7 +7,7 @@
 
 #include "../Stockfish/position.h"
 #include "../Stockfish/uci.h"
-#include "model.h"
+#include "NeuralNet/neuralnet.h"
 
 using namespace Stockfish;
 
@@ -17,11 +17,11 @@ class Evaluator {
     Value evalPosition(const Position& pos);
 
   private:
-    cppflow::model model;
+    NeuralNetwork network;
 
     static float getCastlingRights (const Position& pos);
-    static std::vector<float> encodeBoard (const Position& pos);
-    static float getPieceID(Piece p);
+    static std::vector<double> encodeBoard (const Position& pos);
+    static double getPieceID(Piece p);
     static int convertIdx (int idx);
     static Value from_cp (double cp);
 };

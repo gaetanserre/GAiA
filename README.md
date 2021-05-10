@@ -2,7 +2,7 @@
 
 Deep ViCTORIA is a UCI chess engine built with C++.
 
-It performs an in-depth analysis of the position and uses a neural network to evaluate each position.
+It performs an in-depth analysis and uses a neural network to evaluate each chess board.
 
 It can perform an analysis in reasonable time between depth 15 and 20+ depending on the number of possible moves.
 

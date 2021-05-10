@@ -71,7 +71,7 @@ _________________________________________________________________
 ![](Images/model55M.jpg)
 
 ## Notes
-+ Since Deep_ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to change the evaluation function of my previous engine [ViCTORIA](https://github.com/LE10EENFAIT/ViCTORIA) but it was too slow. So I decided to use the [Stockfish](https://github.com/official-stockfish/Stockfish) search algorithm and board representation.
++ Since Deep_ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to use those from my previous engine [ViCTORIA](https://github.com/LE10EENFAIT/ViCTORIA) but it was too slow. So I decided to use those from [Stockfish](https://github.com/official-stockfish/Stockfish).
   
 + I use a customized [cppflow](https://github.com/serizba/cppflow) version as a wrapper for the Tensorflow API. In the future I will code my own library to interpret a neural network created on Tensorflow.
 

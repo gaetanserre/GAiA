@@ -21,7 +21,6 @@ In order to build Deep ViCTORIA, you need [CMake](https://cmake.org/) and the C 
 
 Then:
 ```bash
-mkdir build
 cd build
 cmake ..
 make

@@ -372,9 +372,10 @@ Move UCI::to_move(const Position& pos, string& str) {
 
 void UCI::initEval(std::string argv0) {
   std::string dir = weakly_canonical(std::filesystem::path(argv0)).parent_path().c_str();
+  /*dir = dir.substr(0, dir.find_last_of("/\\"));
   dir = dir.substr(0, dir.find_last_of("/\\"));
-  dir = dir.substr(0, dir.find_last_of("/\\"));
-  dir += "/Models/SF_model_batch_55M";
+  dir += "/Models/SF_model_batch_55M";*/
+  dir += "/Model";
   Eval::setEvaluator(dir);
 }
 

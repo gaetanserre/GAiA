@@ -22,7 +22,7 @@ def parsePgn(pgn_path, nb_fens, output_path):
     df.to_csv(output_path, index=False)
     print('Dataset shape:', df.shape)
     
-def encodeBatch(dataset_path, batch_size, nb_sample, offset, engine, score_getter):
+def encodeBatch(dataset_path, batch_size, nb_sample, offset, engine, getScore):
     df = pd.read_csv('Datasets/raw_dataset.csv')
     boards = df['board'].values
     print('Dataset shape:', df.shape)
@@ -37,7 +37,7 @@ def encodeBatch(dataset_path, batch_size, nb_sample, offset, engine, score_gette
         for j in range(i * batch_size, min(boards.shape[0], i * batch_size + batch_size)):
             board = boards[j]
             try:
-                data.append(np.append(encodeBoard(board), score_getter.getScore(board)))
+                data.append(np.append(encodeBoard(board), getScore(board)))
                 pbar.update(1)
             except Exception as e: 
                 if str(e) == '[Errno 32] Broken pipe':
@@ -60,10 +60,8 @@ def concatDatasets (datasets_path, output_path):
     
 #parsePgn('Datasets/lichess_db_standard_rated_2020-02.pgn', 40 * MILLION, 'Datasets/raw_dataset.csv')
 
-#score_getter = ScoreGetter('/usr/local/bin/stockfish', 'eval', 'go depth 1')
-#encodeBatch('Datasets/raw_dataset.csv', 1000, 34, 0, 'Stockfish 13', score_getter)
+score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Lc0', 'eval', 'go depth 1')
+encodeBatch('Datasets/raw_dataset.csv', MILLION, 58, 0, 'Leela Chess 0', score_getter.getScore2)
 
-concatDatasets (
-    ['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'],
-    'Datasets/Stockfish 13/test_dataset.csv')
+#concatDatasets (['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'], 'Datasets/Stockfish 13/test_dataset.csv')
 

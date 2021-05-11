@@ -32,7 +32,7 @@ make
 + `position starpos [moves move_list]`
 + `position fen your_fen [moves move_list]`
 + `go depth n`
-+ `go infinite`: wait for the stop command
++ `go infinite`: search until you enter `stop`
 + `go movetime t`: search for t milliseconds
 + `go wtime t1 btime t2 [winc t3 binc t4]`: Whites has `t1` ms on clock Blacks has `t2` ms on clock. Whites increment their time by `t3` ms and Blacks increment their time by `t4` ms
 + `go nodes n` search for n nodes (In fact, the number of nodes explored will be a bit greater than *n*)
@@ -41,10 +41,10 @@ make
 + I use Tensorflow and Python to create a neural network.
 + All the Python and Jupyter files to create the dataset and train the network are available in the `ANN` directory.
 + The goal of the network is to perform a regression to recreate the evaluation function of a chess engine.
-  You can emulate any chess engine (I have chosen Stockfish 13, but it could be Leela or Komodo...): for each position in your dataset, you perform an evaluation with the engine of your choice, and you save the result along the position in a new dataset. Then you can perform regression.
+  You can emulate any chess engine (I have chosen Stockfish 13, but it could have been Leela or Komodo...): for each position in your dataset, you perform an evaluation with the engine of your choice, and you save the result along the position in a new dataset (the best is to have a command which give the static evaluation of the position like the `eval` command in Stockfish. If there is no such command, search at depth 1). Then you can perform regression.
   
 + Currently, the network is trained on 55 million positions, recovered from the [Lichess database](https://database.lichess.org).
-+ The position are encoded as vectors of dimensions 131: 64 * 2 (color of the piece + piece type: rook, pawn...) + castlings rights + en passant square + white to play.
++ The position are encoded as vectors of dimension 131: 64 * 2 (color of the piece + piece type: rook, pawn...) + castlings rights + en passant square + Whites to play.
 + The structure of the neural network:
 ```
 _________________________________________________________________
@@ -63,6 +63,8 @@ Trainable params: 25,805
 Non-trainable params: 0
 _________________________________________________________________
 ```
+Each *Dense* layer uses `relu` as the activation function except the last one which uses `linear`.
+
 + Using the [R² metric](https://en.wikipedia.org/wiki/Coefficient_of_determination), the model has a score of about 0.85:
 
 ![](Images/model55M.jpg)

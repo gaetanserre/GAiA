@@ -63,6 +63,9 @@ class ScoreGetter:
                 break
 
             out = self.engine.stdout.readline()
+            
+        if score == None:
+        	raise Exception('Mate or stalemate position.')
 
         return score
 
@@ -78,5 +81,3 @@ class ScoreGetter:
                      stderr=subprocess.STDOUT,
                      stdin=subprocess.PIPE,
                      bufsize=0)
-        
-  

@@ -19,8 +19,8 @@ except:
 mode = 'batch'
 offset = 0
 max_idx = 55
-engine = 'Leela Chess 0'
-model_path = '../Models/LC0_model_batch_55M'
+engine = 'Stockfish 13'
+model_path = '../Models/SF_model_batch_65M'
 
 
 def buildAndCompile(shape):

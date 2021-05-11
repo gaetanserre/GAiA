@@ -22,8 +22,8 @@ def parsePgn(pgn_path, nb_fens, output_path):
     df.to_csv(output_path, index=False)
     print('Dataset shape:', df.shape)
     
-def encodeBatch(dataset_path, batch_size, nb_sample, offset, engine, getScore):
-    df = pd.read_csv('Datasets/raw_dataset.csv')
+def encodeBatch(dataset_path, batch_size, nb_sample, offset, output_path, getScore):
+    df = pd.read_csv('Datasets/raw_dataset.csv', nrows=2*MILLION)
     boards = df['board'].values
     print('Dataset shape:', df.shape)
     
@@ -37,7 +37,7 @@ def encodeBatch(dataset_path, batch_size, nb_sample, offset, engine, getScore):
         for j in range(i * batch_size, min(boards.shape[0], i * batch_size + batch_size)):
             board = boards[j]
             try:
-                data.append(np.append(encodeBoard(board), getScore(board)))
+                data.append(np.append(encodeBoard(board), getScore(board + ' 0 1')))
                 pbar.update(1)
             except Exception as e: 
                 if str(e) == '[Errno 32] Broken pipe':
@@ -45,7 +45,7 @@ def encodeBatch(dataset_path, batch_size, nb_sample, offset, engine, getScore):
                 continue
 
         df = pd.DataFrame(data, columns=np.append(getColumns(), 'cp (' + engine + ')'))
-        df.to_csv('Datasets/' + engine + '/dataset' + str(offset + i + 1) + '.csv', index=False)
+        df.to_csv(output_path + '/dataset' + str(offset + i + 1) + '.csv', index=False)
 
     pbar.close()
     
@@ -58,10 +58,10 @@ def concatDatasets (datasets_path, output_path):
     pd.concat(dfs).to_csv(output_path, index=False)
 
     
-#parsePgn('Datasets/lichess_db_standard_rated_2020-02.pgn', 40 * MILLION, 'Datasets/raw_dataset.csv')
+parsePgn('/media/gaetan/Data/Deep_ViCTORIA/Datasets/lichess_db_standard_rated_2019-12.pgn', 80 * MILLION, 'Datasets/raw_dataset.csv')
 
-score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Lc0/lc0', 'eval', 'go depth 1')
-encodeBatch('Datasets/raw_dataset.csv', MILLION, 58, 0, 'Leela Chess 0', score_getter.getScore2)
+#score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Stockfish 13/stockfish_13_linux_x64_bmi2', 'eval', 'go depth 1')
+#encodeBatch('Datasets/raw_dataset.csv', MILLION, 58, 0, '/media/gaetan/Data/Deep_ViCTORIA/Datasets/Stockfish 13', score_getter.getScore2)
 
 #concatDatasets (['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'], 'Datasets/Stockfish 13/test_dataset.csv')
 

@@ -12,7 +12,7 @@ from dataset_utils import encodeBoard
 from dataset_utils import getColumns
 from PGNParser import parseFromPGN
 
-MILLION = 1e6
+MILLION = 1000000
 
 
 def parsePgn(pgn_path, nb_fens, output_path):

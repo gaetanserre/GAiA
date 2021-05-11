@@ -37,4 +37,5 @@ add_executable(Deep_ViCTORIA
 		src/Stockfish/nnue/features/half_kp.cpp
 		src/Evaluator/evaluator.cpp
 		src/Evaluator/NeuralNet/neuralnet.cpp
+		src/Evaluator/NeuralNet/activation_functions.h
 		)

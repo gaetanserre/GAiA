@@ -60,7 +60,7 @@ def concatDatasets (datasets_path, output_path):
     
 #parsePgn('Datasets/lichess_db_standard_rated_2020-02.pgn', 40 * MILLION, 'Datasets/raw_dataset.csv')
 
-score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Lc0', 'eval', 'go depth 1')
+score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Lc0/lc0', 'eval', 'go depth 1')
 encodeBatch('Datasets/raw_dataset.csv', MILLION, 58, 0, 'Leela Chess 0', score_getter.getScore2)
 
 #concatDatasets (['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'], 'Datasets/Stockfish 13/test_dataset.csv')

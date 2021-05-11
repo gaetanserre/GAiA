@@ -2,94 +2,65 @@
 // Created by Gaëtan Serré on 10/05/2021.
 //
 
+#ifndef NEURALNET_H
+#define NEURALNET_H
 
-#include "neuralnet.h"
+#include <iostream>
+#include <vector>
 
-#include <fstream>
-#include <sstream>
-#include <utility>
+using namespace std;
 
-
-Neuron::Neuron(vector<double> weights, double bias) {
-  this->weights = std::move(weights);
-  this->bias = bias;
-}
-
-double Neuron::getOutput(vector<double> x) {
-  return relu(dot(this->weights, std::move(x)) + this->bias);
-}
-
-DenseLayer::DenseLayer(vector<vector<double>> weights, vector<double> bias) {
-  for (int nb_neurons = 0; nb_neurons<weights.size(); nb_neurons++) {
-    this->neurons.emplace_back(weights[nb_neurons], bias[nb_neurons]);
-  }
-}
-
-
-vector<double> DenseLayer::getOutput(const vector<double>& x) {
-  vector<double> res;
-  for (Neuron neuron : this->neurons) {
-    res.emplace_back(neuron.getOutput(x));
-  }
-  return res;
-}
-
-
-DenseLayer NeuralNetwork::createLayer(vector<vector<double>> weights, vector<double> bias) {
-  return DenseLayer(std::move(weights), std::move(bias));
-}
-
-void NeuralNetwork::init(const string& modelpath) {
-  vector<vector<double>> weights; vector<double> bias;
-  int nb_layer = 0;
-  ifstream model_file(modelpath);
-
-  if (!model_file) {
-    string error = "File " + modelpath + " not found.";
+double relu(double x) { return max(0.0, x); }
+double dot(vector<double> u, vector<double> v) {
+  int u_size = u.size(); int v_size = v.size();
+  if (u_size != v_size) {
+    string error = "Dot product between vector of size " + to_string(u_size) + " and " + "vector of size " + to_string(v_size) + ".";
     throw runtime_error(error);
-  }
-
-  for(string line; getline(model_file, line);) {
-    if (line == "layer") {
-      if (nb_layer > 0) {
-        this->layers.emplace_back(createLayer(weights, bias));
-        weights.clear();
-        bias.clear();
-      }
-      nb_layer++;
-    } else {
-      vector<double> w;
-      istringstream iss(line);
-      string s;
-      while ( getline(iss, s, ' ') ) {
-        w.push_back(stod(s));
-      }
-      bias.push_back(w.back());
-      w.pop_back();
-      weights.emplace_back(w);
+  } else {
+    double res = 0.0;
+    for (int i = 0; i<u_size; i++) {
+      res += u[i] * v[i];
     }
+    return res;
   }
-  if (!weights.empty() && !bias.empty())
-    this->layers.emplace_back(createLayer(weights, bias));
 }
 
-double NeuralNetwork::single_predict(vector<double> data) {
-  for (DenseLayer layer : this->layers) {
-    data = layer.getOutput(data);
-  }
-  return data[0];
-}
+class Neuron {
+public:
+    Neuron() = default;
+    Neuron(vector<double> weights, double bias);
+    double getOutput(vector<double> x);
+private:
+    vector<double> weights;
+    double bias;
+};
 
-vector<double> NeuralNetwork::predict(const vector<vector<double>>& data) {
-  vector<double> res;
-  res.reserve(data.size());
-for (const vector<double>& d : data) {
-    res.emplace_back(this->single_predict(d));
-  }
-  return res;
-}
+class DenseLayer {
+public:
+    DenseLayer() = default;
+    DenseLayer(vector<vector<double>> weights, vector<double> bias);
+    vector<double> getOutput(const vector<double>& x);
+    int getShape() { return this->neurons.size(); }
+private:
+    vector<Neuron> neurons;
+};
 
-void NeuralNetwork::printShape() {
-  for (DenseLayer layer : this->layers)
-    cout << layer.getShape() << endl;
-}
+class NeuralNetwork {
+public:
+    NeuralNetwork() = default;
+    NeuralNetwork(const string& modelpath);
+
+    void init (const string& modelpath);
+    vector<double> predict(const vector<vector<double>>& data);
+    double single_predict(vector<double> data);
+    void printShape();
+
+
+private:
+    static DenseLayer createLayer(vector<vector<double>> weights, vector<double> bias);
+    vector<DenseLayer> layers;
+
+};
+
+#endif //NEURALNET_H
+

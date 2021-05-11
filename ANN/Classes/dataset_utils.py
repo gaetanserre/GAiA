@@ -63,7 +63,7 @@ def encodeBoard(fen):
             continue
         else:
             piece_color = board.color_at(square)
-            res[i] = [1 if piece_color else -1, piece_type]
+            res[square] = [1 if piece_color else -1, piece_type]
     ep_square = -1 if board.ep_square == None else board.ep_square
     
     res = np.append(res.flatten(), 1 if board.turn else 0)

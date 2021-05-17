@@ -58,10 +58,10 @@ def concatDatasets (datasets_path, output_path):
     pd.concat(dfs).to_csv(output_path, index=False)
 
     
-parsePgn('/media/gaetan/Data/Deep_ViCTORIA/Datasets/lichess_db_standard_rated_2019-12.pgn', 80 * MILLION, 'Datasets/raw_dataset.csv')
+parsePgn('/media/gaetan/IA/Deep_ViCTORIA/Datasets/lichess_db_standard_rated_2019-12.pgn', 80 * MILLION, 'Datasets/raw_dataset.csv')
 
 #score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Stockfish 13/stockfish_13_linux_x64_bmi2', 'eval', 'go depth 1')
-#encodeBatch('Datasets/raw_dataset.csv', MILLION, 58, 0, '/media/gaetan/Data/Deep_ViCTORIA/Datasets/Stockfish 13', score_getter.getScore2)
+#encodeBatch('Datasets/raw_dataset.csv', MILLION, 58, 0, '/media/gaetan/IA/Deep_ViCTORIA/Datasets/Stockfish 13', score_getter.getScore2)
 
 #concatDatasets (['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'], 'Datasets/Stockfish 13/test_dataset.csv')
 

@@ -18,9 +18,10 @@ except:
 
 mode = 'batch'
 offset = 0
-max_idx = 55
+max_idx = 58
 engine = 'Stockfish 13'
-model_path = '../Models/SF_model_batch_65M'
+model_path = '../Models/SF_model_batch_58M'
+dataset_path = '/home/gaetan/IA/Deep_VicTORIA/Datasets/'
 
 
 def buildAndCompile(shape):
@@ -83,7 +84,7 @@ if mode == 'all':
 
     for i in range(max_idx):
         dataframe_encoded = pd.read_csv(
-            'Datasets/' + engine + '/dataset' + str(i+1) + '.csv')
+            dataset_path + engine + '/dataset' + str(i+1) + '.csv')
         features = dataframe_encoded.columns[:-1]
         cps = dataframe_encoded.columns[-1]
 
@@ -104,7 +105,7 @@ else:
 
     for i in range(offset, max_idx):
         dataframe_encoded = pd.read_csv(
-            'Datasets/' + engine + '/dataset' + str(i+1) + '.csv')
+            dataset_path + engine + '/dataset' + str(i+1) + '.csv')
         features = dataframe_encoded.columns[:-1]
         cps = dataframe_encoded.columns[-1]
         X = dataframe_encoded[features].values

@@ -22,8 +22,8 @@ def parsePgn(pgn_path, nb_fens, output_path):
     df.to_csv(output_path, index=False)
     print('Dataset shape:', df.shape)
     
-def encodeBatch(dataset_path, batch_size, nb_sample, offset, output_path, getScore):
-    df = pd.read_csv('Datasets/raw_dataset.csv', nrows=2*MILLION)
+def encodeBatch(dataset_path, batch_size, nb_sample, offset, output_path, getScore, engine):
+    df = pd.read_csv('Datasets/raw_dataset.csv')
     boards = df['board'].values
     print('Dataset shape:', df.shape)
     
@@ -58,10 +58,10 @@ def concatDatasets (datasets_path, output_path):
     pd.concat(dfs).to_csv(output_path, index=False)
 
     
-parsePgn('/media/gaetan/IA/Deep_ViCTORIA/Datasets/lichess_db_standard_rated_2019-12.pgn', 80 * MILLION, 'Datasets/raw_dataset.csv')
+#parsePgn('/media/gaetan/IA/Deep_ViCTORIA/Datasets/lichess_db_standard_rated_2019-12.pgn', 80 * MILLION, 'Datasets/raw_dataset.csv')
 
-#score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Stockfish 13/stockfish_13_linux_x64_bmi2', 'eval', 'go depth 1')
-#encodeBatch('Datasets/raw_dataset.csv', MILLION, 58, 0, '/media/gaetan/IA/Deep_ViCTORIA/Datasets/Stockfish 13', score_getter.getScore2)
+score_getter = ScoreGetter('/home/gaetan/Documents/Chess/Engines/Stockfish 13/stockfish_13_linux_x64_bmi2', 'eval', 'go depth 1')
+encodeBatch('Datasets/raw_dataset.csv', MILLION, 66, 58, '/media/gaetan/IA/Deep_ViCTORIA/Datasets/Stockfish 13', score_getter.getScore, 'Stockfish 13')
 
 #concatDatasets (['Datasets/Stockfish 13/dataset56.csv', 'Datasets/Stockfish 13/dataset57.csv', 'Datasets/Stockfish 13/dataset58.csv'], 'Datasets/Stockfish 13/test_dataset.csv')
 

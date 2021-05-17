@@ -21,8 +21,8 @@ offset = 0
 max_idx = 58
 engine = 'Stockfish 13'
 model_path = '../Models/SF_model_batch_58M'
-dataset_path = '/home/gaetan/IA/Deep_VicTORIA/Datasets/'
-
+dataset_path = '/media/gaetan/IA/Deep_ViCTORIA/Datasets/'
+rebuild = True
 
 def buildAndCompile(shape):
     input = tf.keras.Input(shape=(shape,))
@@ -66,14 +66,12 @@ def saveTFModel(model, output_path):
   f.close()
 
 
-rebuild = True
 model = None
-
 if rebuild:
     model = buildAndCompile(131)
 else:
-    model = keras.models.load_model('../Models/SF_model_batch_55M')
-
+    model = keras.models.load_model(model_path)
+    print(f"model load from {model_path}")
 print(model.summary())
 
 
@@ -101,7 +99,7 @@ if mode == 'all':
     save_loss(history)
     model.save(model_path, save_format='tf')
 
-else:
+elif mode == 'batch':
 
     for i in range(offset, max_idx):
         dataframe_encoded = pd.read_csv(

@@ -22,7 +22,6 @@ class Evaluator {
     static float getCastlingRights (const Position& pos);
     static std::vector<double> encodeBoard (const Position& pos);
     static double getPieceID(Piece p);
-    static int convertIdx (int idx);
     static Value from_cp (double cp);
 };
 

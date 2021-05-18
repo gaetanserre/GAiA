@@ -39,18 +39,12 @@ double Evaluator::getPieceID(Piece p) {
   }
 }
 
-int Evaluator::convertIdx (int idx) {
-  int rank = idx % 8;
-  int file = int(idx/8) + 1;
-  return (8-file) * 8 + rank;
-}
-
 std::vector<double> Evaluator::encodeBoard(const Position& pos) {
   std::vector<double> res;
 
   for (int i = 0; i<64; i++) {
 
-    Square s = Square(convertIdx(i));
+    Square s = Square(i);
     Piece p = pos.piece_on(s);
 
     if (p != NO_PIECE) {
@@ -70,7 +64,7 @@ std::vector<double> Evaluator::encodeBoard(const Position& pos) {
   res.push_back(getCastlingRights(pos));
 
   if (pos.ep_square() < 64)
-    res.push_back(convertIdx(pos.ep_square()));
+    res.push_back(pos.ep_square());
   else
     res.push_back(-1.0);
   return res;

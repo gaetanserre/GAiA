@@ -43,7 +43,7 @@ make
 + The goal of the network is to perform a regression to recreate the evaluation function of a chess engine.
   You can emulate any chess engine (I have chosen Stockfish 13, but it could have been Leela or Komodo...): for each position in your dataset, you perform an evaluation with the engine of your choice, and you save the result along the position in a new dataset (the best is to have a command which give the static evaluation of the position like the `eval` command in Stockfish. If there is no such command, search at depth 1). Then you can perform regression.
   
-+ Currently, the network is trained on 55 million positions, recovered from the [Lichess database](https://database.lichess.org).
++ Currently, the network is trained on 58 million positions, recovered from the [Lichess database](https://database.lichess.org).
 + The position are encoded as vectors of dimension 131: 64 * 2 (color of the piece + piece type: rook, pawn...) + castlings rights + en passant square + Whites to play.
 + The structure of the neural network:
 ```
@@ -65,9 +65,9 @@ _________________________________________________________________
 ```
 Each *Dense* layer uses `relu` as the activation function except the last one which uses `linear`.
 
-+ Using the [R² metric](https://en.wikipedia.org/wiki/Coefficient_of_determination), the model has a score of about 0.85:
++ Using the [R² metric](https://en.wikipedia.org/wiki/Coefficient_of_determination), the model has a score of about 0.86:
 
-![](Images/model55M.jpg)
+![](ANN/model.jpg)
 
 ## Notes
 + Since Deep_ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to use those from my previous engine [ViCTORIA](https://github.com/LE10EENFAIT/ViCTORIA) but it was too slow. So I decided to use those from [Stockfish](https://github.com/official-stockfish/Stockfish).

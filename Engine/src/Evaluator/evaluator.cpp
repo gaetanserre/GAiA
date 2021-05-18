@@ -76,7 +76,7 @@ Value Evaluator::from_cp(double cp) {
 
 Value Evaluator::evalPosition(const Position &pos) {
   std::vector<double> encoded = encodeBoard(pos);
-  double pred = this->network.single_predict(encoded) / 100.0;
+  double pred = this->network.single_predict(encoded)[0] / 100.0;
   Value v = from_cp(pred);
   return pos.side_to_move() == WHITE ? v : -v;
 }

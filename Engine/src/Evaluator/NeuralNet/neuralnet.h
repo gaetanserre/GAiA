@@ -40,8 +40,8 @@ public:
     NeuralNetwork(const string& modelpath);
 
     void init (const string& modelpath);
-    vector<double> predict(const vector<vector<double>>& data);
-    double single_predict(vector<double> data);
+    vector<vector<double>> predict(const vector<vector<double>>& data);
+    vector<double> single_predict(vector<double> data);
     void summary();
 
 

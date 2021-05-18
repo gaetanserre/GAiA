@@ -17,8 +17,9 @@ Neuron::Neuron(vector<double> weights, double bias, activationFunction afunction
 }
 
 double Neuron::getOutput(const vector<double>& x) {
-  return afunction(dot(this->weights, x) + this->bias);
+  return this->afunction(dot(this->weights, x) + this->bias);
 }
+
 
 DenseLayer::DenseLayer(vector<vector<double>> weights, vector<double> bias, string afunction_name) {
   this->afunction_name = std::move(afunction_name);
@@ -26,7 +27,6 @@ DenseLayer::DenseLayer(vector<vector<double>> weights, vector<double> bias, stri
     this->neurons.emplace_back(weights[nb_neurons], bias[nb_neurons], findAFunction(this->afunction_name));
   }
 }
-
 
 vector<double> DenseLayer::getOutput(const vector<double>& x) {
   vector<double> res;
@@ -95,17 +95,17 @@ void NeuralNetwork::isInitiated() {
   }
 }
 
-double NeuralNetwork::single_predict(vector<double> data) {
+vector<double> NeuralNetwork::single_predict(vector<double> data) {
   this->isInitiated();
   for (DenseLayer layer : this->layers) {
     data = layer.getOutput(data);
   }
-  return data[0];
+  return data;
 }
 
-vector<double> NeuralNetwork::predict(const vector<vector<double>>& data) {
+vector<vector<double>> NeuralNetwork::predict(const vector<vector<double>>& data) {
   this->isInitiated();
-  vector<double> res;
+  vector<vector<double>> res;
   res.reserve(data.size());
   for (const vector<double>& d : data) {
     res.emplace_back(this->single_predict(d));

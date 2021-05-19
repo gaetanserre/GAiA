@@ -115,10 +115,13 @@ vector<vector<double>> NeuralNetwork::predict(const vector<vector<double>>& data
 
 void NeuralNetwork::summary() {
   this->isInitiated();
+  cout << endl << "Network summary:" << endl;
+  cout << "--------------------------------------------------------" << endl;
   for (int i = 0; i<this->layers.size(); i++) {
     int shape = this->layers[i].getShape();
     cout << "Layer " << i << " → " << shape
          << (shape > 1 ? " neurons" : " neuron") << " with " << this->layers[i].getAFunctionName()
          << " activation function." << endl;
   }
+  cout << "--------------------------------------------------------" << endl << endl;
 }

@@ -2,12 +2,10 @@ import sys
 sys.path.insert(1, 'Classes/')
 import pandas as pd
 import numpy as np
-import random
 from tqdm import tqdm
 from multiprocessing import current_process
 
 from ScoreGetter import ScoreGetter
-from dataset_utils import checkIfEarlyMidEnd
 from dataset_utils import encodeBoard
 from dataset_utils import getColumns
 from PGNParser import parseFromPGN

@@ -11,10 +11,10 @@ void Evaluator::setModel(const std::string& modelpath) {
 
 float Evaluator::getCastlingRights(const Position& pos) {
   bool temp[] = {
-          pos.can_castle(WHITE_OO),
-          pos.can_castle(WHITE_OOO),
-          pos.can_castle(BLACK_OO),
-          pos.can_castle(BLACK_OOO)
+    pos.can_castle(WHITE_OO),
+    pos.can_castle(WHITE_OOO),
+    pos.can_castle(BLACK_OO),
+    pos.can_castle(BLACK_OOO)
   };
 
   float res = 0;

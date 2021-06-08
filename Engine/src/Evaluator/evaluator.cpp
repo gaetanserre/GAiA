@@ -80,4 +80,3 @@ Value Evaluator::evalPosition(const Position &pos) {
   Value v = from_cp(pred);
   return pos.side_to_move() == WHITE ? v : -v;
 }
-

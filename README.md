@@ -1,6 +1,6 @@
 # Deep ViCTORIA
 
-Deep ViCTORIA is a UCI chess engine built with C++.
+Deep ViCTORIA is a UCI chess engine built with C++ 17.
 
 It performs an in-depth analysis and uses a neural network to evaluate each chess board.
 

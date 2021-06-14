@@ -40,8 +40,8 @@ public:
     NeuralNetwork(const string& modelpath);
 
     void init (const string& modelpath);
-    vector<vector<double>> predict(const vector<vector<double>>& data);
-    vector<double> single_predict(vector<double> data);
+    vector<vector<double>> predict(vector<vector<double>>& data);
+    vector<double> single_predict(vector<double>& data);
     void summary();
 
 
@@ -52,8 +52,6 @@ private:
 
     vector<DenseLayer> layers;
     bool initiated = false;
-
-
 };
 
 #endif //NEURALNET_H

@@ -95,7 +95,7 @@ void NeuralNetwork::isInitiated() {
   }
 }
 
-vector<double> NeuralNetwork::single_predict(vector<double> data) {
+vector<double> NeuralNetwork::single_predict(vector<double>& data) {
   this->isInitiated();
   for (DenseLayer layer : this->layers) {
     data = layer.getOutput(data);
@@ -103,11 +103,11 @@ vector<double> NeuralNetwork::single_predict(vector<double> data) {
   return data;
 }
 
-vector<vector<double>> NeuralNetwork::predict(const vector<vector<double>>& data) {
+vector<vector<double>> NeuralNetwork::predict(vector<vector<double>>& data) {
   this->isInitiated();
   vector<vector<double>> res;
   res.reserve(data.size());
-  for (const vector<double>& d : data) {
+  for (vector<double>& d : data) {
     res.emplace_back(this->single_predict(d));
   }
   return res;

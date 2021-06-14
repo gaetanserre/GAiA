@@ -45,7 +45,7 @@ make
   
 + Currently, the network is trained on 58 million positions, recovered from the [Lichess database](https://database.lichess.org).
 + The position are encoded as vectors of dimension 131: 64 * 2 (color of the piece + piece type: rook, pawn...) + castlings rights + en passant square + Whites to play.
-+ The structure of the neural network:
++ The structure of the neural network is:
 ```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   

@@ -7,8 +7,6 @@
 
 #include <fstream>
 #include <sstream>
-#include <utility>
-
 
 Neuron::Neuron(vector<double> weights, double bias, activationFunction afunction) {
   this->weights = std::move(weights);

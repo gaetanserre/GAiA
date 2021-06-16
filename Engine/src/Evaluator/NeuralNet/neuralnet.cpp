@@ -3,7 +3,7 @@
 //
 
 
-#include "neuralnet.h"
+#include "neuralnet.hpp"
 
 #include <fstream>
 #include <sstream>

@@ -30,7 +30,7 @@
 #include "misc.h"
 #include "pawns.h"
 #include "thread.h"
-#include "../Evaluator/evaluator.h"
+#include "../Evaluator/evaluator.hpp"
 
 
 

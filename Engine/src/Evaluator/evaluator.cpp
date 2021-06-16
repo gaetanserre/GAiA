@@ -2,7 +2,7 @@
 // Created by Gaëtan Serré on 09/05/2021.
 //
 
-#include "evaluator.h"
+#include "evaluator.hpp"
 
 
 void Evaluator::setModel(const std::string& modelpath) {

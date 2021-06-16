@@ -5,7 +5,7 @@
 #ifndef NEURALNET_H
 #define NEURALNET_H
 
-#include "activation_functions.h"
+#include "activation_functions.hpp"
 
 #include <map>
 

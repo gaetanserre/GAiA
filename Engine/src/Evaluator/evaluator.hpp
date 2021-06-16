@@ -7,7 +7,7 @@
 
 #include "../Stockfish/position.h"
 #include "../Stockfish/uci.h"
-#include "NeuralNet/neuralnet.h"
+#include "NeuralNet/neuralnet.hpp"
 
 using namespace Stockfish;
 

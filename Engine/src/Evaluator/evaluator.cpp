@@ -27,7 +27,7 @@ float Evaluator::getCastlingRights(const Position& pos) {
   return res;
 }
 
-double Evaluator::getPieceID(Piece p) {
+double Evaluator::getPieceID(const Piece& p) {
   switch (p)
   {
     case W_PAWN: case B_PAWN: return 1.0;
@@ -70,7 +70,7 @@ std::vector<double> Evaluator::encodeBoard(const Position& pos) {
   return res;
 }
 
-Value Evaluator::from_cp(double cp) {
+Value Evaluator::from_cp(const double& cp) {
   return Value(cp * double(PawnValueEg));
 }
 

@@ -65,7 +65,7 @@ namespace Eval {
   }
 
   void setEvaluator(std::string modelpath) {
-    sync_cout << "info string neural network file: " << modelpath << sync_endl;
+    sync_cout << "info string neural network file " << modelpath << sync_endl;
     evaluator.setModel(modelpath);
   }
 

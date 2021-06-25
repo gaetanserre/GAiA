@@ -5,9 +5,9 @@
 #ifndef DEEP_VICTORIA_EVALUATOR_H
 #define DEEP_VICTORIA_EVALUATOR_H
 
-#include "../Stockfish/position.h"
-#include "../Stockfish/uci.h"
-#include "NeuralNet/neuralnet.hpp"
+#include "position.h"
+#include "uci.h"
+#include "neuralnet.hpp"
 
 using namespace Stockfish;
 

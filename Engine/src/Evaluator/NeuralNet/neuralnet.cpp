@@ -8,41 +8,43 @@
 #include <fstream>
 #include <sstream>
 
-Neuron::Neuron(vector<double> weights, double bias, activationFunction afunction) {
+Neuron::Neuron(vector<double> weights, double bias, activationFunction afunction, bool parallelization) {
   this->weights = std::move(weights);
   this->bias = bias;
   this->afunction = afunction;
+  if (parallelization) {
+    if (this->weights.size() <= 4)
+      this->nb_thread = 1;
+    else
+      this->nb_thread = 8;
+  }
 }
 
 double Neuron::getOutput(const vector<double>& x) {
-  return this->afunction(dot(this->weights, x) + this->bias);
+  return this->afunction(dot(this->weights, x, this->nb_thread) + this->bias);
 }
 
 
-DenseLayer::DenseLayer(vector<vector<double>> weights, vector<double> bias, string afunction_name) {
+DenseLayer::DenseLayer(vector<vector<double>> weights, vector<double> bias, string afunction_name, bool parallelization) {
   this->afunction_name = std::move(afunction_name);
   for (int nb_neurons = 0; nb_neurons<weights.size(); nb_neurons++) {
-    this->neurons.emplace_back(weights[nb_neurons], bias[nb_neurons], findAFunction(this->afunction_name));
+    this->neurons.emplace_back(weights[nb_neurons], bias[nb_neurons], findAFunction(this->afunction_name), parallelization);
   }
 }
 
 vector<double> DenseLayer::getOutput(const vector<double>& x) {
-  vector<double> res;
-  for (Neuron neuron : this->neurons) {
-    res.emplace_back(neuron.getOutput(x));
+  vector<double> res(neurons.size());
+  for (int i = 0; i<this->neurons.size(); i++) {
+    res[i] = neurons[i].getOutput(x);
   }
   return res;
 }
 
 
-NeuralNetwork::NeuralNetwork(const string& modelpath) {
+NeuralNetwork::NeuralNetwork(const string& modelpath, bool parallelization) {
+  this->parallelization = parallelization;
   this->init(modelpath);
 }
-
-DenseLayer NeuralNetwork::createLayer(vector<vector<double>> weights, vector<double> bias, string afunction_name) {
-  return DenseLayer(std::move(weights), std::move(bias), std::move(afunction_name));
-}
-
 
 string NeuralNetwork::getAFunctionName(const string& line) {
   return line.substr(6);
@@ -63,7 +65,7 @@ void NeuralNetwork::init(const string& modelpath) {
   for(string line; getline(model_file, line);) {
     if (line.rfind("layer", 0) == 0) {
       if (nb_layer > 0) {
-        this->layers.emplace_back(createLayer(weights, bias, afunction));
+        this->layers.emplace_back(weights, bias, afunction, parallelization);
         weights.clear();
         bias.clear();
       }
@@ -82,7 +84,7 @@ void NeuralNetwork::init(const string& modelpath) {
     }
   }
   if (!weights.empty() && !bias.empty())
-    this->layers.emplace_back(createLayer(weights, bias, afunction));
+    this->layers.emplace_back(weights, bias, afunction, parallelization);
 
   this->initiated = true;
 }

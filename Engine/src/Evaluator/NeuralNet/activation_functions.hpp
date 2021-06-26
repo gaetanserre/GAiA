@@ -5,24 +5,10 @@
 #ifndef ACTIVATION_FUNCTIONS_H
 #define ACTIVATION_FUNCTIONS_H
 
-#include <vector>
 #include <math.h>
-#include <iostream>
 #include <map>
+#include <iostream>
 
-static double dot(const std::vector<double>& u, const std::vector<double>& v) {
-  int u_size = u.size(); int v_size = v.size();
-  if (u_size != v_size) {
-    std::string error = "Dot product between vector of size " + std::to_string(u_size) + " and " + "vector of size " + std::to_string(v_size) + ".";
-    throw std::runtime_error(error);
-  } else {
-    double res = 0.0;
-    for (int i = 0; i<u_size; i++) {
-      res += u[i] * v[i];
-    }
-    return res;
-  }
-}
 
 static inline double linear (const double& x) { return x; }
 static inline double relu (const double& x) { return fmax(0.0, x); }

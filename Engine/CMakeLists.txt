@@ -16,6 +16,8 @@ file (GLOB NEURALNET_SOURCES src/Evaluator/NeuralNet/*.cpp)
 file (GLOB NEURALNET_HEADERS src/Evaluator/NeuralNet/*.hpp)
 add_library(neuralnet ${NEURALNET_SOURCES} ${NEURALNET_HEADERS})
 
+link_libraries(neuralnet)
+
 file (GLOB EVALUATOR_SOURCES src/Evaluator/*.cpp)
 file (GLOB EVALUATOR_HEADERS src/Evaluator/*.hpp)
 add_library(evaluator ${EVALUATOR_SOURCES} ${EVALUATOR_HEADERS})

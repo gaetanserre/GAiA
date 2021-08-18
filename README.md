@@ -42,9 +42,9 @@ Deep ViCTORIA uses a neural network as an evaluation function.
 The goal of this network is to perform a regression to recreate the evaluation function of another chess engine.
 You can emulate any of these (I have chosen Stockfish 13, but it could have been Leela or Komodo...)
 
-I use Tensorflow and Python to create and train the neural network.
+I used Tensorflow and Python to create and train the neural network.
 
-I use the [Lichess database](https://database.lichess.org) to recover tons of chess games.
+I used the [Lichess database](https://database.lichess.org) to recover tons of chess games.
 
 ### Evaluate positions
 To do the regression, I must first evaluate each position of the dataset with a chess engine (here Stockfish 13):
@@ -95,7 +95,7 @@ All the Python and Jupyter files to create the dataset and train the network are
 ## Notes
 + Since Deep ViCTORIA uses a neural network, the evaluation function is much more slower than a 'standard' one. So I needed a very optimized search algorithm and board representation. I first tried to use those from my previous engine [ViCTORIA](https://github.com/Pl4giat01/ViCTORIA) but it was too slow. So I decided to use those from [Stockfish](https://github.com/official-stockfish/Stockfish).
   
-+ I use my own implementation of neural network in C++ called [Neural Net](https://github.com/Pl4giat01/NeuralNet).
++ I used my own implementation of neural network in C++ called [Neural Net](https://github.com/Pl4giat01/NeuralNet).
 
 ## Credits
 + [Stockfish](https://github.com/official-stockfish/Stockfish)

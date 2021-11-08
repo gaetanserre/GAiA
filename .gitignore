@@ -14,6 +14,7 @@ Engine/build/cmake_install.cmake
 Engine/build/CMakeCache.txt
 Engine/build/compile_commands.json
 Engine/build/Deep_ViCTORIA
+Engine/build/Deep_ViCTORIA.exe
 Engine/build/Makefile
 Engine/build/libevaluator.a
 Engine/build/libneuralnet.a

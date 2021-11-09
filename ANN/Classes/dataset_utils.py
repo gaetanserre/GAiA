@@ -16,22 +16,22 @@ def getNbMoves(fen_splitted):
     return int(fen_splitted[-1])
 
 def checkIfEarlyMidEnd(fen):
-    fen_splitted = fen.split(' ')
+    fen_splitted = fen.split(" ")
     nb_piece_maj = getNbPieceMaj(fen_splitted)
 
     if nb_piece_maj <= 4:
-        return 'end_game'
+        return "end_game"
     
     elif getNbMoves(fen_splitted) <= 10 and nb_piece_maj >= 14:
-        return 'early_game'
+        return "early_game"
     
     else:
-        return 'mid_game'
+        return "mid_game"
     
 
-'''
+"""
 We compute castling rights as if it were a 4-bit number.
-'''
+"""
 def getCastlingRights(board):
     rights = [
         board.has_kingside_castling_rights(chess.WHITE),
@@ -50,9 +50,9 @@ def getCastlingRights(board):
     return res
 
 
-'''
+"""
 We encode a position like an image (shape: 64 * 2 + 3)
-'''
+"""
 def encodeBoard(fen):
     res = np.zeros((64, 2))
     board = chess.Board(fen)
@@ -72,11 +72,12 @@ def encodeBoard(fen):
     
     return res.flatten()
 
-def getColumns():
+def getColumns(engine_name):
     columns = []
     for i in range (64 * 2):
         columns.append(str(i))
-    columns.append('whites to play')
-    columns.append('castling rights')
-    columns.append('en passant square')
+    columns.append("whites to play")
+    columns.append("castling rights")
+    columns.append("en passant square")
+    columns.append(f"cp({engine_name}")
     return columns

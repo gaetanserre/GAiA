@@ -26,12 +26,12 @@ class ScoreGetter:
             line = out.decode()[:-1]
 
             if line.startswith('Final evaluation'):
-                line_splitted = line.split(' ')
+                line_splitted = [s for s in line.split(' ') if s]
 
                 if line_splitted[2] == 'none':
                     return self.getScore2(fen)
 
-                score = int(float(line_splitted[6])*100)
+                score = int(float(line_splitted[2])*100)
                 break
 
             out = self.engine.stdout.readline()

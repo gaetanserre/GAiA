@@ -32,17 +32,19 @@ def encodeBatch(dataset_path, batch_size, nb_sample, offset, output_path, getSco
 
     for i in range(nb_sample):
         data = np.zeros((batch_size, nb_columns))
+        count = 0
         for j in range(i * batch_size, min(boards.shape[0], i * batch_size + batch_size)):
             try:
                 data[j%batch_size, :-1] = encodeBoard(boards[j])
                 data[j%batch_size, -1] = getScore(boards[j] + " 0 1")
                 pbar.update(1)
+                count += 1
             except Exception as e:
                 if str(e) == "[Errno 32] Broken pipe":
                     score_getter.restart()
                 continue
 
-        df = pd.DataFrame(data, columns=columns)
+        df = pd.DataFrame(data[:count], columns=columns)
         df.to_csv(output_path + "/dataset" + str(offset + i + 1) + ".csv", index=False)
 
     pbar.close()
@@ -56,13 +58,14 @@ def concatDatasets (datasets_path, output_path):
 
 pgn_dataset_path = "D:/IA/Deep_ViCTORIA/Datasets/lichess_db_standard_rated_2019-12.pgn"
 engine_path = "C:/Users/Gaëtan/Downloads/stockfish_14.1_win_x64_avx2.exe"
+engine_name = "Stockfish 14"
 fen_dataset_path = "D:/IA/Deep_ViCTORIA/Datasets/fen_dataset.csv"
-dataset_dir = "D:/IA/Deep_ViCTORIA/Datasets/"
+dataset_dir = "D:/IA/Deep_ViCTORIA/Datasets/" + engine_name + "/"
     
 parsePgn(pgn_dataset_path, 100 * MILLION, fen_dataset_path)
 
-#score_getter = ScoreGetter(engine_path, "eval", "go depth 1")
-#encodeBatch(fen_dataset_path, 100, 2, 0, dataset_dir, score_getter.getScore, "Stockfish 14")
+score_getter = ScoreGetter(engine_path, "eval", "go depth 1")
+#encodeBatch(fen_dataset_path, MILLION, 80, 0, dataset_dir, score_getter.getScore, engine_name)
 
 #concatDatasets ([dataset_dir + "/dataset57.csv", dataset_dir + "/dataset58.csv"], dataset_dir + "test_dataset.csv")
 

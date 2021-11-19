@@ -20,7 +20,7 @@ float Evaluator::getCastlingRights(const Position& pos) {
   float res = 0;
   int coeff = 1;
   for (int i = 0; i<4; i++) {
-    if(temp[1])
+    if(temp[i])
       res += coeff;
     coeff *= 2;
   }

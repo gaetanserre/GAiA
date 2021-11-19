@@ -28,7 +28,7 @@ def piece_to_vec(piece, color):
 nb_channels = 15
 
 def encode_position(fen):
-  res = np.zeros((8, 8, nb_channels), dtype=np.int64)
+  res = np.zeros((8, 8, nb_channels), dtype=np.float32)
   board = chess.Board(fen)
   for rank in range(8):
     for file in range(8):

@@ -1,5 +1,4 @@
 import subprocess
-import time
 
 class ScoreGetter:
   def __init__(self, engine_path, go_command, go_command2=None):

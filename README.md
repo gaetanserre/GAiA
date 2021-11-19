@@ -98,6 +98,7 @@ All the Python and Jupyter files to create the dataset and train the network are
 + I used my own implementation of neural network in C++ called [Neural Net](https://github.com/Pl4giat01/NeuralNet).
 
 ## Credits
++ [Lichess](https://database.lichess.org/)
 + [Stockfish](https://github.com/official-stockfish/Stockfish)
 
 ## License

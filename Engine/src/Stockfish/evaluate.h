@@ -31,7 +31,7 @@ namespace Eval {
 
   std::string trace(const Position& pos);
   Value evaluate(const Position& pos);
-  void setEvaluator(std::string modelpath);
+  void set_evaluator(std::string modelpath);
 
   extern bool useNNUE;
 

@@ -1,0 +1,8 @@
+pandas
+numpy
+tqdm
+matplotlib
+tensorflow
+sklearn
+chess
+h5py

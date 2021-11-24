@@ -64,9 +64,9 @@ namespace Eval {
     sync_cout << "info string neural network evaluation enabled" << sync_endl;
   }
 
-  void setEvaluator(std::string modelpath) {
+  void set_evaluator(std::string modelpath) {
     sync_cout << "info string neural network file " << modelpath << sync_endl;
-    evaluator.setModel(modelpath);
+    evaluator.set_model(modelpath);
   }
 
 }
@@ -791,7 +791,7 @@ namespace {
 
   template<Tracing T>
   Value Evaluation<T>::value() {
-    return Eval::evaluator.evalPosition(pos);
+    return Eval::evaluator.eval_position(pos);
   }
 
 

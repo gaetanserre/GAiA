@@ -1,31 +1,42 @@
 cmake_minimum_required(VERSION 3.17)
-project(Deep_ViCTORIA)
+project(GAiA)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread -march=native")
 
 include_directories(src/Stockfish/)
 include_directories(src/Stockfish/incbin)
 include_directories(src/Stockfish/nnue)
 include_directories(src/Stockfish/syzygy)
 include_directories(src/Evaluator/)
-include_directories(src/Evaluator/NeuralNet)
+include_directories(src/Evaluator/ResNet)
+include_directories(src/Evaluator/ResNet/include)
 
-file (GLOB NEURALNET_SOURCES src/Evaluator/NeuralNet/*.cpp)
-file (GLOB NEURALNET_HEADERS src/Evaluator/NeuralNet/*.hpp)
-add_library(neuralnet ${NEURALNET_SOURCES} ${NEURALNET_HEADERS})
+add_library(fdeep INTERFACE)
+target_include_directories(fdeep INTERFACE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/src/Evaluator/ResNet/include>
+)
 
-link_libraries(neuralnet)
+find_package(Threads REQUIRED)
+target_link_libraries(fdeep INTERFACE Threads::Threads)
+
+link_libraries(fdeep)
+
+file (GLOB RESNET_SOURCES src/Evaluator/ResNet/*.cpp)
+file (GLOB RESNET_HEADERS src/Evaluator/ResNet/*.hpp)
+add_library(resnet ${RESNET_SOURCES} ${RESNET_HEADERS})
+
+link_libraries(fdeep resnet)
 
 file (GLOB EVALUATOR_SOURCES src/Evaluator/*.cpp)
 file (GLOB EVALUATOR_HEADERS src/Evaluator/*.hpp)
 add_library(evaluator ${EVALUATOR_SOURCES} ${EVALUATOR_HEADERS})
 
-link_libraries(neuralnet evaluator)
+link_libraries(resnet evaluator)
 
 
-add_executable(Deep_ViCTORIA
+add_executable(GAiA
   src/Stockfish/main.cpp
   src/Stockfish/benchmark.cpp
   src/Stockfish/bitbase.cpp

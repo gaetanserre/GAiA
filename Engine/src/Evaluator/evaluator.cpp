@@ -5,11 +5,11 @@
 #include "evaluator.hpp"
 
 
-void Evaluator::setModel(const std::string& modelpath) {
+void Evaluator::set_model(const std::string& modelpath) {
   this->network.init(modelpath);
 }
 
-float Evaluator::getCastlingRights(const Position& pos) {
+float Evaluator::get_castling_rights(const Position& pos) {
   bool temp[] = {
     pos.can_castle(WHITE_OO),
     pos.can_castle(WHITE_OOO),
@@ -27,56 +27,60 @@ float Evaluator::getCastlingRights(const Position& pos) {
   return res;
 }
 
-double Evaluator::getPieceID(const Piece& p) {
+int Evaluator::get_piece_idx(const Piece& p) {
   switch (p)
   {
-    case W_PAWN: case B_PAWN: return 1.0;
-    case W_ROOK: case B_ROOK: return 4.0;
-    case W_KNIGHT: case B_KNIGHT: return 2.0;
-    case W_BISHOP: case B_BISHOP: return 3.0;
-    case W_QUEEN: case B_QUEEN: return 5.0;
-    default: return 6.0;
+    case W_ROOK: return 3;
+    case W_BISHOP: return 2;
+    case W_KNIGHT: return 1;
+    case W_PAWN: return 0;
+    case W_KING: return 5;
+    case W_QUEEN: return 4;
+
+    case B_ROOK: return 9;
+    case B_BISHOP: return 8;
+    case B_KNIGHT: return 7;
+    case B_PAWN: return 6;
+    case B_KING: return 11;
+    case B_QUEEN: return 10;
+
+    default: return -1;
   }
 }
 
-std::vector<double> Evaluator::encodeBoard(const Position& pos) {
-  std::vector<double> res;
+int NB_CHANNELS = 15;
+fdeep::tensor Evaluator::encode_position(const Position& pos) {
+  fdeep::tensor board(fdeep::tensor_shape(8, 8, NB_CHANNELS), 0);
 
-  for (int i = 0; i<64; i++) {
+  float side_to_move = pos.side_to_move() == WHITE ? 1.0 : 0.0;
+  float castlings_rights = get_castling_rights(pos);
+  float ep_square = static_cast<float>(pos.ep_square());
+  float is_ep_square = ep_square == 64 ? -1.0 : ep_square;
 
-    Square s = Square(i);
-    Piece p = pos.piece_on(s);
+  for (int rank = 0; rank < 8; rank++) {
+    for (int file = 0; file < 8; file++) {
+      board.set(fdeep::tensor_pos(rank, file, 12), side_to_move);
+      board.set(fdeep::tensor_pos(rank, file, 13), castlings_rights);
+      board.set(fdeep::tensor_pos(rank, file, 14), is_ep_square);
 
-    if (p != NO_PIECE) {
-      if (p < 9)
-        res.push_back(1.0);
-      else
-        res.push_back(-1.0);
-
-      res.push_back(getPieceID(p));
-    } else {
-      res.push_back(0.0);
-      res.push_back(0.0);
+      int square = (rank * 8) + file;
+      Square s = Square(square);
+      int p_idx = get_piece_idx(pos.piece_on(s));
+      if (p_idx != -1)
+        board.set(fdeep::tensor_pos(rank, file, p_idx), 1);
     }
   }
-
-  res.push_back(pos.side_to_move() == WHITE ? 1.0 : -1.0);
-  res.push_back(getCastlingRights(pos));
-
-  if (pos.ep_square() < 64)
-    res.push_back(pos.ep_square());
-  else
-    res.push_back(-1.0);
-  return res;
+  return board;
 }
 
-Value Evaluator::from_cp(const double& cp) {
-  return Value(cp * double(PawnValueEg));
+Value Evaluator::from_cp(const float& cp) {
+  return Value(cp * float(PawnValueEg));
 }
 
-Value Evaluator::evalPosition(const Position &pos) {
-  std::vector<double> encoded = encodeBoard(pos);
-  double pred = this->network.single_predict(encoded)[0] / 100.0;
+Value Evaluator::eval_position(const Position &pos) {
+  fdeep::tensor encoded = encode_position(pos);
+  float pred = this->network.predict(NB_CHANNELS, encoded);
+  pred /= 100.0;
   Value v = from_cp(pred);
   return pos.side_to_move() == WHITE ? v : -v;
 }

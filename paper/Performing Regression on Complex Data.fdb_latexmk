@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex Performing Regression on Complex Data"] 1637723726 "Performing Regression on Complex Data.aux" "Performing Regression on Complex Data.bbl" "Performing Regression on Complex Data" 1637723729
+["bibtex Performing Regression on Complex Data"] 1637724413 "Performing Regression on Complex Data.aux" "Performing Regression on Complex Data.bbl" "Performing Regression on Complex Data" 1637724414
   "/usr/local/texlive/2021/texmf-dist/bibtex/bst/base/abbrv.bst" 1292289607 20329 b5fed53e10044d0f8112183785c759b1 ""
-  "Performing Regression on Complex Data.aux" 1637723727 3307 5e8978993bd37f63451fb7dff4a65786 "pdflatex"
+  "Performing Regression on Complex Data.aux" 1637724414 3307 89e27328ff369c49394b8a8fcc4b0281 "pdflatex"
   "refs.bib" 1637723629 1271 efbcda95509fdaf3a9c77f735edc26dd ""
   (generated)
   "Performing Regression on Complex Data.bbl"
   "Performing Regression on Complex Data.blg"
-["pdflatex"] 1637723726 "/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.tex" "/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.pdf" "Performing Regression on Complex Data" 1637723729
-  "/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.aux" 1637723727 3307 5e8978993bd37f63451fb7dff4a65786 ""
-  "/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.tex" 1637723729 7902 6cbba3b14112244bf6582bf468013898 ""
+["pdflatex"] 1637724413 "/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.tex" "/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.pdf" "Performing Regression on Complex Data" 1637724414
+  "/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux" 1637724414 3307 89e27328ff369c49394b8a8fcc4b0281 ""
+  "/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.tex" 1637724411 7892 509a30ded89e1d4405e72d22c4aa88d8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1136768653 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -99,10 +99,10 @@
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616695603 5169178 a2ce6e2d73f603b690db6777d06dbccb ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1636896100 2724740 86e02a0167f6f6ea29d6c52990623857 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "Performing Regression on Complex Data.aux" 1637723727 3307 5e8978993bd37f63451fb7dff4a65786 "pdflatex"
-  "Performing Regression on Complex Data.bbl" 1637723726 748 9d312c557ae3fa56e85d9253b0763701 "bibtex Performing Regression on Complex Data"
-  "Performing Regression on Complex Data.out" 1637723727 600 56105b25b59be68a1853d30fee8079c1 "pdflatex"
-  "Performing Regression on Complex Data.tex" 1637723729 7902 6cbba3b14112244bf6582bf468013898 ""
+  "Performing Regression on Complex Data.aux" 1637724414 3307 89e27328ff369c49394b8a8fcc4b0281 "pdflatex"
+  "Performing Regression on Complex Data.bbl" 1637724413 748 9d312c557ae3fa56e85d9253b0763701 "bibtex Performing Regression on Complex Data"
+  "Performing Regression on Complex Data.out" 1637724414 600 56105b25b59be68a1853d30fee8079c1 "pdflatex"
+  "Performing Regression on Complex Data.tex" 1637724411 7892 509a30ded89e1d4405e72d22c4aa88d8 ""
   "images//GAiA_history.pdf" 1637720477 16365 d8531c2e3dc03eb7ccc19a17e6827802 ""
   "images//model_selection_1.pdf" 1637712356 17197 0384cd8a1ab3461a5d3af4ef629c3689 ""
   "images//model_selection_2.pdf" 1637712356 1406434 ca0f9a1d6082f37da9881b10af56d758 ""
@@ -112,8 +112,8 @@
   "images//ups-logo.png" 1637712889 125163 9415f371749ec64d1d295dc490887529 ""
   (generated)
   "Performing Regression on Complex Data.log"
-  "/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.pdf"
-  "Performing Regression on Complex Data.aux"
-  "Performing Regression on Complex Data.out"
   "Performing Regression on Complex Data.pdf"
-  "/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.log"
+  "Performing Regression on Complex Data.out"
+  "/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.pdf"
+  "Performing Regression on Complex Data.aux"
+  "/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.log"

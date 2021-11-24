@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.14)  24 NOV 2021 04:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.11.14)  24 NOV 2021 04:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.tex"
-(/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.tex
+**"/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.tex"
+(/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -247,7 +247,7 @@ Package footmisc Info: Declaring symbol style lamport*-robust on input line 924.
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
 \l__pdf_internal_box=\box49
-) (/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.aux)
+) (/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux)
 \openout1 = `"Performing Regression on Complex Data.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -285,7 +285,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 25.
 LaTeX Info: Redefining \pageref on input line 25.
 LaTeX Info: Redefining \nameref on input line 25.
- (/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.out) (/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.out)
+ (/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out) (/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out)
 \@outlinefile=\write3
 \openout3 = `"Performing Regression on Complex Data.out"'.
 
@@ -391,7 +391,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- </Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//ups-logo.png>]
+ </Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//ups-logo.png>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 76.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -451,29 +451,29 @@ File: images//result.pdf Graphic file (type pdf)
 <use images//result.pdf>
 Package pdftex.def Info: images//result.pdf  used on input line 190.
 (pdftex.def)             Requested size: 369.88582pt x 184.9422pt.
-(/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.bbl [2 </Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//module_seresnet.pdf> </Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//network/network.pdf>] [3 </Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//model_selection_1.pdf> </Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//model_selection_2.pdf
+[2 </Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//module_seresnet.pdf> </Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//network/network.pdf>] [3 </Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_1.pdf> </Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_2.pdf
 
-pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//model_selection_2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> </Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//GAiA_history.pdf
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//GAiA_history.pdf
 
-pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//GAiA_history.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [4 </Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/images//result.pdf>]) [5] (/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.aux)
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//GAiA_history.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.bbl) [4 </Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//result.pdf>] (/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux)
 Package rerunfilecheck Info: File `"Performing Regression on Complex Data".out' has not changed.
 (rerunfilecheck)             Checksum: 56105B25B59BE68A1853D30FEE8079C1;600.
  ) 
 Here is how much of TeX's memory you used:
- 10927 strings out of 478994
- 168654 string characters out of 5858183
+ 10926 strings out of 478994
+ 168513 string characters out of 5858183
  484718 words of memory out of 5000000
  28245 multiletter control sequences out of 15000+600000
  410965 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,10n,74p,340b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,10n,74p,331b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "/Users/gaetanserre/Documents/Projects/Chess/Deep-ViCTORIA/paper/Performing Regression on Complex Data.pdf" (6 pages, 3561869 bytes).
+Output written on "/Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.pdf" (5 pages, 3561225 bytes).
 PDF statistics:
- 394 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 25 named destinations out of 1000 (max. 500000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 197 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
  84 words of extra memory for PDF output out of 10000 (max. 10000000)
 

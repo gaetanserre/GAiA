@@ -181,9 +181,11 @@ The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 3
 As we can see in the figure \ref{fig:result}, GAiA's neural network
 has great performance and I only trained it on $\sim 400k$ positions.
 Moreover, GAiA (the complete chess engine) works pretty well:
-since infer a board evaluation is much more longer than use heuristics functions,
-GAiA can see much less positions per second than Stockfish but at equal depth,
-there is almost no difference between the two engines.
+since infer a board evaluation through a such complex neural network
+is much more time consuming than use heuristics functions, GAiA can see
+much less positions per second than standard chess engine. However,
+it has been able to defeat many engines on Lichess.org around 2000 elo.
+
 
 \begin{figure}[!]
   \centering

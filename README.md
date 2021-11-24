@@ -41,9 +41,9 @@ Notebooks order:
 4. `results.ipynb`
 
 ## Detailed Description
-I wrote a paper about GAiA which describes in detail its creation process.
+I wrote an article about GAiA which describes in detail its creation process.
 You can read it here: [Performing Regression on Complex Data using a
-  Squeeze-and-Excitation Residual Neural Network, Chess as a Model System](paper/Performing%20Regression%20on%20Complex%20Data.pdf)
+  Squeeze-and-Excitation Residual Neural Network, Chess as a Model System](https://raw.githubusercontent.com/Plagiat01/GAiA/master/article/Performing%20Regression%20on%20Complex%20Data.pdf)
 
 ## Credits
 + [Lichess](https://database.lichess.org/)

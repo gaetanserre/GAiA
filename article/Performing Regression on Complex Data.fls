@@ -1,9 +1,9 @@
-PWD /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper
+PWD /Users/gaetanserre/Documents/Projects/Chess/GAiA/article
 INPUT /usr/local/texlive/2021/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.tex
-OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.log
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.tex
+OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.log
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
@@ -502,10 +502,10 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.de
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux
-OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.aux
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.aux
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.aux
+OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.aux
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -543,18 +543,18 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestri
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+OUTPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
 INPUT /usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -581,11 +581,11 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//ups-logo.png
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//ups-logo.png
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//ups-logo.png
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//ups-logo.png
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//ups-logo.png
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//ups-logo.png
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//ups-logo.png
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//ups-logo.png
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//ups-logo.png
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//ups-logo.png
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
 INPUT /usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm
@@ -597,43 +597,43 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//module_seresnet.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//module_seresnet.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//module_seresnet.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//module_seresnet.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//module_seresnet.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//network/network.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//network/network.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//network/network.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//network/network.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//network/network.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_1.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_1.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_1.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_1.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_1.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_2.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_2.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_2.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_2.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//model_selection_2.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//GAiA_history.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//GAiA_history.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//GAiA_history.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//GAiA_history.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//GAiA_history.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//result.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//result.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//result.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//result.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/images//result.pdf
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.bbl
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.bbl
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.bbl
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.bbl
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.aux
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
-INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/paper/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//module_seresnet.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//module_seresnet.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//module_seresnet.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//module_seresnet.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//module_seresnet.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//network/network.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//network/network.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//network/network.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//network/network.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//network/network.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_1.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_1.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_1.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_1.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_1.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_2.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_2.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_2.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_2.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//model_selection_2.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//GAiA_history.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//GAiA_history.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//GAiA_history.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//GAiA_history.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//GAiA_history.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//result.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//result.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//result.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//result.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/images//result.pdf
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.bbl
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.bbl
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.bbl
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.bbl
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.aux
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
+INPUT /Users/gaetanserre/Documents/Projects/Chess/GAiA/article/Performing Regression on Complex Data.out
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

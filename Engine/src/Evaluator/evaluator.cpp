@@ -48,20 +48,20 @@ int Evaluator::get_piece_idx(const Piece& p) {
   }
 }
 
-int NB_CHANNELS = 15;
+int NB_CHANNELS = 16;
 fdeep::tensor Evaluator::encode_position(const Position& pos) {
   fdeep::tensor board(fdeep::tensor_shape(8, 8, NB_CHANNELS), 0);
 
-  float side_to_move = pos.side_to_move() == WHITE ? 1.0 : 0.0;
   float castlings_rights = get_castling_rights(pos);
   float ep_square = static_cast<float>(pos.ep_square());
   float is_ep_square = ep_square == 64 ? -1.0 : ep_square;
 
   for (int rank = 0; rank < 8; rank++) {
     for (int file = 0; file < 8; file++) {
-      board.set(fdeep::tensor_pos(rank, file, 12), side_to_move);
-      board.set(fdeep::tensor_pos(rank, file, 13), castlings_rights);
-      board.set(fdeep::tensor_pos(rank, file, 14), is_ep_square);
+      board.set(fdeep::tensor_pos(rank, file, 12), pos.side_to_move() == WHITE);
+      board.set(fdeep::tensor_pos(rank, file, 13), pos.side_to_move() == BLACK);
+      board.set(fdeep::tensor_pos(rank, file, 14), castlings_rights);
+      board.set(fdeep::tensor_pos(rank, file, 15), is_ep_square);
 
       int square = (rank * 8) + file;
       Square s = Square(square);

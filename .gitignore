@@ -16,3 +16,4 @@ Makefile
 libevaluator.a
 libresnet.a
 libstockfish.a
+bin/

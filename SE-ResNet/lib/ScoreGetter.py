@@ -5,10 +5,12 @@ class ScoreGetter:
     self.engine_path = engine_path
     if evalc is not None:
       self.evalc = evalc + '\n'
+      self.evalc = self.evalc.encode()
     else:
       self.evalc = None
     if depth1 is not None:
       self.depth1 = depth1 + '\n'
+      self.depth1 = self.depth1.encode()
     else:
       self.depth1 = None
 
@@ -18,18 +20,17 @@ class ScoreGetter:
                   stdin=subprocess.PIPE,
                   bufsize=0)
 
-
   def get_score(self, fen):
+    print("EFOEIFEJFOEJF")
     if self.evalc is None: return self.get_score2(fen)
 
-    set_pos = 'position fen ' + fen + '\n'
-    self.engine.stdin.write(set_pos.encode())
-    self.engine.stdin.write(self.evalc.encode())
+    self.engine.stdin.write(self.evalc)
 
     out = self.engine.stdout.readline()
     score = None
     while out:
       line = out.decode("utf-8", "ignore")[:-1]
+      print(line)
 
       if line.startswith('Final evaluation'):
         line_splitted = [s for s in line.split(' ') if s]
@@ -43,10 +44,22 @@ class ScoreGetter:
       out = self.engine.stdout.readline()
     return score
 
+  def go_depth1(self, fen):
+    set_pos = 'position fen ' + fen + '\n'
+    self.engine.stdin.write(set_pos.encode())
+    self.engine.stdin.write("go depth 1\n".encode())
+    out = self.engine.stdout.readline()
+    while out:
+      line = out.decode("utf-8", "ignore")[:-1]
+      print(line)
+      if line.startswith("bestmove"):
+        break
+      out = self.engine.stdout.readline()
+
   def get_score2(self, fen):
     set_pos = 'position fen ' + fen + '\n'
     self.engine.stdin.write(set_pos.encode())
-    self.engine.stdin.write(self.depth1.encode())
+    self.engine.stdin.write(self.depth1)
 
     out = self.engine.stdout.readline()
     score = None

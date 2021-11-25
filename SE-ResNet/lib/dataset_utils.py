@@ -25,7 +25,10 @@ def piece_to_vec(piece, color):
   res[offset+piece - 1] = 1
   return res
 
-nb_channels = 15
+def turn_to_vec(turn):
+  return np.array([turn == chess.WHITE, turn == chess.BLACK])
+
+nb_channels = 16
 board_shape = (8, 8, nb_channels)
 
 def encode_position(fen):
@@ -38,12 +41,35 @@ def encode_position(fen):
       if piece_type is None:
         continue
       res[rank, file, :12] = piece_to_vec(piece_type, board.color_at(square))
-  res[:, :, 12] = board.turn
-  res[:, :, 13] = get_castling_rights(board)
-  res[:, :, 14] = -1 if board.ep_square is None else board.ep_square
+  res[:, :, 12:14] = turn_to_vec(board.turn)
+  res[:, :, 14] = get_castling_rights(board)
+  res[:, :, 15] = -1 if board.ep_square is None else board.ep_square
   return res
 
+def one_hot_to_piece(oh):
+  if oh.sum() == 0: return None
+  idx = np.argmax(oh) + 1
+  color = chess.WHITE
+  if idx > 6:
+    color = chess.BLACK
+    idx = idx-6
+  return chess.Piece(idx, color)
 
+def decode_position(pos):
+  board = chess.Board()
+
+  for square in range(64):
+    board.remove_piece_at(square)
+  
+  for rank in range(8):
+    for file in range(8):
+      square = (rank * 8) + file
+      piece = one_hot_to_piece(pos[rank, file, :12])
+      board.set_piece_at(square, piece)
+  board.turn = chess.WHITE if pos[0, 0, 12] == 1 else chess.BLACK
+  print(("Whites" if pos[0, 0, 12] == 1 else "Blacks"))
+  print(board.fen())
+  return board
 
 def store_many_hdf5(images, labels, directory, tag=""):
   num_images = len(images)

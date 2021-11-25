@@ -1,29 +1,30 @@
 import subprocess
-from enum import IntEnum
 
-class Engine(IntEnum):
-  STOCKFISH = 0
-  LEELA     = 1
-
-class ScoreGetter():
-  def __init__(self, engine_path, engine=Engine.STOCKFISH):
-    self.engine_type = engine
-    self.eval = "eval\n".encode()
-    self.depth1 = "go depth 1\n".encode()
+class ScoreGetter:
+  def __init__(self, engine_path, evalc="eval", depth1=None):
+    self.engine_path = engine_path
+    if evalc is not None:
+      self.evalc = evalc + '\n'
+    else:
+      self.evalc = None
+    if depth1 is not None:
+      self.depth1 = depth1 + '\n'
+    else:
+      self.depth1 = None
 
     self.engine = subprocess.Popen(engine_path,
                   stdout=subprocess.PIPE,
                   stderr=subprocess.STDOUT,
                   stdin=subprocess.PIPE,
                   bufsize=0)
-  
-  def write_position(self, fen):
+
+
+  def get_score(self, fen):
+    if self.evalc is None: return self.get_score2(fen)
+
     set_pos = 'position fen ' + fen + '\n'
     self.engine.stdin.write(set_pos.encode())
-  
-  def get_score_sf(self, fen, set_pos=True):
-    if set_pos: self.write_position(fen)
-    self.engine.stdin.write(self.eval)
+    self.engine.stdin.write(self.evalc.encode())
 
     out = self.engine.stdout.readline()
     score = None
@@ -34,16 +35,18 @@ class ScoreGetter():
         line_splitted = [s for s in line.split(' ') if s]
 
         if line_splitted[2] == 'none':
-          return self.get_score_d1(fen)
+          return self.get_score2(fen)
 
-        score = float(line_splitted[2])*100
+        score = int(float(line_splitted[2])*100)
         break
 
       out = self.engine.stdout.readline()
     return score
 
-  def get_score_d1(self, fen):
-    self.engine.stdin.write(self.depth1)
+  def get_score2(self, fen):
+    set_pos = 'position fen ' + fen + '\n'
+    self.engine.stdin.write(set_pos.encode())
+    self.engine.stdin.write(self.depth1.encode())
 
     out = self.engine.stdout.readline()
     score = None
@@ -60,7 +63,7 @@ class ScoreGetter():
               break
         if idx == -1:
           raise Exception('Mate or stalemate position.')
-        score = coeff * float(line_splitted[idx])
+        score = coeff * int(line_splitted[idx])
 
       if line.startswith('bestmove'):
           break
@@ -71,25 +74,16 @@ class ScoreGetter():
       raise Exception('Mate or stalemate position.')
 
     return score
-  
-  def get_score_leela(self, fen):
-    self.write_position(fen)
-    self.engine.stdin.write(self.depth1)
 
-    out = self.engine.stdout.readline()
-    while out:
-      line = out.decode("utf-8", "ignore")[:-1]
-      if line.startswith("bestmove"):
-        if line.split(' ')[1] == "a1a1":
-          raise Exception('Mate or stalemate position.')
-        break
-      out = self.engine.stdout.readline()
-    
-    return self.get_score_sf(fen, set_pos=False)
+  def quit(self):
+    self.engine.stdin.write(b'quit\n')
 
-  
-  def get_score(self, fen):
-    if self.engine_type == Engine.STOCKFISH:
-      return self.get_score_sf(fen)
-    elif self.engine_type == Engine.LEELA:
-      return self.get_score_leela(fen)
+  def __del__(self):
+    self.quit()
+      
+  def restart(self):
+    self.engine = subprocess.Popen(self.engine_path,
+                  stdout=subprocess.PIPE,
+                  stderr=subprocess.STDOUT,
+                  stdin=subprocess.PIPE,
+                  bufsize=0)

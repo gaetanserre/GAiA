@@ -104,7 +104,7 @@ improve the performance of ResNet with almost no computation costs.
 The question is: can we use this architecture on data that are not
 originally images. If so, we just have to encode our data in 3-dimensional
 tensors and look for the number of Squeeze-and-Excitation residual
-blocks (Figure \ref{fig:seblock}) that optimizes our results to get excellent performance.
+blocks \ref{fig:seblock} that optimizes our results to get excellent performance.
 The challenge is to know if Squeeze-and-Excitation networks are
 generalizable to any kind of machine learning problem.
 
@@ -112,7 +112,7 @@ As a chess fan, I have chosen to show that it was possible to create a
 high-performance chess engine using this type of neural network.
 I have called this chess engine GAiA.
 
-\begin{figure}[H]
+\begin{figure}[!]
   \centering
   \includegraphics[width=8cm]{module_seresnet.pdf}
   \caption{The schema of the original Residual block (left) and the SE-ResNet
@@ -156,21 +156,21 @@ The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 3
   \label{fig:model_archi}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!]
   \centering
   \includegraphics[width=15cm]{model_selection_1.pdf}
   \caption{Loss and accuracy on train sets}
   \label{fig:acc_loss}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!]
   \centering
   \includegraphics[width=13cm]{model_selection_2.pdf}
   \caption{Score on validation sets}
   \label{fig:score_valid}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!]
   \centering
   \includegraphics[width=15cm]{GAiA_history.pdf}
   \caption{Loss and accuracy during training}
@@ -187,10 +187,10 @@ much less positions per second than standard chess engine. However,
 it has been able to defeat many engines on Lichess.org around 2000 elo.
 
 
-\begin{figure}[H]
+\begin{figure}[!]
   \centering
   \includegraphics[width=13cm]{result.pdf}
-  \caption{GAiA's neural network results}
+  \caption{GAiA's results}
   \label{fig:result}
 \end{figure}
 

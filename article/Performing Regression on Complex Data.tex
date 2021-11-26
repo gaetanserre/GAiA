@@ -132,10 +132,36 @@ In order to train GAiA's neural network, I needed tons of different
 chess position. Lichess.org\cite{lichess} is a popular, free and open-source
 chess platform which provides millions of games played by humans every month.
 From these games, I extracted millions of different positions along with their
-Stockfish 14 evaluation.
+Stockfish 14 evaluation. If we look at the distribution of the evaluations
+(Figure \ref{fig:distribution}), we can see that the overwhelming majority
+is close to $0$ i.e draw game.
 Each position is encoded as a $8\times8$ image with $15$ channels: 
 $12$ representing each chess pieces, $1$ for the actual player, $1$
 for the en-passant square and $1$ for the castling rights.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=8cm]{distribution.pdf}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \begin{tabular}{ | l | c | }
+      \hline
+      count & 397182 \\ \hline
+      mean  & 28.93 \\ \hline
+      std   &  931.44\\ \hline
+      min   & -9358\\ \hline
+      25\%  & -231\\ \hline
+      50\%  & 27\\ \hline
+      75\%  & 298\\ \hline
+      max   & 10751\\ \hline
+    \end{tabular}
+  \end{subfigure}
+  \caption{Distribution of the evaluations}
+  \label{fig:distribution}
+  \end{figure}
 
 \section{Neural Network Structure}
 My model architecture is composed of $3$ SE-ResNet blocks of $2$ CNNs with $64$ filters
@@ -145,11 +171,11 @@ This model architecture is designed based on Maia\cite{maia}.
 The loss is the Mean Absolute Error and the accuracy the coefficient of determination.
 I used the framework Tensorflow 2.7 to create and train the neural network.
 I tried several numbers of SE-ResNet blocks and $3$ seemed
-to be the best compromise between computing costs and results
+to be the best compromise between computation costs and results
 (Figure \ref{fig:acc_loss} \& \ref{fig:score_valid}).
 The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 30 epochs (Figure \ref{fig:history}).
 
-\begin{figure}[htp]
+\begin{figure}[H]
   \centering
   \includegraphics[width=13cm]{network/network.pdf}
   \caption{GAiA's neural network architecture}

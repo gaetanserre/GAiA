@@ -164,23 +164,16 @@ for the en-passant square and $1$ for the castling rights.
   \end{figure}
 
 \section{Neural Network Structure}
-My model architecture is composed of $3$ SE-ResNet blocks of $2$ CNNs with $64$ filters
-and a kernel shape of $1\times1$ using ReLU activation function. The output is a
-fully connected layer with a linear readout function(Figure \ref{fig:model_archi}).
+GAiA's model architecture is composed of $3$ SE-ResNet blocks of $2$ CNNs with $64$ filters
+and a kernel shape of $1\times1$ using \textit{ReLU} activation function.
+To find these hyperparameters, I tried several values and these ones seemed to be
+the best compromise between computation costs and accuracy.
+(Figure \ref{fig:acc_loss} \& \ref{fig:score_valid})
+The output is a fully connected layer using \textit{Linear} readout function(Figure \ref{fig:model_archi}).
 This model architecture is designed based on Maia\cite{maia}.
 The loss is the Mean Absolute Error and the accuracy the coefficient of determination.
 I used the framework Tensorflow 2.7 to create and train the neural network.
-I tried several numbers of SE-ResNet blocks and $3$ seemed
-to be the best compromise between computation costs and results
-(Figure \ref{fig:acc_loss} \& \ref{fig:score_valid}).
 The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 30 epochs (Figure \ref{fig:history}).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=13cm]{network/network.pdf}
-  \caption{GAiA's neural network architecture}
-  \label{fig:model_archi}
-\end{figure}
 
 \begin{figure}[H]
   \centering
@@ -191,9 +184,16 @@ The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 3
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{model_selection_2.pdf}
+  \includegraphics[width=13cm]{model_selection_2.png}
   \caption{Score on validation sets}
   \label{fig:score_valid}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=13cm]{network/network.pdf}
+  \caption{GAiA's neural network architecture}
+  \label{fig:model_archi}
 \end{figure}
 
 \begin{figure}[H]
@@ -204,7 +204,7 @@ The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 3
 \end{figure}
 
 \section{Results}
-As we can see in the figure \ref{fig:result}, GAiA's neural network
+As we can see on the Figure \ref{fig:result}, GAiA's neural network
 has great performance and I only trained it on $\sim 400k$ positions.
 Moreover, GAiA (the complete chess engine) works pretty well:
 since infer a board evaluation through a such complex neural network
@@ -215,7 +215,7 @@ it has been able to defeat many engines on Lichess.org around 2000 elo.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{result.pdf}
+  \includegraphics[width=13cm]{result.png}
   \caption{GAiA's neural network results}
   \label{fig:result}
 \end{figure}

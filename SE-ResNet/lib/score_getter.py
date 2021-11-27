@@ -21,8 +21,12 @@ class ScoreGetter():
     set_pos = 'position fen ' + fen + '\n'
     self.engine.stdin.write(set_pos.encode())
   
-  def get_score_sf(self, fen, set_pos=True):
-    if set_pos: self.write_position(fen)
+  def get_score_sf(self, fen):
+    self.write_position(fen)
+    self.engine.stdin.write(self.depth1)
+    return self.get_score_eval(fen)
+
+  def get_score_eval(self, fen):
     self.engine.stdin.write(self.eval)
 
     out = self.engine.stdout.readline()
@@ -85,7 +89,7 @@ class ScoreGetter():
         break
       out = self.engine.stdout.readline()
     
-    return self.get_score_sf(fen, set_pos=False)
+    return self.get_score_eval(fen)
 
   
   def get_score(self, fen):

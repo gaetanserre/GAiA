@@ -164,8 +164,8 @@ for the en-passant square and $1$ for the castling rights.
   \end{figure}
 
 \section{Neural Network Structure}
-GAiA's model architecture is composed of $3$ SE-ResNet blocks of $2$ CNNs with $64$ filters
-and a kernel shape of $1\times1$ using \textit{ReLU} activation function.
+GAiA's model architecture is composed of $3$ SE-ResNet blocks of $2$ convolutional layers
+each with $64$ filters and a kernel shape of $1\times1$ using \textit{ReLU} activation function.
 To find these hyperparameters, I tried several values and these ones seemed to be
 the best compromise between computation costs and accuracy.
 (Figure \ref{fig:acc_loss} \& \ref{fig:score_valid})
@@ -206,12 +206,16 @@ The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 3
 \section{Results}
 As we can see on the Figure \ref{fig:result}, GAiA's neural network
 has great performance and I only trained it on $\sim 400k$ positions.
-Moreover, GAiA (the complete chess engine) works pretty well:
-since infer a board evaluation through a such complex neural network
-is much more time consuming than use heuristics functions, GAiA can see
-much less positions per second than standard chess engine. However,
-it has been able to defeat many engines on Lichess.org around 2000 elo.
-
+However, some points are misplaced. These are positions where one of the kings is
+in check. This is due to the fact that Stockfish cannot statically evaluate
+position where a king is in check and so I had to search at depth $1$.
+The resulting score takes into account the next move and therefore
+is much more difficult to predict.\\
+Even if GAiA (the complete chess engine) can see much less positions
+per second than "classic" chess engine (inferring an evaluation of a chessboard
+from such a complex neural network is much more time consuming than
+use heuristics functions), it has been able to defeat many engines
+around 2000 elo on Lichess.org.
 
 \begin{figure}[H]
   \centering

@@ -63,6 +63,7 @@ def decode_position(pos):
       piece = one_hot_to_piece(pos[rank, file, :12])
       board.set_piece_at(square, piece)
   board.turn = chess.WHITE if pos[0, 0, 12] == 1 else chess.BLACK
+  if pos[0, 0, 14] != -1: board.ep_square = pos[0, 0, 14]
   #print(("Whites" if pos[0, 0, 12] == 1 else "Blacks"))
   #print(board.fen())
   return board

@@ -85,7 +85,7 @@ residual network as an evaluation function and the Stockfish\cite{stockfish}
 search algorithm which is known for its efficiency. GAiA's neural network
 try to reproduce the evaluation function of Stockfish 14.
 With only few hours of training, GAiA's neural network has
-an accuracy of 0.92 (using the coefficient of determination).
+an accuracy of 0.93 (using the coefficient of determination).
 
 \noindent
 These results suggest that Squeeze-and-Excitation residual networks,
@@ -209,8 +209,10 @@ has great performance and I only trained it on $\sim 400k$ positions.
 However, some points are misplaced. These are positions where one of the kings is
 in check. This is due to the fact that Stockfish cannot statically evaluate
 position where a king is in check and so I had to search at depth $1$.
-The resulting score takes into account the next move and therefore
-is much more difficult to predict.\\
+The resulting evaluation takes into account the next move and therefore
+is much more difficult to predict. However, the evaluations of
+such positions produced by the network are not meaningless,
+and are even more accurate than those of Stockfish (Figure \ref{fig:misplaced})\\
 Even if GAiA (the complete chess engine) can see much less positions
 per second than "classic" chess engine (inferring an evaluation of a chessboard
 from such a complex neural network is much more time consuming than
@@ -224,6 +226,23 @@ around 2000 elo on Lichess.org.
   \label{fig:result}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=5cm]{misplaced/pos1.pdf}
+    \caption{Stockfish score: 863, GAiA score: 6348}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=5cm]{misplaced/pos2.pdf}
+    \caption{Stockfish score: -55, GAiA score: -6287}
+  \end{subfigure}
+  \caption{Example of misplaced positions}
+  \label{fig:misplaced}
+  \end{figure}
+
+\pagebreak
 \section{Conclusion}
 Artificial intelligence is being used in more and more fields.
 It is becoming very complex to design models capable of answering very precise problems.

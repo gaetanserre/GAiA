@@ -85,7 +85,7 @@ residual network as an evaluation function and the Stockfish\cite{stockfish}
 search algorithm which is known for its efficiency. GAiA's neural network
 try to reproduce the evaluation function of Stockfish 14.
 With only few hours of training, GAiA's neural network has
-an accuracy of 0.92 (using the coefficient of determination).
+an accuracy of 0.93 (using the coefficient of determination).
 
 \noindent
 These results suggest that Squeeze-and-Excitation residual networks,
@@ -96,15 +96,16 @@ can be used with data that are not images.
 \section{Introduction}
 Artificial intelligence for image recognition is becoming
 increasingly powerful. Since 2015, thanks to the ResNet\cite{resnet}
-architecture, We achieve astounding performance on the ImageNet database.
+architecture, we achieve astounding performance on the ImageNet database.
 Furthermore, in 2017 is introduced Squeeze-and-Excitation\cite{squeezeandexcitation}
 network architecture which significantly
-improve the performance of ResNet with almost no computation costs.
+improve the performance of ResNet with almost no additional computation costs.
 
 The question is: can we use this architecture on data that are not
 originally images. If so, we just have to encode our data in 3-dimensional
 tensors and look for the number of Squeeze-and-Excitation residual
-blocks (Figure \ref{fig:seblock}) that optimizes our results to get excellent performance.
+blocks (Figure \ref{fig:seblock}) and other hyperparameters
+that optimizes our results to get excellent performance.
 The challenge is to know if Squeeze-and-Excitation networks are
 generalizable to any kind of machine learning problem.
 
@@ -149,14 +150,14 @@ for the en-passant square and $1$ for the castling rights.
     \centering
     \begin{tabular}{ | l | c | }
       \hline
-      count & 397182 \\ \hline
-      mean  & 28.93 \\ \hline
-      std   &  931.44\\ \hline
-      min   & -9358\\ \hline
-      25\%  & -231\\ \hline
-      50\%  & 27\\ \hline
-      75\%  & 298\\ \hline
-      max   & 10751\\ \hline
+      count & 1,389,333 \\ \hline
+      mean  & 30.14 \\ \hline
+      std   & 942.35\\ \hline
+      min   & 9873\\ \hline
+      25\%  & -254.0\\ \hline
+      50\%  & 28.0\\ \hline
+      75\%  & 320.0\\ \hline
+      max   & 13,678.0\\ \hline
     \end{tabular}
   \end{subfigure}
   \caption{Distribution of the evaluations}
@@ -164,23 +165,17 @@ for the en-passant square and $1$ for the castling rights.
   \end{figure}
 
 \section{Neural Network Structure}
-My model architecture is composed of $3$ SE-ResNet blocks of $2$ CNNs with $64$ filters
-and a kernel shape of $1\times1$ using ReLU activation function. The output is a
-fully connected layer with a linear readout function(Figure \ref{fig:model_archi}).
+GAiA's model architecture is composed of $4$ SE-ResNet blocks of $2$ convolutional layers
+each with $64$ filters and a kernel shape of $1\times1$ using \textit{ReLU} activation function.
+To find these hyperparameters, I tried several values and these ones seemed to be
+the best compromise between computation costs and accuracy.
+(Figure \ref{fig:acc_loss} \& \ref{fig:score_valid})
+The output is a fully connected layer using \textit{Linear} readout function (Figure \ref{fig:model_archi}).
 This model architecture is designed based on Maia\cite{maia}.
 The loss is the Mean Absolute Error and the accuracy the coefficient of determination.
 I used the framework Tensorflow 2.7 to create and train the neural network.
-I tried several numbers of SE-ResNet blocks and $3$ seemed
-to be the best compromise between computation costs and results
-(Figure \ref{fig:acc_loss} \& \ref{fig:score_valid}).
-The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 30 epochs (Figure \ref{fig:history}).
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=13cm]{network/network.pdf}
-  \caption{GAiA's neural network architecture}
-  \label{fig:model_archi}
-\end{figure}
+The model is trained on $\sim 1,400k$ positions and tested on $\sim 400k$
+during 30 epochs (Figure \ref{fig:history}).
 
 \begin{figure}[H]
   \centering
@@ -191,9 +186,16 @@ The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 3
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{model_selection_2.pdf}
+  \includegraphics[width=13cm]{model_selection_2.png}
   \caption{Score on validation sets}
   \label{fig:score_valid}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=13cm]{network/network.pdf}
+  \caption{GAiA's neural network architecture}
+  \label{fig:model_archi}
 \end{figure}
 
 \begin{figure}[H]
@@ -204,22 +206,46 @@ The model is trained on $\sim 400k$ positions and tested on $\sim 150k$ during 3
 \end{figure}
 
 \section{Results}
-As we can see in the figure \ref{fig:result}, GAiA's neural network
-has great performance and I only trained it on $\sim 400k$ positions.
-Moreover, GAiA (the complete chess engine) works pretty well:
-since infer a board evaluation through a such complex neural network
-is much more time consuming than use heuristics functions, GAiA can see
-much less positions per second than standard chess engine. However,
-it has been able to defeat many engines on Lichess.org around 2000 elo.
-
+As we can see on the Figure \ref{fig:result}, GAiA's neural network
+has great performance and I only trained it on $\sim 1,400k$ positions.
+But some points are misplaced: these are positions where one of the kings is
+in check. This is due to the fact that Stockfish cannot statically evaluate
+position where a king is in check and so I had to search at depth $1$ (one move ahead).
+The resulting evaluation takes into account the next move and therefore
+is much more difficult to predict. However, the evaluations of
+such positions produced by the network are not meaningless,
+and are even quite close to a static evaluation of the position.
+(Figure \ref{fig:misplaced})\\
+Even if GAiA (the complete chess engine) can see much less positions
+per second than "classic" chess engine (inferring an evaluation of a chessboard
+from such a complex neural network is much more time consuming than
+use heuristics functions), it has been able to defeat many engines
+around 2000 elo on Lichess.org.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{result.pdf}
+  \includegraphics[width=13cm]{result.png}
   \caption{GAiA's neural network results}
   \label{fig:result}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=5cm]{misplaced/pos1.pdf}
+    \caption{Stockfish score: 863, GAiA score: 6348}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=5cm]{misplaced/pos2.pdf}
+    \caption{Stockfish score: -55, GAiA score: -6287}
+  \end{subfigure}
+  \caption{Example of misplaced positions}
+  \label{fig:misplaced}
+  \end{figure}
+
+\pagebreak
 \section{Conclusion}
 Artificial intelligence is being used in more and more fields.
 It is becoming very complex to design models capable of answering very precise problems.

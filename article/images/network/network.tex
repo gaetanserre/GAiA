@@ -123,15 +123,47 @@
 \pic[shift={(0,0,0)}] at (addl3-east) {Box={name=r7,%
         fill=\ReLUColor,zlabel=8,height=40,width=0.5,depth=40}};
 
-\pic[shift={(3,0,0)}] at (add3-east) {Box={name=cr8,caption=Conv2D BN ReLU,%
+%block4
+\pic[shift={(3,0,0)}] at (r7-east) {Box={name=cr8,caption=Conv2D BN ReLU,%
         xlabel={{"64", "dummy"}},fill=\ConvColor,%
         height=40,width=2,depth=40}};
 \pic[shift={(0,0,0)}] at (cr8-east) {Box={name=bn8,%
         fill=\BatchNormColor,height=40,width=1,depth=40}};
 \pic[shift={(0,0,0)}] at (bn8-east) {Box={name=r8,%
+        fill=\ReLUColor,height=40,width=0.5,depth=40}};
+
+\pic[shift={(1,0,0)}] at (r8-east) {Box={name=cr9,caption=Conv2D\\BN,%
+        xlabel={{"64", "dummy"}},fill=\ConvColor,%
+        height=40,width=2,depth=40}};
+\pic[shift={(0,0,0)}] at (cr9-east) {Box={name=bn9,%
+        fill=\BatchNormColor,height=40,width=1,depth=40}};
+
+\pic[shift={(0,5,0)}] at (cr9-east) {Box={name=t4,%
+        fill=\ConvColor,height=0,width=0,depth=0}};
+
+\pic[shift={(1,0,0)}] at (bn9-east) {Box={name=se4,caption=SE,%
+        xlabel={{"64", "dummy"}},fill=\SEColor,%
+        height=40,width=2,depth=40}};
+
+\pic[shift={(1,0,0)}] at (se4-east) {Box={name=addl4,caption=Add\\ReLU,%
+        xlabel={{"64", "dummy"}},fill=\AddColor,%
+        height=40,width=2,depth=40}};
+\pic[shift={(0,-4,0)}] at (addl4-north) {Ball={name=add4,%
+        fill=\AddColor,opacity=0.6,%
+        radius=2.5,logo=$+$}};
+\pic[shift={(0,0,0)}] at (addl4-east) {Box={name=r9,%
+        fill=\ReLUColor,zlabel=8,height=40,width=0.5,depth=40}};
+        
+
+\pic[shift={(3,0,0)}] at (add4-east) {Box={name=cr10,caption=Conv2D BN ReLU,%
+        xlabel={{"64", "dummy"}},fill=\ConvColor,%
+        height=40,width=2,depth=40}};
+\pic[shift={(0,0,0)}] at (cr10-east) {Box={name=bn10,%
+        fill=\BatchNormColor,height=40,width=1,depth=40}};
+\pic[shift={(0,0,0)}] at (bn10-east) {Box={name=r10,%
         fill=\ReLUColor,zlabel=8,height=40,width=0.5,depth=40}};
 
-\pic[shift={(3,0,0)}] at (r8-east) {Box={name=f1,caption=Flatten,%
+\pic[shift={(3,0,0)}] at (r10-east) {Box={name=f1,caption=Flatten,%
         xlabel={{"4096", "dummy"}},fill=\DenseColor,%
         zlabel=1,height=5,width=20,depth=5}};
 
@@ -164,8 +196,14 @@
 \draw [connection]  (bn7-east)    -- node {\midarrow} (se3-west);
 \draw [connection]  (se3-east)    -- node {\midarrow} (add3-west);
 
-\draw [connection]  (add3-east)    -- node {\midarrow} (cr8-west);
-\draw [connection]  (r8-east)    -- node {\midarrow} (f1-west);
+\draw [connection]  (r7-east) -- node {\midarrow} (cr8-west);
+
+\draw [connection]  (r8-east)    -- node {\midarrow} (cr9-west);
+\draw [connection]  (bn9-east)    -- node {\midarrow} (se4-west);
+\draw [connection]  (se4-east)    -- node {\midarrow} (add4-west);
+
+\draw [connection]  (add4-east)    -- node {\midarrow} (cr10-west);
+\draw [connection]  (r10-east)    -- node {\midarrow} (f1-west);
 \draw [connection]  (f1-east)    -- node {\midarrow} (fl1-west);
 \draw [connection]  (fl1-east)    -- node {\midarrow} (v1-west);
 
@@ -182,11 +220,15 @@
 \draw [add_connection]  (between5_6)    -- node {\addarrow} (t3-west-|between5_6) -- node {\addarrow} (t3-west);
 \draw [add_connection]  (t3-east) -- node {\addarrow} (t3-east-|addl3-north)-- node {\addarrow} (addl3-north);
 
+\path (cr8-north) -- (addl4-north) coordinate[pos=0] (between7_8) ;
+\draw [add_connection]  (between7_8)    -- node {\addarrow} (t4-west-|between7_8) -- node {\addarrow} (t4-west);
+\draw [add_connection]  (t4-east) -- node {\addarrow} (t4-east-|addl4-north)-- node {\addarrow} (addl4-north);
+
 \draw[densely dashed]
-(r8-nearnortheast) -- (f1-nearnorthwest)
-(r8-nearsoutheast) -- (f1-nearsouthwest)
-(r8-farsoutheast)  -- (f1-farsouthwest)
-(r8-farnortheast)  -- (f1-farnorthwest)
+(r10-nearnortheast) -- (f1-nearnorthwest)
+(r10-nearsoutheast) -- (f1-nearsouthwest)
+(r10-farsoutheast)  -- (f1-farsouthwest)
+(r10-farnortheast)  -- (f1-farnorthwest)
 ;
 
 \end{tikzpicture}

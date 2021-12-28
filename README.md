@@ -7,7 +7,7 @@ It can perform an analysis in reasonable time between depth 10 and 14+ depending
 
 GAiA is not a complete chess program and requires a UCI-compatible graphical user interface (GUI) (e.g. XBoard with PolyGlot, Scid, Cute Chess, eboard, Arena, Sigma Chess, Shredder, Chess Partner or Fritz) in order to be used comfortably.
 
-## Build
+## Build from source
 In order to build GAiA, you need [CMake](https://cmake.org/).
 
 ```bash

@@ -3,8 +3,8 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.tex
-OUTPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.log
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex
+OUTPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.log
 INPUT /home/gaetan/Documents/Projects/GAiA/article/Article.cls
 INPUT /home/gaetan/Documents/Projects/GAiA/article/Article.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/crop/crop.sty
@@ -151,9 +151,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.aux
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.aux
-OUTPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.aux
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux
+OUTPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -166,14 +166,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
-OUTPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.pdf
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
-OUTPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
+OUTPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
+OUTPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
@@ -282,12 +282,12 @@ INPUT /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf
 INPUT /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
 INPUT /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
 INPUT /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.bbl
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.bbl
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.bbl
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.bbl
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.aux
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
-INPUT /home/gaetan/Documents/Projects/GAiA/article/ Performing Regression on Complex Data.out
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
+INPUT /home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

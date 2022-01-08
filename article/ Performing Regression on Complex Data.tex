@@ -1,99 +1,98 @@
-\documentclass[a4paper]{article}
+%%
+%% Copyright 2021 OXFORD UNIVERSITY PRESS
+%%
+%% This file is part of the 'pnas-nexus-authoring-template Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% The list of all files belonging to the 'pnas-nexus-authoring-template Bundle' is
+%% given in the file `manifest.txt'.
+%%
+%% with bibliographic references
+%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[unnumsec,webpdf,contemporary,large]{Article}%
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{float}
-\usepackage{hyperref}
-\usepackage{fancyhdr}
-\usepackage[a4paper, left=2.85cm, right=2.85cm]{geometry}
-\usepackage{graphicx}
-\usepackage[nottoc]{tocbibind}
-\usepackage[bottom]{footmisc}
+%\usepackage{showframe}
+
 \graphicspath{{images/}}
 
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{\small Paris-Saclay University -- 23/11/2021}
-\lhead{\small Gaëtan Serré -- Master AI}
-\rfoot{\thepage}
+% line numbers
+%\usepackage[mathlines, switch]{lineno}
+%\usepackage[right]{lineno}
+
+\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}%  meant for continuous numbers
+%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+\newtheorem{proposition}[theorem]{Proposition}%
+%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}
+
 
 \begin{document}
 
-\setlength{\parindent}{0pt}
+\copyrightyear{2022}
+\appnotes{~}
 
-\newgeometry{
-  bottom=1.5cm
+\firstpage{1}
+
+%\subtitle{Subject Section}
+
+\title[Regression, Chess as a Model System]{Performing Regression on Complex Data using a
+Squeeze-and-Excitation Residual Neural Network, Chess as a Model System}
+
+\author[a]{Gaëtan Serré}
+
+\corresp[a]{\href{email:gaetan.serre@universite-paris-saclay.fr}{gaetan.serre@universite-paris-saclay.fr}}
+
+\authormark{Gaëtan Serré}
+
+
+\received{Date}{0}{Year}
+\accepted{Date}{0}{Year}
+
+%\editor{Associate Editor: Name}
+
+\abstract{
+  As neural networks for image recognition become more and more powerful
+  and AI becomes more and more present in all fields,
+  it would be very helpful to be able to use these models
+  with non-image data and get good performance.
+  This paper aims to show that this is possible through an model system very
+  related to artificial intelligence: chess.\\
+  We can simplify a chess engine in two main components: an evaluation function,
+  which is a function that takes a chess position as input and returns a score 
+  and a search algorithm which will uses the evaluation function to find the best move
+  to play in a given position.\\
+  I introduce GAiA, a chess engine which uses a Squeeze-and-Excitation
+  residual network as an evaluation function. GAiA's neural network
+  try to reproduce the evaluation function of a world reknown chess engine.
+  With only few hours of training, GAiA's neural network has
+  an accuracy of 0.93 (using the coefficient of determination).\\
+  These results suggest that Squeeze-and-Excitation residual networks,
+  which are the state-of-the-art neural networks for image recognition,
+  can be used with data that are not images.
 }
-\setlength{\headheight}{13.59999pt}
-\addtolength{\topmargin}{-1.59999pt}
+\keywords{Artificial Intelligence, Deep Learning, Neural Networks, Chess}
 
-\begin{center}
-  \vspace*{5cm}
+%\boxedtext{
+% Research reports require a significance statement of between 50 and 120 words. Abbreviations are permitted, but citations cannot be included. If required, un-comment this element in the template to include. The heading is included automatically.
+%}
 
-  \textbf{\large Performing Regression on Complex Data using a
-  Squeeze-and-Excitation Residual Neural Network, Chess as a Model System}
-
-  \vspace*{1cm}
-
-  Gaëtan Serré \\
-  {\ttfamily gaetan.serre@universite-paris-saclay.fr}
-
-  \vspace*{10cm}
-
-  \vfill
-  \noindent\rule{\textwidth}{0.4pt}
-  \begin{figure}[H]
-      \centering
-      \begin{subfigure}{.35\textwidth}
-          \includegraphics[width=\textwidth]{ups-logo.png}
-      \end{subfigure}
-  \end{figure}
-\end{center}
-\pagenumbering{gobble}
-
-\pagebreak
-\restoregeometry
-\pagebreak
-\pagenumbering{arabic}
-
-\begin{abstract}
-\noindent
-As neural networks for image recognition become more and more powerful
-and AI becomes more and more present in all fields,
-it would be very helpful to be able to use these models
-with non-image data and get good performance.
-This paper aims to show that this is possible through an model system very
-related to artificial intelligence: chess.
-
-\noindent
-We can simplify a chess engine in two main components: an evaluation function,
-which is a function that takes a chess position as input and returns a score 
-(usually, $>0$ if Whites are winning and $<0$ if Blacks are winning) and
-a search algorithm which will uses the evaluation function to find the best move
-to play in a given position. Generally, we ask the search algorithm to search
-at a certain depth $d$ meaning that our engine will return the best move to play
-by searching $d$ moves in advance.
-
-\noindent
-I introduce GAiA, a chess engine which uses a Squeeze-and-Excitation\cite{squeezeandexcitation}
-residual network as an evaluation function and the Stockfish\cite{stockfish} 
-search algorithm which is known for its efficiency. GAiA's neural network
-try to reproduce the evaluation function of Stockfish 14.
-With only few hours of training, GAiA's neural network has
-an accuracy of 0.93 (using the coefficient of determination).
-
-\noindent
-These results suggest that Squeeze-and-Excitation residual networks,
-which are the state-of-the-art neural networks for image recognition,
-can be used with data that are not images.
-\end{abstract}
-
+\maketitle
 \section{Introduction}
+
 Artificial intelligence for image recognition is becoming
 increasingly powerful. Since 2015, thanks to the ResNet\cite{resnet}
 architecture, we achieve astounding performance on the ImageNet database.
@@ -115,19 +114,20 @@ I have called this chess engine GAiA.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=8cm]{module_seresnet.pdf}
+  \includegraphics[width=7cm]{module_seresnet.pdf}
   \caption{The schema of the original Residual block (left) and the SE-ResNet
   block (right)}
   \label{fig:seblock}
 \end{figure}
 
+
 \section{Data}
-GAiA's neural network tries to recreate the evaluation function of Stockfish 14,
+GAiA's neural network tries to recreate the evaluation function of Stockfish 14\cite{stockfish},
 a open-source world reknown chess engine. It uses heuristics function written
 by human experts to evaluate position. Stockfish also uses a classical
 alpha-beta game tree search with plenty optimizations to find the best move.
 GAiA is a combination of the Stockfish game tree search algorithm and a
-Squeeze-and-Excitation residual neural network as evaluation function.
+Squeeze-and-Excitation\cite{squeezeandexcitation} residual neural network as evaluation function.
 
 In order to train GAiA's neural network, I needed tons of different
 chess position. Lichess.org\cite{lichess} is a popular, free and open-source
@@ -140,14 +140,12 @@ Each position is encoded as a $8\times8$ image with $15$ channels:
 $12$ representing each chess pieces, $1$ for the actual player, $1$
 for the en-passant square and $1$ for the castling rights.
 
+
 \begin{figure}[H]
+  \captionsetup[subfigure]{labelformat=empty}
   \centering
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=8cm]{distribution.pdf}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
-    \centering
+  \subfloat[]{\includegraphics[width=3.1in]{distribution.pdf}}\\
+  \subfloat[]{
     \begin{tabular}{ | l | c | }
       \hline
       count & 1,389,333 \\ \hline
@@ -159,10 +157,11 @@ for the en-passant square and $1$ for the castling rights.
       75\%  & 320.0\\ \hline
       max   & 13,678.0\\ \hline
     \end{tabular}
-  \end{subfigure}
+  }
   \caption{Distribution of the evaluations}
   \label{fig:distribution}
-  \end{figure}
+\end{figure}
+
 
 \section{Neural Network Structure}
 GAiA's model architecture is composed of $4$ SE-ResNet blocks of $2$ convolutional layers
@@ -178,29 +177,45 @@ The model is trained on $\sim 1,400k$ positions and tested on $\sim 400k$
 during 30 epochs (Figure \ref{fig:history}).
 
 \begin{figure}[H]
+  \captionsetup[subfigure]{labelformat=empty}
   \centering
-  \includegraphics[width=15cm]{model_selection_1.pdf}
+  \subfloat[Loss]{
+    \centering
+    \includegraphics[width=8cm]{model_selection_1_loss.pdf}
+  }\\
+  \subfloat[Accuracy]{
+    \centering
+    \includegraphics[width=8cm]{model_selection_1_score.pdf}
+  }
   \caption{Loss and accuracy on train sets}
   \label{fig:acc_loss}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{model_selection_2.png}
+  \includegraphics[width=10cm]{model_selection_2.png}
   \caption{Score on validation sets}
   \label{fig:score_valid}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{network/network.pdf}
+  \includegraphics[width=9cm]{network/network.pdf}
   \caption{GAiA's neural network architecture}
   \label{fig:model_archi}
 \end{figure}
 
 \begin{figure}[H]
+  \captionsetup[subfigure]{labelformat=empty}
   \centering
-  \includegraphics[width=15cm]{GAiA_history.pdf}
+  \subfloat[Loss]{
+    \centering
+    \includegraphics[width=8cm]{GAiA_history_loss.pdf}
+  }\\
+  \subfloat[Accuracy]{
+    \centering
+    \includegraphics[width=8cm]{GAiA_history_score.pdf}
+  }
   \caption{Loss and accuracy during training}
   \label{fig:history}
 \end{figure}
@@ -224,28 +239,26 @@ around 2000 elo on Lichess.org.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=13cm]{result.png}
+  \includegraphics[width=8cm]{result.png}
   \caption{GAiA's neural network results}
   \label{fig:result}
 \end{figure}
 
 \begin{figure}[H]
+  \captionsetup[subfigure]{labelformat=empty}
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \subfloat[Stockfish score: 863, GAiA score: 6348]{
     \centering
     \includegraphics[width=5cm]{misplaced/pos1.pdf}
-    \caption{Stockfish score: 863, GAiA score: 6348}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
+  }\\
+  \subfloat[Stockfish score: -55, GAiA score: -6287]{
     \centering
     \includegraphics[width=5cm]{misplaced/pos2.pdf}
-    \caption{Stockfish score: -55, GAiA score: -6287}
-  \end{subfigure}
+  }
   \caption{Example of misplaced positions}
   \label{fig:misplaced}
-  \end{figure}
+\end{figure}
 
-\pagebreak
 \section{Conclusion}
 Artificial intelligence is being used in more and more fields.
 It is becoming very complex to design models capable of answering very precise problems.
@@ -256,7 +269,8 @@ In my chess example, I was able to design a chess engine able to beat any non-pr
 human player in only a few hours of training. It would be interesting to find other problems
 that can be solved in this way to corroborate these results.
 
-\bibliographystyle{abbrv}
+
+\bibliographystyle{plain}
 \bibliography{refs}
 
 

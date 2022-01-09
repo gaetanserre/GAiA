@@ -1,4 +1,4 @@
-#include "resnet.hpp"
+#include "seresnet.hpp"
 
 void ResNet::init(const std::string& modelpath) {
   Ort::Env env = Ort::Env(ORT_LOGGING_LEVEL_FATAL, "Default");

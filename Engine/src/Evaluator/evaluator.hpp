@@ -7,7 +7,7 @@
 
 #include "position.h"
 #include "uci.h"
-#include "resnet.hpp"
+#include "seresnet.hpp"
 
 using namespace Stockfish;
 

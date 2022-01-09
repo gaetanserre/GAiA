@@ -10,20 +10,20 @@ include_directories(src/Stockfish/incbin)
 include_directories(src/Stockfish/nnue)
 include_directories(src/Stockfish/syzygy)
 include_directories(src/Evaluator/)
-include_directories(src/Evaluator/ResNet)
+include_directories(src/Evaluator/SEResNet)
 include_directories(include)
 
 
-file (GLOB RESNET_SOURCES src/Evaluator/ResNet/*.cpp)
-file (GLOB RESNET_HEADERS src/Evaluator/ResNet/*.hpp)
-add_library(resnet ${RESNET_SOURCES} ${RESNET_HEADERS})
-link_libraries(resnet)
+file (GLOB SERESNET_SOURCES src/Evaluator/SEResNet/*.cpp)
+file (GLOB SERESNET_HEADERS src/Evaluator/SEResNet/*.hpp)
+add_library(seresnet ${SERESNET_SOURCES} ${SERESNET_HEADERS})
+link_libraries(seresnet)
 
 file (GLOB EVALUATOR_SOURCES src/Evaluator/*.cpp)
 file (GLOB EVALUATOR_HEADERS src/Evaluator/*.hpp)
 add_library(evaluator ${EVALUATOR_SOURCES} ${EVALUATOR_HEADERS})
 
-link_libraries(resnet evaluator)
+link_libraries(seresnet evaluator)
 
 add_executable(GAiA
   src/Stockfish/main.cpp
@@ -51,5 +51,4 @@ add_executable(GAiA
   src/Stockfish/nnue/features/half_kp.cpp
   )
 
-target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime.so)
-target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_cuda.so)
+target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime.dylib)

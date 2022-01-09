@@ -13,8 +13,6 @@ GAiA
 GAiA.exe
 GAiA.exe.stackdump
 Makefile
-libevaluator.a
-libresnet.a
-libstockfish.a
+*.a
 bin/
 lib/

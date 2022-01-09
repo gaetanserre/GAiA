@@ -11,30 +11,19 @@ include_directories(src/Stockfish/nnue)
 include_directories(src/Stockfish/syzygy)
 include_directories(src/Evaluator/)
 include_directories(src/Evaluator/ResNet)
-include_directories(src/Evaluator/ResNet/include)
+include_directories(include)
 
-add_library(fdeep INTERFACE)
-target_include_directories(fdeep INTERFACE
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/src/Evaluator/ResNet/include>
-)
-
-find_package(Threads REQUIRED)
-target_link_libraries(fdeep INTERFACE Threads::Threads)
-
-link_libraries(fdeep)
 
 file (GLOB RESNET_SOURCES src/Evaluator/ResNet/*.cpp)
 file (GLOB RESNET_HEADERS src/Evaluator/ResNet/*.hpp)
 add_library(resnet ${RESNET_SOURCES} ${RESNET_HEADERS})
-
-link_libraries(fdeep resnet)
+link_libraries(resnet)
 
 file (GLOB EVALUATOR_SOURCES src/Evaluator/*.cpp)
 file (GLOB EVALUATOR_HEADERS src/Evaluator/*.hpp)
 add_library(evaluator ${EVALUATOR_SOURCES} ${EVALUATOR_HEADERS})
 
 link_libraries(resnet evaluator)
-
 
 add_executable(GAiA
   src/Stockfish/main.cpp
@@ -61,3 +50,6 @@ add_executable(GAiA
   src/Stockfish/nnue/evaluate_nnue.cpp
   src/Stockfish/nnue/features/half_kp.cpp
   )
+
+target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime.so)
+target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_cuda.so)

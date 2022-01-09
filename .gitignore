@@ -17,3 +17,4 @@ libevaluator.a
 libresnet.a
 libstockfish.a
 bin/
+lib/

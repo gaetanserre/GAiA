@@ -372,7 +372,7 @@ Move UCI::to_move(const Position& pos, string& str) {
 
 void UCI::initEval(std::string argv0) {
   std::string dir = weakly_canonical(std::filesystem::path(argv0)).parent_path().c_str();
-  dir += "/model.json";
+  dir += "/network.onnx";
   Eval::set_evaluator(dir);
 }
 

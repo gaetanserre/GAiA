@@ -3,44 +3,47 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Performing Regression on Complex Data.aux
 The style file: plain.bst
 Database file #1: refs.bib
-You've used 5 entries,
+Warning--entry type for "tensorflow" isn't style-file defined
+--line 46 of file refs.bib
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            522 strings with 4707 characters,
-and the built_in function-call counts, 1372 in all, are:
-= -- 118
-> -- 88
+            526 strings with 5541 characters,
+and the built_in function-call counts, 2785 in all, are:
+= -- 214
+> -- 291
 < -- 0
-+ -- 35
-- -- 30
-* -- 77
-:= -- 239
-add.period$ -- 14
-call.type$ -- 5
-change.case$ -- 30
++ -- 116
+- -- 110
+* -- 242
+:= -- 505
+add.period$ -- 16
+call.type$ -- 6
+change.case$ -- 73
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 35
-empty$ -- 111
-format.name$ -- 30
-if$ -- 282
+cite$ -- 6
+duplicate$ -- 42
+empty$ -- 133
+format.name$ -- 110
+if$ -- 522
 int.to.chr$ -- 0
-int.to.str$ -- 5
+int.to.str$ -- 6
 missing$ -- 0
-newline$ -- 27
-num.names$ -- 10
-pop$ -- 53
+newline$ -- 31
+num.names$ -- 12
+pop$ -- 101
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 67
 quote$ -- 0
-skip$ -- 36
+skip$ -- 44
 stack$ -- 0
-substring$ -- 25
-swap$ -- 5
+substring$ -- 30
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 20
+type$ -- 24
 warning$ -- 0
-while$ -- 10
-width$ -- 6
-write$ -- 50
+while$ -- 12
+width$ -- 7
+write$ -- 58
+(There was 1 warning)

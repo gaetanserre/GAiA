@@ -20,7 +20,7 @@ class Evaluator {
     ResNet network;
 
     static float get_castling_rights (const Position& pos);
-    static fdeep::tensor encode_position (const Position& pos);
+    static std::array<float, NB_CHANNELS*8*8> encode_position (const Position& pos);
     static int get_piece_idx(const Piece& p);
     static Value from_cp (const float& cp);
 };

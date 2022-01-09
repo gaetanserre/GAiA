@@ -80,7 +80,7 @@ class GAiA_Network(tf.keras.Model):
 
 def GAiA_Network(shape, hyperparameters):
   filters = hyperparameters["filters"]
-  inputs = tf.keras.Input(shape)
+  inputs = tf.keras.Input(shape, name="input")
   x = layers.Conv2D(filters, (1, 1))(inputs)
   x = layers.BatchNormalization()(x)
   x = layers.ReLU()(x)
@@ -108,7 +108,7 @@ def GAiA_Network(shape, hyperparameters):
 
   x = layers.Flatten()(x)
 
-  x = layers.Dense(1, activation="linear")(x)
+  x = layers.Dense(1, activation="linear", name="output")(x)
 
 
   model = tf.keras.Model(inputs=inputs, outputs=x)

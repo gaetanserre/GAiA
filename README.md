@@ -1,5 +1,5 @@
 # GAiA
-GAiA is a UCI chess engine built with C++ 17 and Tensorflow.
+GAiA is a UCI chess engine built with C++ 17, [ONNX](https://github.com/microsoft/onnxruntime) and [Tensorflow](https://github.com/tensorflow/tensorflow).
 
 It performs an in-depth analysis and uses a complex squeeze-and-excitation residual network to evaluate each chess board.
 
@@ -9,6 +9,13 @@ GAiA is not a complete chess program and requires a UCI-compatible graphical use
 
 ## Build from source
 In order to build GAiA, you need [CMake](https://cmake.org/).
+
+GAiA depends on [ONNX](https://github.com/microsoft/onnxruntime) which is an awesome library
+for inferring and even training artificial intelligence model. ONNX support many framework
+such as CUDA or TensoRT. You need to put the ONNX libraries file in `Engine/lib` and modify the
+last lines of the `CMakeLists.txt` accordingly.
+
+Then,
 
 ```bash
 cd Engine/build
@@ -48,7 +55,8 @@ You can read it here: [Performing Regression on Complex Data using a
 ## Credits
 + [Lichess](https://database.lichess.org/)
 + [Stockfish](https://github.com/official-stockfish/Stockfish)
-+ [frugally-deep](https://github.com/Dobiasd/frugally-deep)
++ [ONNX](https://github.com/microsoft/onnxruntime)
++ [Tensorflow](https://github.com/tensorflow/tensorflow)
 
 ## License
 [GPL v3](https://choosealicense.com/licenses/gpl-3.0/)

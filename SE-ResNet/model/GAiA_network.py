@@ -83,7 +83,7 @@ def GAiA_Network(shape, hyperparameters):
   inputs = tf.keras.Input(shape, name="input")
   x = layers.Conv2D(filters, (1, 1))(inputs)
   x = layers.BatchNormalization()(x)
-  x = layers.ReLU()(x)
+  #x = layers.ReLU()(x)
 
   for _ in range(hyperparameters["nb_blocks"]):
     x_old = x

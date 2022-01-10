@@ -13,11 +13,12 @@ using namespace Stockfish;
 
 class Evaluator {
   public:
+    Evaluator() = default;
     void set_model (const std::string& modelpath);
     Value eval_position(const Position& pos);
 
   private:
-    ResNet network;
+    SEResNet network;
 
     static float get_castling_rights (const Position& pos);
     static std::array<float, NB_CHANNELS*8*8> encode_position (const Position& pos);

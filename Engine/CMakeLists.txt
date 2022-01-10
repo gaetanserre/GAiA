@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread -mavx2")
 
+set(EP "CPU")
+
 include_directories(src/Stockfish/)
 include_directories(src/Stockfish/incbin)
 include_directories(src/Stockfish/nnue)
@@ -12,6 +14,14 @@ include_directories(src/Stockfish/syzygy)
 include_directories(src/Evaluator/)
 include_directories(src/Evaluator/SEResNet)
 include_directories(include)
+
+if(${EP} STREQUAL "CPU")
+  add_definitions(-DUSE_CPU)
+elseif(${EP} STREQUAL "CUDA")
+  add_definitions(-DUSE_CUDA)
+elseif(${EP} STREQUAL "TENSORRT")
+  add_definitions(-DUSE_TENSORRT)
+endif()
 
 
 file (GLOB SERESNET_SOURCES src/Evaluator/SEResNet/*.cpp)
@@ -51,4 +61,11 @@ add_executable(GAiA
   src/Stockfish/nnue/features/half_kp.cpp
   )
 
-target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime.dylib)
+
+target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime.so)
+
+if(${EP} STREQUAL "CUDA")
+  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_tensorrt.so)
+elseif(${EP} STREQUAL "TENSORRT")
+  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_cuda.so)
+endif()

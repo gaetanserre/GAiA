@@ -12,7 +12,7 @@ In order to build GAiA, you need [CMake](https://cmake.org/).
 
 GAiA depends on [ONNX](https://github.com/microsoft/onnxruntime) which is an awesome library
 for inferring and even training artificial intelligence model. ONNX support many framework
-such as CUDA or TensoRT. You need to put the ONNX libraries file in `Engine/lib` and modify the
+such as CUDA or TensorRT. You need to put the ONNX libraries file in `Engine/lib` and modify the
 last lines of the `CMakeLists.txt` accordingly.
 
 Then,
@@ -27,6 +27,10 @@ make
 ```bash
 ./GAiA
 ```
+
+By default, GAiA is built using the CPU as the execution provider of ONNX because
+it was the most efficient on my machine. But you can easily change the EP to CUDA or TensorRT
+by changing the variable `EP` in the `CMakeLists`. The accepted values are `CPU`, `CUDA` and `TENSORRT`
 
 ## Most used UCI commands:
 + `position startpos [moves move_list]`

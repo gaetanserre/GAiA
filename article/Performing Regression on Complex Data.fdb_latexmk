@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex Performing Regression on Complex Data"] 1641780996 "Performing Regression on Complex Data.aux" "Performing Regression on Complex Data.bbl" "Performing Regression on Complex Data" 1641781082
+["bibtex Performing Regression on Complex Data"] 1641780996 "Performing Regression on Complex Data.aux" "Performing Regression on Complex Data.bbl" "Performing Regression on Complex Data" 1641781267
   "/usr/local/texlive/2021/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Performing Regression on Complex Data.aux" 1641781019 5311 80d9c0226936e70edc3473dc8055c33c "pdflatex"
+  "Performing Regression on Complex Data.aux" 1641781266 5311 80d9c0226936e70edc3473dc8055c33c "pdflatex"
   "refs.bib" 1641770195 2227 41bde7e0d58a63273e23236408758c4f ""
   (generated)
   "Performing Regression on Complex Data.blg"
   "Performing Regression on Complex Data.bbl"
-["pdflatex"] 1641781018 "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex" "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" "Performing Regression on Complex Data" 1641781082
-  "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux" 1641781019 5311 80d9c0226936e70edc3473dc8055c33c ""
-  "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex" 1641781079 10720 dfd2676f14e81a346fe3dca91ce19e76 ""
+["pdflatex"] 1641781265 "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex" "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" "Performing Regression on Complex Data" 1641781267
+  "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux" 1641781266 5311 80d9c0226936e70edc3473dc8055c33c ""
+  "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex" 1641781264 10721 72038eff86f66acab9db35fb9be4abee ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1246382020 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -150,10 +150,10 @@
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1641455460 2724735 c4993853bef8c2e746e5293bd6f8e5c5 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
   "Article.cls" 1641770195 101854 c1b7ec299dba5b9ca81362ab24b1b9dd ""
-  "Performing Regression on Complex Data.aux" 1641781019 5311 80d9c0226936e70edc3473dc8055c33c "pdflatex"
+  "Performing Regression on Complex Data.aux" 1641781266 5311 80d9c0226936e70edc3473dc8055c33c "pdflatex"
   "Performing Regression on Complex Data.bbl" 1641780996 1534 d44272c32b8b2d7df6a61d91ed0393ab "bibtex Performing Regression on Complex Data"
-  "Performing Regression on Complex Data.out" 1641781019 506 28ca29f8c32cec993320a7c1cb40021a "pdflatex"
-  "Performing Regression on Complex Data.tex" 1641781079 10720 dfd2676f14e81a346fe3dca91ce19e76 ""
+  "Performing Regression on Complex Data.out" 1641781266 506 28ca29f8c32cec993320a7c1cb40021a "pdflatex"
+  "Performing Regression on Complex Data.tex" 1641781264 10721 72038eff86f66acab9db35fb9be4abee ""
   "images//GAiA_history_loss.pdf" 1641770195 23385 1bd5e64974b22842590a501f86fb7b3a ""
   "images//GAiA_history_score.pdf" 1641770195 23401 6e10510b6b6c54eae0d999fe58396c95 ""
   "images//distribution.pdf" 1641770195 14263 9c669d9c1b43581ca02c0b19d032e14f ""
@@ -166,9 +166,9 @@
   "images//network/network.pdf" 1641770195 122515 de4e6ffe9306906a8a2d4a8bf511ace9 ""
   "images//result.png" 1641770195 93390 3e896ae1e596cf5c983789041069f172 ""
   (generated)
-  "Performing Regression on Complex Data.aux"
+  "Performing Regression on Complex Data.log"
+  "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf"
   "Performing Regression on Complex Data.pdf"
   "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.log"
-  "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf"
   "Performing Regression on Complex Data.out"
-  "Performing Regression on Complex Data.log"
+  "Performing Regression on Complex Data.aux"

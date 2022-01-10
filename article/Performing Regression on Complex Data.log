@@ -1,140 +1,137 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.4)  9 JAN 2022 23:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.1.6)  10 JAN 2022 03:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex"
-(/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex
-LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (/home/gaetan/Documents/Projects/GAiA/article/Article.cls
+**"/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex"
+(/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (/Users/gaetanserre/Documents/Projects/GAiA/article/Article.cls
 
 LaTeX Warning: You have requested document class `Article',
                but the document class provides `oup-authoring-template'.
 
 Document Class: oup-authoring-template 2020/02/18 1.0
-(/usr/share/texlive/texmf-dist/tex/latex/crop/crop.sty
-Package: crop 2003/05/20 v1.9 crop marks (mf)
-\stockwidth=\dimen134
-\stockheight=\dimen135
-\CROP@index=\count167
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(/usr/local/texlive/2021/texmf-dist/tex/latex/crop/crop.sty
+Package: crop 2017/11/19 1.10 crop marks (mf)
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\stockwidth=\dimen138
+\stockheight=\dimen139
+\CROP@index=\count179
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\CROP@offset=\count168
-Package crop Info: Local config file crop.cfg used on input line 605.
- (/usr/share/texlive/texmf-dist/tex/xelatex/xetexconfig/crop.cfg)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+\CROP@offset=\count180
+Package crop Info: Local config file crop.cfg used on input line 622.
+ (/usr/local/texlive/2021/texmf-dist/tex/xelatex/xetexconfig/crop.cfg)) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks15
 )
-\Gin@req@height=\dimen136
-\Gin@req@width=\dimen137
-) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2020/01/03 v3.4h Customizing captions (AR)
- (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen138
-\captionmargin@=\dimen139
-\captionwidth=\dimen140
-\caption@tempdima=\dimen141
-\caption@indent=\dimen142
-\caption@parindent=\dimen143
-\caption@hangindent=\dimen144
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen142
+\captionmargin@=\dimen143
+\captionwidth=\dimen144
+\caption@tempdima=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-Package caption Info: Unknown document class (or package),
-(caption)             standard defaults will be used.
-Package caption Info: \@makecaption = undefined on input line 1082.
+Package caption Info: Document class w/o caption stuff detected.
 )
-
-Package caption Warning: Unknown document class (or package),
-(caption)                standard defaults will be used.
-See the caption package documentation for explanation.
-
-\c@caption@flags=\count169
-\c@continuedfloat=\count170
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
+\c@caption@flags=\count181
+\c@continuedfloat=\count182
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks15
-\ex@=\dimen145
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+\@emptytoks=\toks16
+\ex@=\dimen149
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen146
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+\pmbraise@=\dimen150
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count171
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count172
-\leftroot@=\count173
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count174
-\DOTSCASE@=\count175
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen147
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count176
-\c@MaxMatrixCols=\count177
+\inf@bad=\count183
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count184
+\leftroot@=\count185
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count186
+\DOTSCASE@=\count187
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count188
+\c@MaxMatrixCols=\count189
 \dotsspace@=\muskip16
-\c@parentequation=\count178
-\dspbrk@lvl=\count179
-\tag@help=\toks16
-\row@=\count180
-\column@=\count181
-\maxfields@=\count182
-\andhelp@=\toks17
-\eqnshift@=\dimen148
-\alignsep@=\dimen149
-\tagshift@=\dimen150
-\tagwidth@=\dimen151
-\totwidth@=\dimen152
-\lineht@=\dimen153
-\@envbody=\toks18
+\c@parentequation=\count190
+\dspbrk@lvl=\count191
+\tag@help=\toks17
+\row@=\count192
+\column@=\count193
+\maxfields@=\count194
+\andhelp@=\toks18
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks19
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen154
-\ar@mcellbox=\box47
-\extrarowheight=\dimen155
-\NC@list=\toks20
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen158
+\ar@mcellbox=\box49
+\extrarowheight=\dimen159
+\NC@list=\toks21
 \extratabsurround=\skip52
 \backup@length=\skip53
-\ar@cellbox=\box48
-) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+\ar@cellbox=\box50
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -148,128 +145,130 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/share/texlive/texmf-dist/tex/latex/sttools/flushend.sty
-Package: flushend 2017/03/27 v3.3 Balancing columns in twocolumn mode
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/sttools/flushend.sty
+Package: flushend 2020/10/16 v3.5 Balancing columns in twocolumn mode
 \flushend@@lastskip@a=\skip54
 \flushend@@lastskip@b=\skip55
 \flushend@@lastskip@c=\skip56
-\flushend@@penalty@a=\count183
-\flushend@@lastkern@a=\dimen156
-\var@@temp@spread=\dimen157
-\var@@temp@a=\dimen158
-\flushend@@page@rule=\dimen159
-\flushend@@varbox@a=\box49
-\flushend@@varbox@c=\box50
-\flushend@@tempbox@a=\box51
-\flushend@@tempbox@c=\box52
-\@viper=\box53
-\hold@viper=\box54
-\atColsBreak=\toks21
-\atColsEnd=\toks22
- (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count184
-)) (/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty
+\flushend@@penalty@a=\count195
+\var@@loop@iter=\count196
+\flushend@@lastkern@a=\dimen160
+\var@@temp@spread=\dimen161
+\var@@temp@a=\dimen162
+\var@@temp@loop=\dimen163
+\flushend@@page@rule=\dimen164
+\flushend@@varbox@a=\box51
+\flushend@@varbox@c=\box52
+\flushend@@tempbox@a=\box53
+\flushend@@tempbox@c=\box54
+\@viper=\box55
+\hold@viper=\box56
+\atColsBreak=\toks22
+\atColsEnd=\toks23
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count197
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/sttools/stfloats.sty
 Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip settings
-\@dblbotnum=\count185
-\c@dblbotnumber=\count186
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+\@dblbotnum=\count198
+\c@dblbotnumber=\count199
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
- (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count187
+\c@r@tfl@t=\count266
 \rotFPtop=\skip57
 \rotFPbot=\skip58
-\rot@float@box=\box55
-\rot@mess@toks=\toks23
-) (/usr/share/texlive/texmf-dist/tex/latex/changepage/chngpage.sty
+\rot@float@box=\box57
+\rot@mess@toks=\toks24
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/changepage/chngpage.sty
 Package: chngpage 2009/10/20 v1.2b change page layout
-\c@cp@cnt=\count188
-\c@cp@tempcnt=\count189
-) (/usr/share/texlive/texmf-dist/tex/latex/totcount/totcount.sty
+\c@cp@cnt=\count267
+\c@cp@tempcnt=\count268
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/totcount/totcount.sty
 Package: totcount 2011/01/25 v1.2 package for gettingthe total value of LaTeX counters
-) (/usr/share/texlive/texmf-dist/tex/latex/base/fix-cm.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\croppaperwidth=\dimen160
-\croppaperheight=\dimen161
-\Croppdfwidth=\dimen162
-\Croppdfheight=\dimen163
-\Trimpdfwidth=\dimen164
-\Trimpdfheight=\dimen165
-\CP@toff@wd=\dimen166
-\CP@toff@ht=\dimen167
-\CP@boff@wd=\dimen168
-\CP@boff@ht=\dimen169
-\CP@crop@wd=\dimen170
-\CP@crop@ht=\dimen171
-\CP@bled@wd=\dimen172
-\CP@bled@ht=\dimen173
-\CP@trim@wd=\dimen174
-\CP@trim@ht=\dimen175
-\c@section=\count190
-\c@subsection=\count191
-\c@subsubsection=\count192
-\c@paragraph=\count193
-\c@subparagraph=\count194
-\c@figure=\count195
-\c@table=\count196
+\croppaperwidth=\dimen165
+\croppaperheight=\dimen166
+\Croppdfwidth=\dimen167
+\Croppdfheight=\dimen168
+\Trimpdfwidth=\dimen169
+\Trimpdfheight=\dimen170
+\CP@toff@wd=\dimen171
+\CP@toff@ht=\dimen172
+\CP@boff@wd=\dimen173
+\CP@boff@ht=\dimen174
+\CP@crop@wd=\dimen175
+\CP@crop@ht=\dimen176
+\CP@bled@wd=\dimen177
+\CP@bled@ht=\dimen178
+\CP@trim@wd=\dimen179
+\CP@trim@ht=\dimen180
+\c@section=\count269
+\c@subsection=\count270
+\c@subsubsection=\count271
+\c@paragraph=\count272
+\c@subparagraph=\count273
+\c@figure=\count274
+\c@table=\count275
 \dropfromtop=\skip59
-\c@myauthcount=\count197
-\c@myauthcount@totc=\count198
-\c@myhistorycount=\count199
-\c@myhistorycount@totc=\count266
-\c@myaddcount=\count267
-\c@myaddcount@totc=\count268
+\c@myauthcount=\count276
+\c@myauthcount@totc=\count277
+\c@myhistorycount=\count278
+\c@myhistorycount@totc=\count279
+\c@myaddcount=\count280
+\c@myaddcount@totc=\count281
 \extraspace=\skip60
 \aboveskipchk=\skip61
 \titlepagewd=\skip62
-\rotdimen=\dimen176
-\tempdime=\dimen177
-\temptbox=\box56
- (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+\rotdimen=\dimen181
+\tempdime=\dimen182
+\temptbox=\box58
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip63
 \bibsep=\skip64
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count269
-) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen178
-\WF@size=\dimen179
-\c@WF@wrappedlines=\count270
-\WF@box=\box57
-\WF@everypar=\toks24
+\c@NAT@ctr=\count282
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen183
+\WF@size=\dimen184
+\c@WF@wrappedlines=\count283
+\WF@box=\box59
+\WF@everypar=\toks25
 Package: wrapfig 2003/01/31  v 3.6
 )
-\wraplines=\count271
-\@authorfigbox=\box58
+\wraplines=\count284
+\@authorfigbox=\box60
 \@authorfigboxdim=\skip65
 \biofigadjskip=\skip66
- (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks25
-\thm@bodyfont=\toks26
-\thm@headfont=\toks27
-\thm@notefont=\toks28
-\thm@headpunct=\toks29
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
 \thm@preskip=\skip67
 \thm@postskip=\skip68
 \thm@headsep=\skip69
-\dth@everypar=\toks30
-) (/usr/share/texlive/texmf-dist/tex/latex/subfloat/subfloat.sty
+\dth@everypar=\toks31
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/subfloat/subfloat.sty
 Package: subfloat 2003/08/21 version 2.14
  Package `subfloat', Version 2.14 of 2003/08/21.
 
@@ -281,193 +280,198 @@ Package subfloat Warning: Numbers of floats not counted:
 (subfloat)                Please switch on countmax or remove the code using
 (subfloat)                the counter then..
 
-) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count272
+\c@KVtest=\count285
 \sf@farskip=\skip70
-\sf@captopadj=\dimen180
+\sf@captopadj=\dimen185
 \sf@capskip=\skip71
 \sf@nearskip=\skip72
-\c@subfigure=\count273
-\c@subfigure@save=\count274
-\c@lofdepth=\count275
-\c@subtable=\count276
-\c@subtable@save=\count277
-\c@lotdepth=\count278
+\c@subfigure=\count286
+\c@subfigure@save=\count287
+\c@lofdepth=\count288
+\c@subtable=\count289
+\c@subtable@save=\count290
+\c@lotdepth=\count291
 \sf@top=\skip73
 \sf@bottom=\skip74
-) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip75
-\multirow@cntb=\count279
+\multirow@cntb=\count292
 \multirow@dima=\skip76
-\bigstrutjot=\dimen181
-) (/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
+\bigstrutjot=\dimen186
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box59
-\fn@width=\dimen182
-) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\fn@notes=\box61
+\fn@width=\dimen187
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
-) (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
- (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count280
-\float@exts=\toks31
-\float@box=\box60
-\@float@everytoks=\toks32
-\@floatcapt=\box61
+\c@float@type=\count293
+\float@exts=\toks32
+\float@box=\box62
+\@float@everytoks=\toks33
+\@floatcapt=\box63
 )
-\@float@every@algorithm=\toks33
-\c@algorithm=\count281
-) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+\@float@every@algorithm=\toks34
+\c@algorithm=\count294
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count282
-\c@ALG@rem=\count283
-\c@ALG@nested=\count284
+\c@ALG@line=\count295
+\c@ALG@rem=\count296
+\c@ALG@nested=\count297
 \ALG@tlm=\skip77
 \ALG@thistlm=\skip78
-\c@ALG@Lnr=\count285
-\c@ALG@blocknr=\count286
-\c@ALG@storecount=\count287
-\c@ALG@tmpcounter=\count288
+\c@ALG@Lnr=\count298
+\c@ALG@blocknr=\count299
+\c@ALG@storecount=\count300
+\c@ALG@tmpcounter=\count301
 \ALG@tmplength=\skip79
-) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
 
 Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count289
-\lst@gtempboxa=\box62
-\lst@token=\toks34
-\lst@length=\count290
-\lst@currlwidth=\dimen183
-\lst@column=\count291
-\lst@pos=\count292
-\lst@lostspace=\dimen184
-\lst@width=\dimen185
-\lst@newlines=\count293
-\lst@lineno=\count294
-\lst@maxwidth=\dimen186
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count295
-\lst@skipnumbers=\count296
-\lst@framebox=\box63
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2019/09/10 1.8c listings configuration
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count302
+\lst@gtempboxa=\box64
+\lst@token=\toks35
+\lst@length=\count303
+\lst@currlwidth=\dimen188
+\lst@column=\count304
+\lst@pos=\count305
+\lst@lostspace=\dimen189
+\lst@width=\dimen190
+\lst@newlines=\count306
+\lst@lineno=\count307
+\lst@maxwidth=\dimen191
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count308
+\lst@skipnumbers=\count309
+\lst@framebox=\box65
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
-Package: listings 2019/09/10 1.8c (Carsten Heinz)
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
- (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-) (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-02-27 v7.00k Hypertext links for LaTeX
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
-\@linkdim=\dimen187
-\Hy@linkcounter=\count297
-\Hy@pagecounter=\count298
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+\@linkdim=\dimen192
+\Hy@linkcounter=\count310
+\Hy@pagecounter=\count311
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-02-27 v7.00k Hyperref: patches for babel languages
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count299
-\pdfmajorversion=\count300
-Package hyperref Info: Hyper figures OFF on input line 4547.
-Package hyperref Info: Link nesting OFF on input line 4552.
-Package hyperref Info: Hyper index ON on input line 4555.
-Package hyperref Info: Plain pages OFF on input line 4562.
-Package hyperref Info: Backreferencing OFF on input line 4567.
+\Hy@SavedSpaceFactor=\count312
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count301
-LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen188
- (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count313
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen193
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count302
-\Field@Width=\dimen189
-\Fld@charsize=\dimen190
-Package hyperref Info: Hyper figures OFF on input line 6430.
-Package hyperref Info: Link nesting OFF on input line 6435.
-Package hyperref Info: Hyper index ON on input line 6438.
-Package hyperref Info: backreferencing OFF on input line 6445.
-Package hyperref Info: Link coloring OFF on input line 6450.
-Package hyperref Info: Link coloring with OCG OFF on input line 6455.
-Package hyperref Info: PDF/A mode OFF on input line 6460.
-LaTeX Info: Redefining \ref on input line 6500.
-LaTeX Info: Redefining \pageref on input line 6504.
- (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
-Package atbegshi Info: Package `crop' patched.
+\Fld@menulength=\count314
+\Field@Width=\dimen194
+\Fld@charsize=\dimen195
+Package hyperref Info: Hyper figures OFF on input line 6075.
+Package hyperref Info: Link nesting OFF on input line 6080.
+Package hyperref Info: Hyper index ON on input line 6083.
+Package hyperref Info: backreferencing OFF on input line 6090.
+Package hyperref Info: Link coloring OFF on input line 6095.
+Package hyperref Info: Link coloring with OCG OFF on input line 6100.
+Package hyperref Info: PDF/A mode OFF on input line 6105.
+LaTeX Info: Redefining \ref on input line 6145.
+LaTeX Info: Redefining \pageref on input line 6149.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi package
+with kernel methods
 )
-\Hy@abspage=\count303
-\c@Item=\count304
-\c@Hfootnote=\count305
+\Hy@abspage=\count315
+\c@Item=\count316
+\c@Hfootnote=\count317
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
- (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2021-02-27 v7.00k Hyperref driver for pdfTeX
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
+with kernel methods
 )
-\Fld@listcount=\count306
-\c@bookmark@seq@number=\count307
- (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+\Fld@listcount=\count318
+\c@bookmark@seq@number=\count319
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip80
 ))
-\c@theorem=\count308
-\c@example=\count309
-\c@remark=\count310
-\c@definition=\count311
- (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count312
-\l__pdf_internal_box=\box64
-) (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux)
+\c@theorem=\count320
+\c@example=\count321
+\c@remark=\count322
+\c@definition=\count323
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count324
+\l__pdf_internal_box=\box66
+) (/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux)
 \openout1 = `"Performing Regression on Complex Data.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
@@ -486,23 +490,25 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
 LaTeX Font Info:    ... okay on input line 43.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+ (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count313
-\scratchdimen=\dimen191
-\scratchbox=\box65
-\nofMPsegments=\count314
-\nofMParguments=\count315
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count316
-\MPscratchDim=\dimen192
-\MPnumerator=\count317
-\makeMPintoPDFobject=\count318
-\everyMPtoPDFconversion=\toks36
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count325
+\scratchdimen=\dimen196
+\scratchbox=\box67
+\nofMPsegments=\count326
+\nofMParguments=\count327
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count328
+\MPscratchDim=\dimen197
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
+\everyMPtoPDFconversion=\toks37
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package crop Info: requested driver: `' on input line 43.
@@ -521,22 +527,21 @@ LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
 (Font)                  U/msa/m/n --> U/msa/m/n on input line 43.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
 (Font)                  U/msa/m/n --> U/msa/m/n on input line 43.
-\c@lstlisting=\count319
-\AtBeginShipoutBox=\box66
+\c@lstlisting=\count331
 Package hyperref Info: Link coloring OFF on input line 43.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
- (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (/usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count320
+\c@section@level=\count332
 )
 LaTeX Info: Redefining \ref on input line 43.
 LaTeX Info: Redefining \pageref on input line 43.
 LaTeX Info: Redefining \nameref on input line 43.
- (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out) (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out)
+ (/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out) (/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.out)
 \@outlinefile=\write3
 \openout3 = `"Performing Regression on Complex Data.out"'.
 
@@ -546,15 +551,15 @@ LaTeX Warning: No \author given.
 
 LaTeX Font Info:    Calculating math sizes for size <13.04874> on input line 94.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 94.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 94.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 94.
- (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 
@@ -623,10 +628,10 @@ Underfull \hbox (badness 1694) in paragraph at lines 103--110
 \OT1/cmr/m/n/7.52812 that are not originally images. If so, we just have to
  []
 
-<images/module_seresnet.pdf, id=28, 597.23125pt x 558.085pt>
-File: images/module_seresnet.pdf Graphic file (type pdf)
-<use images/module_seresnet.pdf>
-Package pdftex.def Info: images/module_seresnet.pdf  used on input line 117.
+<images//module_seresnet.pdf, id=28, 597.23125pt x 558.085pt>
+File: images//module_seresnet.pdf Graphic file (type pdf)
+<use images//module_seresnet.pdf>
+Package pdftex.def Info: images//module_seresnet.pdf  used on input line 117.
 (pdftex.def)             Requested size: 199.16928pt x 186.1102pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -635,48 +640,48 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- </home/gaetan/Documents/Projects/GAiA/article/images/module_seresnet.pdf>]
-<images/distribution.pdf, id=96, 433.62pt x 289.08pt>
-File: images/distribution.pdf Graphic file (type pdf)
-<use images/distribution.pdf>
-Package pdftex.def Info: images/distribution.pdf  used on input line 147.
+ </Users/gaetanserre/Documents/Projects/GAiA/article/images//module_seresnet.pdf>]
+<images//distribution.pdf, id=95, 433.62pt x 289.08pt>
+File: images//distribution.pdf Graphic file (type pdf)
+<use images//distribution.pdf>
+Package pdftex.def Info: images//distribution.pdf  used on input line 147.
 (pdftex.def)             Requested size: 224.03743pt x 149.36086pt.
 
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_loss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/model_selection_1_loss.pdf, id=103, 556.34454pt x 324.45076pt>
-File: images/model_selection_1_loss.pdf Graphic file (type pdf)
-<use images/model_selection_1_loss.pdf>
-Package pdftex.def Info: images/model_selection_1_loss.pdf  used on input line 185.
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/GAiA/article/images//model_selection_1_loss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images//model_selection_1_loss.pdf, id=102, 556.34454pt x 324.45076pt>
+File: images//model_selection_1_loss.pdf Graphic file (type pdf)
+<use images//model_selection_1_loss.pdf>
+Package pdftex.def Info: images//model_selection_1_loss.pdf  used on input line 185.
 (pdftex.def)             Requested size: 227.62204pt x 132.74841pt.
 
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_score.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/model_selection_1_score.pdf, id=104, 554.07pt x 325.96782pt>
-File: images/model_selection_1_score.pdf Graphic file (type pdf)
-<use images/model_selection_1_score.pdf>
-Package pdftex.def Info: images/model_selection_1_score.pdf  used on input line 189.
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/GAiA/article/images//model_selection_1_score.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images//model_selection_1_score.pdf, id=103, 554.07pt x 325.96782pt>
+File: images//model_selection_1_score.pdf Graphic file (type pdf)
+<use images//model_selection_1_score.pdf>
+Package pdftex.def Info: images//model_selection_1_score.pdf  used on input line 189.
 (pdftex.def)             Requested size: 227.62204pt x 133.91127pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<images/model_selection_2.png, id=105, 722.7pt x 361.35pt>
-File: images/model_selection_2.png Graphic file (type png)
-<use images/model_selection_2.png>
-Package pdftex.def Info: images/model_selection_2.png  used on input line 196.
+<images//model_selection_2.png, id=104, 722.7pt x 361.35pt>
+File: images//model_selection_2.png Graphic file (type png)
+<use images//model_selection_2.png>
+Package pdftex.def Info: images//model_selection_2.png  used on input line 196.
 (pdftex.def)             Requested size: 284.52756pt x 142.26578pt.
 
 Overfull \hbox (49.27756pt too wide) in paragraph at lines 196--197
  [][] 
  []
 
-<images/network/network.pdf, id=106, 1672.4944pt x 400.7482pt>
-File: images/network/network.pdf Graphic file (type pdf)
-<use images/network/network.pdf>
-Package pdftex.def Info: images/network/network.pdf  used on input line 203.
+<images//network/network.pdf, id=105, 1672.4944pt x 400.7482pt>
+File: images//network/network.pdf Graphic file (type pdf)
+<use images//network/network.pdf>
+Package pdftex.def Info: images//network/network.pdf  used on input line 203.
 (pdftex.def)             Requested size: 256.0748pt x 61.35707pt.
 
 Overfull \hbox (20.8248pt too wide) in paragraph at lines 203--204
@@ -685,19 +690,19 @@ Overfull \hbox (20.8248pt too wide) in paragraph at lines 203--204
 
 
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/GAiA_history_loss.pdf, id=107, 556.32843pt x 325.96782pt>
-File: images/GAiA_history_loss.pdf Graphic file (type pdf)
-<use images/GAiA_history_loss.pdf>
-Package pdftex.def Info: images/GAiA_history_loss.pdf  used on input line 214.
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/GAiA/article/images//GAiA_history_loss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images//GAiA_history_loss.pdf, id=106, 556.32843pt x 325.96782pt>
+File: images//GAiA_history_loss.pdf Graphic file (type pdf)
+<use images//GAiA_history_loss.pdf>
+Package pdftex.def Info: images//GAiA_history_loss.pdf  used on input line 214.
 (pdftex.def)             Requested size: 227.62204pt x 133.36913pt.
 
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/GAiA_history_score.pdf, id=108, 561.59813pt x 325.215pt>
-File: images/GAiA_history_score.pdf Graphic file (type pdf)
-<use images/GAiA_history_score.pdf>
-Package pdftex.def Info: images/GAiA_history_score.pdf  used on input line 218.
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/GAiA/article/images//GAiA_history_score.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images//GAiA_history_score.pdf, id=107, 561.59813pt x 325.215pt>
+File: images//GAiA_history_score.pdf Graphic file (type pdf)
+<use images//GAiA_history_score.pdf>
+Package pdftex.def Info: images//GAiA_history_score.pdf  used on input line 218.
 (pdftex.def)             Requested size: 227.62204pt x 131.8106pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -713,23 +718,23 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
  [2
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
- </home/gaetan/Documents/Projects/GAiA/article/images/distribution.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_loss.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_score.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_2.png> </home/gaetan/Documents/Projects/GAiA/article/images/network/network.pdf>]
-<images/result.png, id=467, 722.7pt x 361.35pt>
-File: images/result.png Graphic file (type png)
-<use images/result.png>
-Package pdftex.def Info: images/result.png  used on input line 242.
+ </Users/gaetanserre/Documents/Projects/GAiA/article/images//distribution.pdf> </Users/gaetanserre/Documents/Projects/GAiA/article/images//model_selection_1_loss.pdf> </Users/gaetanserre/Documents/Projects/GAiA/article/images//model_selection_1_score.pdf> </Users/gaetanserre/Documents/Projects/GAiA/article/images//model_selection_2.png> </Users/gaetanserre/Documents/Projects/GAiA/article/images//network/network.pdf>]
+<images//result.png, id=466, 722.7pt x 361.35pt>
+File: images//result.png Graphic file (type png)
+<use images//result.png>
+Package pdftex.def Info: images//result.png  used on input line 242.
 (pdftex.def)             Requested size: 227.62204pt x 113.80931pt.
-<images/misplaced/pos1.pdf, id=468, 391.4625pt x 391.4625pt>
-File: images/misplaced/pos1.pdf Graphic file (type pdf)
-<use images/misplaced/pos1.pdf>
-Package pdftex.def Info: images/misplaced/pos1.pdf  used on input line 253.
+<images//misplaced/pos1.pdf, id=467, 391.4625pt x 391.4625pt>
+File: images//misplaced/pos1.pdf Graphic file (type pdf)
+<use images//misplaced/pos1.pdf>
+Package pdftex.def Info: images//misplaced/pos1.pdf  used on input line 253.
 (pdftex.def)             Requested size: 142.26378pt x 142.26439pt.
-<images/misplaced/pos2.pdf, id=469, 391.4625pt x 391.4625pt>
-File: images/misplaced/pos2.pdf Graphic file (type pdf)
-<use images/misplaced/pos2.pdf>
-Package pdftex.def Info: images/misplaced/pos2.pdf  used on input line 257.
+<images//misplaced/pos2.pdf, id=468, 391.4625pt x 391.4625pt>
+File: images//misplaced/pos2.pdf Graphic file (type pdf)
+<use images//misplaced/pos2.pdf>
+Package pdftex.def Info: images//misplaced/pos2.pdf  used on input line 257.
 (pdftex.def)             Requested size: 142.26378pt x 142.26439pt.
- (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.bbl
+ (/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.bbl
 Overfull \hbox (253.25pt too wide) has occurred while \output is active
 [][][] 
  []
@@ -740,15 +745,15 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
  [3
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
- </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf
+ </Users/gaetanserre/Documents/Projects/GAiA/article/images//GAiA_history_loss.pdf> </Users/gaetanserre/Documents/Projects/GAiA/article/images//GAiA_history_score.pdf
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> </home/gaetan/Documents/Projects/GAiA/article/images/result.png> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/GAiA/article/images//GAiA_history_score.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </Users/gaetanserre/Documents/Projects/GAiA/article/images//result.png> </Users/gaetanserre/Documents/Projects/GAiA/article/images//misplaced/pos1.pdf
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/GAiA/article/images//misplaced/pos1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> </Users/gaetanserre/Documents/Projects/GAiA/article/images//misplaced/pos2.pdf
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex (file /Users/gaetanserre/Documents/Projects/GAiA/article/images//misplaced/pos2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >])
 - LAST -
 Extra skip:41.58177pt
@@ -763,33 +768,27 @@ Overfull \hbox (253.25pt too wide) has occurred while \output is active
 [4
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 277.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 277.
- (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 277.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 277.
-Package rerunfilecheck Info: File `"Performing Regression on Complex Data".out' has not changed.
-(rerunfilecheck)             Checksum: AC6E79007F893D45BD866D7D2A0CF552;232.
-
+] (/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.73782pt have occurred.
 
+Package rerunfilecheck Info: File `"Performing Regression on Complex Data".out' has not changed.
+(rerunfilecheck)             Checksum: 28CA29F8C32CEC993320A7C1CB40021A;506.
  ) 
 Here is how much of TeX's memory you used:
- 11819 strings out of 481239
- 178189 string characters out of 5920378
- 472668 words of memory out of 5000000
- 26800 multiletter control sequences out of 15000+600000
- 550603 words of font info for 94 fonts, out of 8000000 for 9000
+ 14610 strings out of 478994
+ 220146 string characters out of 5858185
+ 552179 words of memory out of 5000000
+ 31803 multiletter control sequences out of 15000+600000
+ 421695 words of font info for 97 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 49i,10n,52p,17427b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on "/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" (4 pages, 733047 bytes).
+ 86i,10n,88p,17433b,446s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on "/Users/gaetanserre/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" (4 pages, 733123 bytes).
 PDF statistics:
- 714 PDF objects out of 1000 (max. 8388607)
- 247 compressed objects within 3 object streams
+ 713 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
  34 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

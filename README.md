@@ -13,7 +13,7 @@ In order to build GAiA, you need [CMake](https://cmake.org/).
 GAiA depends on [ONNX](https://github.com/microsoft/onnxruntime) which is an awesome library
 for inferring and even training artificial intelligence model. ONNX support many framework
 such as CUDA or TensorRT. You need to put the ONNX libraries file in `Engine/lib` and modify the
-last lines of the `CMakeLists.txt` accordingly.
+last lines of the `CMakeLists.txt` accordingly. You can find these files [here](https://github.com/microsoft/onnxruntime/releases).
 
 Then,
 

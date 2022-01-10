@@ -1340,7 +1340,7 @@
     \else
     \if@contemporary
        \if@large
-        {\color{jnlruleclr}\rule{542pt}{2pt}}\vspace*{12.35pt}\par{\fontsize{11.5bp}{12}\fontseries{b}\selectfont\leftskip0pt\rightskip0pt plus1fill {\color{jnlclr} Abstract}\par}
+        {\color{jnlruleclr}\rule{489pt}{2pt}}\vspace*{12.35pt}\par{\fontsize{11.5bp}{12}\fontseries{b}\selectfont\leftskip0pt\rightskip0pt plus1fill {\color{jnlclr} Abstract}\par}
         \vskip5.5pt
       \else
       \if@medium
@@ -1396,7 +1396,7 @@
     \@abstract
     \if@contemporary
       \if@large
-        \vspace*{6.5pt}\par{\color{jnlruleclr}\rule{542pt}{2pt}}
+        \vspace*{6.5pt}\par{\color{jnlruleclr}\rule{489pt}{2pt}}
       \else
       \if@medium
         \vspace*{6.5pt}\par{\color{jnlruleclr}\rule{484pt}{2pt}}

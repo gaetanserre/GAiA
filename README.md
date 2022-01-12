@@ -7,6 +7,11 @@ It can perform an analysis in reasonable time between depth 10 and 14+ depending
 
 GAiA is not a complete chess program and requires a UCI-compatible graphical user interface (GUI) (e.g. XBoard with PolyGlot, Scid, Cute Chess, eboard, Arena, Sigma Chess, Shredder, Chess Partner or Fritz) in order to be used comfortably.
 
+## Detailed Description
+I wrote an article about GAiA which describes in detail its creation process.
+You can read it here: [Performing Regression on Complex Data using a
+  Squeeze-and-Excitation Residual Neural Network, Chess as a Model System](https://raw.githubusercontent.com/Plagiat01/GAiA/master/article/Performing%20Regression%20on%20Complex%20Data.pdf)
+
 ## Build from source
 In order to build GAiA, you need [CMake](https://cmake.org/).
 
@@ -50,11 +55,6 @@ Notebooks order:
 2. `choose_hyperparameters.ipynb`
 3. `train_model.ipynb`
 4. `results.ipynb`
-
-## Detailed Description
-I wrote an article about GAiA which describes in detail its creation process.
-You can read it here: [Performing Regression on Complex Data using a
-  Squeeze-and-Excitation Residual Neural Network, Chess as a Model System](https://raw.githubusercontent.com/Plagiat01/GAiA/master/article/Performing%20Regression%20on%20Complex%20Data.pdf)
 
 ## Credits
 + [Lichess](https://database.lichess.org/)

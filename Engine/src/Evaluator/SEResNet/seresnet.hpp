@@ -22,8 +22,8 @@ class SEResNet {
     double predict(int channel, std::array<float, NB_CHANNELS*8*8>& board);
   
   private:
-    const char* input_names[7] = {"input_2"};
-    const char* output_names[8] = {"dense_13"};
+    const char* input_names[7] = {"input"};
+    const char* output_names[8] = {"output"};
 
     std::array<float, NB_CHANNELS*8*8> input_data;
     std::array<float, 1> output_data;

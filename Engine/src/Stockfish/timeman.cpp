@@ -69,7 +69,7 @@ void TimeManagement::init(Search::LimitsType& limits, Color us, int ply) {
       limits.time[us] + limits.inc[us] * (mtg - 1) - moveOverhead * (2 + mtg));
 
   // A user may scale time usage by setting UCI option "Slow Mover"
-  // Default is 100 and changing this value will probably lose elo.
+  // Default is 50 and changing this value will probably lose elo.
   timeLeft = slowMover * timeLeft / 100;
 
   // x basetime (+ z increment)

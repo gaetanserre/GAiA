@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.4)  10 JAN 2022 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.4)  12 JAN 2022 01:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -613,7 +613,7 @@ Underfull \hbox (badness 1694) in paragraph at lines 103--110
 \OT1/cmr/m/n/7.52812 that are not originally images. If so, we just have to
  []
 
-<images/module_seresnet.pdf, id=28, 597.23125pt x 558.085pt>
+<images/module_seresnet.pdf, id=32, 597.23125pt x 558.085pt>
 File: images/module_seresnet.pdf Graphic file (type pdf)
 <use images/module_seresnet.pdf>
 Package pdftex.def Info: images/module_seresnet.pdf  used on input line 117.
@@ -629,7 +629,7 @@ Non-PDF special ignored!
 
 
  </home/gaetan/Documents/Projects/GAiA/article/images/module_seresnet.pdf>]
-<images/distribution.pdf, id=95, 433.62pt x 289.08pt>
+<images/distribution.pdf, id=99, 433.62pt x 289.08pt>
 File: images/distribution.pdf Graphic file (type pdf)
 <use images/distribution.pdf>
 Package pdftex.def Info: images/distribution.pdf  used on input line 147.
@@ -637,58 +637,47 @@ Package pdftex.def Info: images/distribution.pdf  used on input line 147.
 
 
 pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_loss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/model_selection_1_loss.pdf, id=102, 556.34454pt x 324.45076pt>
+<images/model_selection_1_loss.pdf, id=109, 556.34454pt x 324.45076pt>
 File: images/model_selection_1_loss.pdf Graphic file (type pdf)
 <use images/model_selection_1_loss.pdf>
-Package pdftex.def Info: images/model_selection_1_loss.pdf  used on input line 185.
+Package pdftex.def Info: images/model_selection_1_loss.pdf  used on input line 184.
 (pdftex.def)             Requested size: 227.62204pt x 132.74841pt.
 
 
 pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_score.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/model_selection_1_score.pdf, id=103, 554.07pt x 325.96782pt>
+<images/model_selection_1_score.pdf, id=110, 554.07pt x 325.96782pt>
 File: images/model_selection_1_score.pdf Graphic file (type pdf)
 <use images/model_selection_1_score.pdf>
-Package pdftex.def Info: images/model_selection_1_score.pdf  used on input line 189.
+Package pdftex.def Info: images/model_selection_1_score.pdf  used on input line 188.
 (pdftex.def)             Requested size: 227.62204pt x 133.91127pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<images/model_selection_2.png, id=104, 722.7pt x 361.35pt>
+<images/model_selection_2.png, id=111, 722.7pt x 361.35pt>
 File: images/model_selection_2.png Graphic file (type png)
 <use images/model_selection_2.png>
-Package pdftex.def Info: images/model_selection_2.png  used on input line 196.
+Package pdftex.def Info: images/model_selection_2.png  used on input line 195.
 (pdftex.def)             Requested size: 284.52756pt x 142.26578pt.
 
-Overfull \hbox (49.27756pt too wide) in paragraph at lines 196--197
+Overfull \hbox (49.27756pt too wide) in paragraph at lines 195--196
  [][] 
  []
 
-<images/network/network.pdf, id=105, 1672.4944pt x 400.7482pt>
+<images/network/network.pdf, id=112, 1672.4944pt x 400.7482pt>
 File: images/network/network.pdf Graphic file (type pdf)
 <use images/network/network.pdf>
-Package pdftex.def Info: images/network/network.pdf  used on input line 203.
+Package pdftex.def Info: images/network/network.pdf  used on input line 202.
 (pdftex.def)             Requested size: 256.0748pt x 61.35707pt.
 
-Overfull \hbox (20.8248pt too wide) in paragraph at lines 203--204
+Overfull \hbox (20.8248pt too wide) in paragraph at lines 202--203
  [][] 
  []
 
 
+Overfull \hbox (11.06085pt too wide) in paragraph at lines 209--223
+ [][] 
+ []
 
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/GAiA_history_loss.pdf, id=106, 556.32843pt x 325.96782pt>
-File: images/GAiA_history_loss.pdf Graphic file (type pdf)
-<use images/GAiA_history_loss.pdf>
-Package pdftex.def Info: images/GAiA_history_loss.pdf  used on input line 214.
-(pdftex.def)             Requested size: 227.62204pt x 133.36913pt.
-
-
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<images/GAiA_history_score.pdf, id=107, 561.59813pt x 325.215pt>
-File: images/GAiA_history_score.pdf Graphic file (type pdf)
-<use images/GAiA_history_score.pdf>
-Package pdftex.def Info: images/GAiA_history_score.pdf  used on input line 218.
-(pdftex.def)             Requested size: 227.62204pt x 131.8106pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -704,22 +693,40 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
  </home/gaetan/Documents/Projects/GAiA/article/images/distribution.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_loss.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_score.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_2.png> </home/gaetan/Documents/Projects/GAiA/article/images/network/network.pdf>]
-<images/result.png, id=466, 722.7pt x 361.35pt>
+<images/GAiA_history_loss.png, id=473, 556.479pt x 326.29906pt>
+File: images/GAiA_history_loss.png Graphic file (type png)
+<use images/GAiA_history_loss.png>
+Package pdftex.def Info: images/GAiA_history_loss.png  used on input line 248.
+(pdftex.def)             Requested size: 227.62204pt x 133.4698pt.
+<images/GAiA_history_score.png, id=474, 561.89925pt x 325.215pt>
+File: images/GAiA_history_score.png Graphic file (type png)
+<use images/GAiA_history_score.png>
+Package pdftex.def Info: images/GAiA_history_score.png  used on input line 252.
+(pdftex.def)             Requested size: 227.62204pt x 131.74112pt.
+<images/result.png, id=475, 722.7pt x 361.35pt>
 File: images/result.png Graphic file (type png)
 <use images/result.png>
-Package pdftex.def Info: images/result.png  used on input line 242.
-(pdftex.def)             Requested size: 227.62204pt x 113.80931pt.
-<images/misplaced/pos1.pdf, id=467, 391.4625pt x 391.4625pt>
+Package pdftex.def Info: images/result.png  used on input line 259.
+(pdftex.def)             Requested size: 284.52756pt x 142.26578pt.
+
+Overfull \hbox (49.27756pt too wide) in paragraph at lines 259--260
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<images/misplaced/pos1.pdf, id=476, 391.4625pt x 391.4625pt>
 File: images/misplaced/pos1.pdf Graphic file (type pdf)
 <use images/misplaced/pos1.pdf>
-Package pdftex.def Info: images/misplaced/pos1.pdf  used on input line 253.
+Package pdftex.def Info: images/misplaced/pos1.pdf  used on input line 270.
 (pdftex.def)             Requested size: 142.26378pt x 142.26439pt.
-<images/misplaced/pos2.pdf, id=468, 391.4625pt x 391.4625pt>
+<images/misplaced/pos2.pdf, id=477, 391.4625pt x 391.4625pt>
 File: images/misplaced/pos2.pdf Graphic file (type pdf)
 <use images/misplaced/pos2.pdf>
-Package pdftex.def Info: images/misplaced/pos2.pdf  used on input line 257.
+Package pdftex.def Info: images/misplaced/pos2.pdf  used on input line 274.
 (pdftex.def)             Requested size: 142.26378pt x 142.26439pt.
- (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.bbl
+
 Overfull \hbox (253.25pt too wide) has occurred while \output is active
 [][][] 
  []
@@ -730,21 +737,20 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
  [3
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
- </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf
-
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> </home/gaetan/Documents/Projects/GAiA/article/images/result.png> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf
-
-pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
+ </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.png> </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.png> </home/gaetan/Documents/Projects/GAiA/article/images/result.png> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
 
 pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->])
+>] (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 44--51
+\OT1/cmtt/m/n/7.52812 title = Coefficient % 20of % 20determination & oldid = 1060800537$[]\OT1/cmr/m/n/7.52812 ,
+ []
+
+)
 - LAST -
-Extra skip:41.58177pt
-Left:83.5pt/1.46379pt
-Right:41.5pt/1.88202pt
-Output:83.75pt
+Extra skip:2.58177pt
+Left:328.0pt/1.46379pt
+Right:325.0pt/1.88202pt
+Output:328.75pt
 
 Overfull \hbox (253.25pt too wide) has occurred while \output is active
 [][][] 
@@ -754,13 +760,13 @@ Overfull \hbox (253.25pt too wide) has occurred while \output is active
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 277.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 277.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 317.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 317.
  (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 277.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 277.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 317.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 317.
 Package rerunfilecheck Info: File `"Performing Regression on Complex Data".out' has not changed.
-(rerunfilecheck)             Checksum: AC6E79007F893D45BD866D7D2A0CF552;232.
+(rerunfilecheck)             Checksum: A1CB1C1BA160011FB09B96BFA2B08FFC;273.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -768,18 +774,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 11819 strings out of 481239
- 178189 string characters out of 5920378
- 472669 words of memory out of 5000000
- 26800 multiletter control sequences out of 15000+600000
- 550603 words of font info for 94 fonts, out of 8000000 for 9000
+ 11839 strings out of 481239
+ 178359 string characters out of 5920378
+ 482765 words of memory out of 5000000
+ 26814 multiletter control sequences out of 15000+600000
+ 550913 words of font info for 95 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 49i,10n,52p,17427b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on "/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" (4 pages, 733024 bytes).
+ 63i,10n,57p,17427b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on "/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" (4 pages, 744550 bytes).
 PDF statistics:
- 713 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 34 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 596 PDF objects out of 1000 (max. 8388607)
+ 250 compressed objects within 3 object streams
+ 39 named destinations out of 1000 (max. 500000)
+ 104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

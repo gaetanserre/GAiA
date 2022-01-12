@@ -12,6 +12,10 @@ Martín Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen, Craig
 \newblock {TensorFlow, Large-scale machine learning on heterogeneous systems},
   11 2015.
 
+\bibitem{onnx}
+ONNX~Runtime developers.
+\newblock {ONNX Runtime}, 11 2018.
+
 \bibitem{lichess}
 Thibault Duplessis.
 \newblock Lichess.
@@ -35,5 +39,22 @@ Joona~Kiiski Tord~Romstad, Marco~Costalba.
 \newblock Stockfish chess engine.
 \newblock \url{https://stockfishchess.org/}, 2021.
 \newblock [accessed 23-November-2021].
+
+\bibitem{r2}
+Wikipedia.
+\newblock {Coefficient of determination} --- {W}ikipedia{,} the free
+  encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Coefficient\%20of\%20determination&oldid=1060800537},
+  2022.
+\newblock [Online; accessed 11-January-2022].
+
+\bibitem{mae}
+Wikipedia.
+\newblock {Mean absolute error} --- {W}ikipedia{,} the free encyclopedia.
+\newblock
+  \url{http://en.wikipedia.org/w/index.php?title=Mean\%20absolute\%20error&oldid=1053388699},
+  2022.
+\newblock [Online; accessed 11-January-2022].
 
 \end{thebibliography}

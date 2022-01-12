@@ -103,7 +103,7 @@ improve the performance of ResNet with almost no additional computation costs.
 The question is: can we use this architecture on data that are not
 originally images. If so, we just have to encode our data in 3-dimensional
 tensors and look for the number of Squeeze-and-Excitation residual
-blocks (Figure \ref{fig:seblock}) and other hyperparameters
+blocks (Figure~\ref{fig:seblock}) and other hyperparameters
 that optimizes our results to get excellent performance.
 The challenge is to know if Squeeze-and-Excitation networks are
 generalizable to any kind of machine learning problem.
@@ -134,7 +134,7 @@ chess position. Lichess.org\cite{lichess} is a popular, free and open-source
 chess platform which provides millions of games played by humans every month.
 From these games, I extracted millions of different positions along with their
 Stockfish 14 evaluation. If we look at the distribution of the evaluations
-(Figure \ref{fig:distribution}), we can see that the overwhelming majority
+(Figure~\ref{fig:distribution}), we can see that the overwhelming majority
 is close to $0$ i.e draw game.
 Each position is encoded as a $8\times8$ image with $15$ channels: 
 $12$ representing each chess pieces, $1$ for the actual player, $1$
@@ -168,13 +168,12 @@ GAiA's model architecture is composed of $4$ SE-ResNet blocks of $2$ convolution
 each with $64$ filters and a kernel shape of $1\times1$ using \textit{ReLU} activation function.
 To find these hyperparameters, I tried several values and these ones seemed to be
 the best compromise between computation costs and accuracy.
-(Figure \ref{fig:acc_loss} \& \ref{fig:score_valid})
-The output is a fully connected layer using \textit{Linear} readout function (Figure \ref{fig:model_archi}).
+(Figure~\ref{fig:acc_loss}~\&~\ref{fig:score_valid})
+The output is a fully connected layer using \textit{Linear} readout function (Figure~\ref{fig:model_archi}).
 This model architecture is designed based on Maia\cite{maia}.
-The loss is the Mean Absolute Error and the accuracy the coefficient of determination.
+The loss is the Mean Absolute Error\cite{mae} and the accuracy is the coefficient of determination\cite{r2}.
 I used the framework Tensorflow 2.7\cite{tensorflow} to create and train the neural network.
-The model is trained on $\sim 1,400k$ positions and tested on $\sim 400k$
-during 30 epochs (Figure \ref{fig:history}).
+You can see an overview of the model in Figure~\ref{fig:model_archi} and Table~\ref{table:config}.
 
 \begin{figure}[H]
   \captionsetup[subfigure]{labelformat=empty}
@@ -205,41 +204,59 @@ during 30 epochs (Figure \ref{fig:history}).
   \label{fig:model_archi}
 \end{figure}
 
-\begin{figure}[H]
-  \captionsetup[subfigure]{labelformat=empty}
+\begin{table}[H]
   \centering
-  \subfloat[Loss]{
-    \centering
-    \includegraphics[width=8cm]{GAiA_history_loss.pdf}
-  }\\
-  \subfloat[Accuracy]{
-    \centering
-    \includegraphics[width=8cm]{GAiA_history_score.pdf}
-  }
-  \caption{Loss and accuracy during training}
-  \label{fig:history}
-\end{figure}
+  \begin{tabular}{c c}
+    \hline
+    Name & GAiA's network\\
+    Model type & Squeeze-and-Excitation residual network\\
+    \hline
+    SE-ResNet blocks & 4\\
+    Convolutional filters & 64\\
+    Loss function & Mean Absolute Error\\
+    Accuracy function & Coefficient of determination\\
+    Batch size & 1024\\
+    Epochs & 60\\
+    Optimizer & ADAM\\
+    \hline
+  \end{tabular}
+  \caption{SEResNet configuration}
+  \label{table:config}
+\end{table}
 
 \section{Results}
-As we can see on the Figure \ref{fig:result}, GAiA's neural network
-has great performance and I only trained it on $\sim 1,400k$ positions.
-But some points are misplaced: these are positions where one of the kings is
+
+The network is trained on $\sim 1,400k$ positions during 60 epochs (Figure~\ref{fig:history})
+and tested on $\sim 400k$ positions
+As we can see on the Figure~\ref{fig:result}, GAiA's neural network
+has great performance.
+However, some points are misplaced: these are positions where one of the kings is
 in check. This is due to the fact that Stockfish cannot statically evaluate
 position where a king is in check and so I had to search at depth $1$ (one move ahead).
 The resulting evaluation takes into account the next move and therefore
 is much more difficult to predict. However, the evaluations of
 such positions produced by the network are not meaningless,
-and are even quite close to a static evaluation of the position.
-(Figure \ref{fig:misplaced})\\
-Even if GAiA (the complete chess engine) can see much less positions
-per second than "classic" chess engine (inferring an evaluation of a chessboard
-from such a complex neural network is much more time consuming than
-use heuristics functions), it has been able to defeat many engines
-around 2000 elo on Lichess.org.
+and are even quite close to a static evaluation of the position
+(Figure~\ref{fig:misplaced}).
+
+\begin{figure}[H]
+  \captionsetup[subfigure]{labelformat=empty}
+  \centering
+  \subfloat[Loss]{
+    \centering
+    \includegraphics[width=8cm]{GAiA_history_loss.png}
+  }\\
+  \subfloat[Accuracy]{
+    \centering
+    \includegraphics[width=8cm]{GAiA_history_score.png}
+  }
+  \caption{Loss and accuracy during training}
+  \label{fig:history}
+\end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=8cm]{result.png}
+  \includegraphics[width=10cm]{result.png}
   \caption{GAiA's neural network results}
   \label{fig:result}
 \end{figure}
@@ -258,6 +275,29 @@ around 2000 elo on Lichess.org.
   \caption{Examples of misplaced positions}
   \label{fig:misplaced}
 \end{figure}
+
+\section{Engine}
+Now that I have the evaluation function of GAiA,
+I still need the program which will search in the game
+tree and use this function in order to have a working chess engine.
+Moreover, a chess engine is not just about the search algorithm
+and the evaluation function (even if these are the most important parts)
+but also the time management (how much time should the engine use
+to play a move in a real game) and many other things.
+I chose to use the Stockfish source code as a basis for GAiA because
+their algorithms are efficient and the code is really well written.
+In addition, I also needed a way to infer a score from a position
+using GAiA's neural network. Since, Stockfish (and therefore GAiA)
+is written in C++, I chose to use ONNX\cite{onnx}, which is
+an awesome library created in 2018 for inferring and even training
+artificial intelligence model. ONNX is very optimized and supports
+many backends such as CUDA or TensorRT.
+However, even though ONNX is fast, GAiA can see much less positions
+per second than "classical" chess engine (inferring an evaluation of a chessboard
+from such a complex neural network is much more time consuming than
+use heuristics functions).
+Still, GAiA has been able to defeat many engines
+around 2300 elo on Lichess.org.
 
 \section{Conclusion}
 Artificial intelligence is being used in more and more fields.

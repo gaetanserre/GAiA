@@ -5,6 +5,14 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread")
 
+if(WIN32)
+  set(LIB_EXT ".dll")
+elseif(APPLE)
+  set(LIB_EXT ".dylib")
+elseif(UNIX)
+  set(LIB_EXT ".so")
+endif()
+
 set(EP "CPU")
 
 include_directories(src/Stockfish/)
@@ -62,10 +70,10 @@ add_executable(GAiA
   )
 
 
-target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime.so)
+target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime${LIB_EXT})
 
 if(${EP} STREQUAL "CUDA")
-  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_tensorrt.so)
+  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_tensorrt${LIB_EXT})
 elseif(${EP} STREQUAL "TENSORRT")
-  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_cuda.so)
+  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_cuda${LIB_EXT})
 endif()

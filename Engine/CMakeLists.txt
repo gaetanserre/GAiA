@@ -4,6 +4,7 @@ project(GAiA)
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath -Wl,$ORIGIN")
 
 if(WIN32)
   set(LIB_EXT ".dll")
@@ -23,6 +24,9 @@ include_directories(src/Evaluator/)
 include_directories(src/Evaluator/SEResNet)
 include_directories(include)
 
+set(LIB_DIR ${CMAKE_CURRENT_LIST_DIR}/lib)
+link_directories(${LIB_DIR})
+
 if(${EP} STREQUAL "CPU")
   add_definitions(-DUSE_CPU)
 elseif(${EP} STREQUAL "CUDA")
@@ -41,39 +45,17 @@ file (GLOB EVALUATOR_SOURCES src/Evaluator/*.cpp)
 file (GLOB EVALUATOR_HEADERS src/Evaluator/*.hpp)
 add_library(evaluator ${EVALUATOR_SOURCES} ${EVALUATOR_HEADERS})
 
-link_libraries(seresnet evaluator)
+link_libraries(evaluator)
 
-add_executable(GAiA
-  src/Stockfish/main.cpp
-  src/Stockfish/benchmark.cpp
-  src/Stockfish/bitbase.cpp
-  src/Stockfish/bitboard.cpp
-  src/Stockfish/endgame.cpp
-  src/Stockfish/evaluate.cpp
-  src/Stockfish/material.cpp
-  src/Stockfish/misc.cpp
-  src/Stockfish/movegen.cpp
-  src/Stockfish/movepick.cpp
-  src/Stockfish/pawns.cpp
-  src/Stockfish/position.cpp
-  src/Stockfish/psqt.cpp
-  src/Stockfish/search.cpp
-  src/Stockfish/thread.cpp
-  src/Stockfish/timeman.cpp
-  src/Stockfish/tt.cpp
-  src/Stockfish/uci.cpp
-  src/Stockfish/ucioption.cpp
-  src/Stockfish/tune.cpp
-  src/Stockfish/syzygy/tbprobe.cpp
-  src/Stockfish/nnue/evaluate_nnue.cpp
-  src/Stockfish/nnue/features/half_kp.cpp
-  )
+file (GLOB_RECURSE SRC_FILES src/Stockfish/*.cpp)
+
+add_executable(GAiA ${SRC_FILES})
 
 
-target_link_libraries(GAiA ${CMAKE_CURRENT_BINARY_DIR}/lib/libonnxruntime${LIB_EXT})
+target_link_libraries(GAiA ${LIB_DIR}/libonnxruntime${LIB_EXT})
 
 if(${EP} STREQUAL "CUDA")
-  target_link_libraries(GAiA ${CMAKE_CURRENT_BINARY_DIR}/lib/libonnxruntime_providers_tensorrt${LIB_EXT})
+  target_link_libraries(GAiA ${LIB_DIR}/libonnxruntime_providers_tensorrt${LIB_EXT})
 elseif(${EP} STREQUAL "TENSORRT")
-  target_link_libraries(GAiA ${CMAKE_CURRENT_BINARY_DIR}/lib/libonnxruntime_providers_cuda${LIB_EXT})
+  target_link_libraries(GAiA ${LIB_DIR}/libonnxruntime_providers_cuda${LIB_EXT})
 endif()

@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.22)
 project(GAiA)
 
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath -Wl,$ORIGIN")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-executable_path -Wl,$ORIGIN")
 
 if(WIN32)
   set(LIB_EXT ".dll")
@@ -58,4 +58,11 @@ if(${EP} STREQUAL "CUDA")
   target_link_libraries(GAiA ${LIB_DIR}/libonnxruntime_providers_tensorrt${LIB_EXT})
 elseif(${EP} STREQUAL "TENSORRT")
   target_link_libraries(GAiA ${LIB_DIR}/libonnxruntime_providers_cuda${LIB_EXT})
+endif()
+
+if(APPLE)
+  add_custom_command(TARGET GAiA 
+    POST_BUILD COMMAND 
+    ${CMAKE_INSTALL_NAME_TOOL} -add_rpath "@executable_path"
+    $<TARGET_FILE:GAiA>)
 endif()

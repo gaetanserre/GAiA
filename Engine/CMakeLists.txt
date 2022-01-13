@@ -70,10 +70,10 @@ add_executable(GAiA
   )
 
 
-target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime${LIB_EXT})
+target_link_libraries(GAiA ${CMAKE_CURRENT_BINARY_DIR}/lib/libonnxruntime${LIB_EXT})
 
 if(${EP} STREQUAL "CUDA")
-  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_tensorrt${LIB_EXT})
+  target_link_libraries(GAiA ${CMAKE_CURRENT_BINARY_DIR}/lib/libonnxruntime_providers_tensorrt${LIB_EXT})
 elseif(${EP} STREQUAL "TENSORRT")
-  target_link_libraries(GAiA ${CMAKE_CURRENT_LIST_DIR}/lib/libonnxruntime_providers_cuda${LIB_EXT})
+  target_link_libraries(GAiA ${CMAKE_CURRENT_BINARY_DIR}/lib/libonnxruntime_providers_cuda${LIB_EXT})
 endif()

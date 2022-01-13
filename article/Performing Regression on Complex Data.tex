@@ -215,8 +215,8 @@ You can see an overview of the model in Figure~\ref{fig:model_archi} and Table~\
     Convolutional filters & 64\\
     Loss function & Mean Absolute Error\\
     Accuracy function & Coefficient of determination\\
-    Batch size & 32\\
-    Epochs & 30\\
+    Batch size & 1024\\
+    Epochs & 50\\
     Optimizer & ADAM\\
     \hline
   \end{tabular}
@@ -226,7 +226,7 @@ You can see an overview of the model in Figure~\ref{fig:model_archi} and Table~\
 
 \section{Results}
 
-The network is trained on $\sim 1,400k$ positions during 30 epochs (Figure~\ref{fig:history})
+The network is trained on $\sim 3,000k$ positions during 50 epochs (Figure~\ref{fig:history})
 and tested on $\sim 400k$ positions
 As we can see on the Figure~\ref{fig:result}, GAiA's neural network
 has great performance.
@@ -264,11 +264,11 @@ and are even quite close to a static evaluation of the position
 \begin{figure}[H]
   \captionsetup[subfigure]{labelformat=empty}
   \centering
-  \subfloat[Stockfish score: 863, GAiA score: 6348]{
+  \subfloat[Stockfish score: 863, GAiA score: 6306]{
     \centering
     \includegraphics[width=5cm]{misplaced/pos1.pdf}
   }\\
-  \subfloat[Stockfish score: -55, GAiA score: -6287]{
+  \subfloat[Stockfish score: -55, GAiA score: -6092]{
     \centering
     \includegraphics[width=5cm]{misplaced/pos2.pdf}
   }

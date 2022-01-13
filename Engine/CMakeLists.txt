@@ -4,7 +4,7 @@ project(GAiA)
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -pthread")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-executable_path -Wl,$ORIGIN")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath -Wl,$ORIGIN")
 
 if(WIN32)
   set(LIB_EXT ".dll")
@@ -34,7 +34,6 @@ elseif(${EP} STREQUAL "CUDA")
 elseif(${EP} STREQUAL "TENSORRT")
   add_definitions(-DUSE_TENSORRT)
 endif()
-
 
 file (GLOB SERESNET_SOURCES src/Evaluator/SEResNet/*.cpp)
 file (GLOB SERESNET_HEADERS src/Evaluator/SEResNet/*.hpp)

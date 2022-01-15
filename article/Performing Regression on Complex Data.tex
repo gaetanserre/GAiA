@@ -216,7 +216,7 @@ You can see an overview of the model in Figure~\ref{fig:model_archi} and Table~\
     Loss function & Mean Absolute Error\\
     Accuracy function & Coefficient of determination\\
     Batch size & 1024\\
-    Epochs & 50\\
+    Epochs & 30\\
     Optimizer & ADAM\\
     Learning rate & 0.001\\
     Framework & Pytorch 1.10.1\\
@@ -228,7 +228,7 @@ You can see an overview of the model in Figure~\ref{fig:model_archi} and Table~\
 
 \section{Results}
 
-The network is trained on 3 datasets of $1,000k$ positions during 50 epochs each
+The network is trained on 3 datasets of $1,000k$ positions during 30 epochs each
 (Figure~\ref{fig:history}) and tested on $400k$ positions.
 As we can see on the Figure~\ref{fig:result}, GAiA's neural network
 has great performance.
@@ -246,11 +246,11 @@ and are even quite close to a static evaluation of the position
   \centering
   \subfloat[Loss]{
     \centering
-    \includegraphics[width=8cm]{GAiA_history_loss.png}
+    \includegraphics[width=8cm]{GAiA_history_loss.pdf}
   }\\
   \subfloat[Accuracy]{
     \centering
-    \includegraphics[width=8cm]{GAiA_history_score.png}
+    \includegraphics[width=8cm]{GAiA_history_score.pdf}
   }
   \caption{Loss and accuracy during training}
   \label{fig:history}
@@ -266,11 +266,11 @@ and are even quite close to a static evaluation of the position
 \begin{figure}[H]
   \captionsetup[subfigure]{labelformat=empty}
   \centering
-  \subfloat[Stockfish score: 863, GAiA score: 6306]{
+  \subfloat[Stockfish score: 863, GAiA score: 6120]{
     \centering
     \includegraphics[width=5cm]{misplaced/pos1.pdf}
   }\\
-  \subfloat[Stockfish score: -55, GAiA score: -6092]{
+  \subfloat[Stockfish score: -55, GAiA score: -6097]{
     \centering
     \includegraphics[width=5cm]{misplaced/pos2.pdf}
   }

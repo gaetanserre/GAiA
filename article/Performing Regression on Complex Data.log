@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.4)  15 JAN 2022 04:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.1.4)  15 JAN 2022 14:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -693,16 +693,21 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
  </home/gaetan/Documents/Projects/GAiA/article/images/distribution.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_loss.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_1_score.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/model_selection_2.png> </home/gaetan/Documents/Projects/GAiA/article/images/network/network.pdf>]
-<images/GAiA_history_loss.png, id=473, 556.479pt x 326.29906pt>
-File: images/GAiA_history_loss.png Graphic file (type png)
-<use images/GAiA_history_loss.png>
-Package pdftex.def Info: images/GAiA_history_loss.png  used on input line 250.
-(pdftex.def)             Requested size: 227.62204pt x 133.4698pt.
-<images/GAiA_history_score.png, id=474, 561.89925pt x 325.215pt>
-File: images/GAiA_history_score.png Graphic file (type png)
-<use images/GAiA_history_score.png>
-Package pdftex.def Info: images/GAiA_history_score.png  used on input line 254.
-(pdftex.def)             Requested size: 227.62204pt x 131.74112pt.
+
+pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/GAiA_history_loss.pdf, id=473, 557.08125pt x 325.96782pt>
+File: images/GAiA_history_loss.pdf Graphic file (type pdf)
+<use images/GAiA_history_loss.pdf>
+Package pdftex.def Info: images/GAiA_history_loss.pdf  used on input line 250.
+(pdftex.def)             Requested size: 227.62204pt x 133.18509pt.
+
+
+pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<images/GAiA_history_score.pdf, id=474, 557.08125pt x 325.96782pt>
+File: images/GAiA_history_score.pdf Graphic file (type pdf)
+<use images/GAiA_history_score.pdf>
+Package pdftex.def Info: images/GAiA_history_score.pdf  used on input line 254.
+(pdftex.def)             Requested size: 227.62204pt x 133.18509pt.
 <images/result.png, id=475, 722.7pt x 361.35pt>
 File: images/result.png Graphic file (type png)
 <use images/result.png>
@@ -737,7 +742,7 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
  [3
 Non-PDF special ignored!
 <special> ps: [{ThisPage} << /CropBox [0 0 595.26013 782.33696] >> /PUT pdf...
- </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.png> </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.png> </home/gaetan/Documents/Projects/GAiA/article/images/result.png> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
+ </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_loss.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/GAiA_history_score.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/result.png> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos1.pdf> </home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf
 
 pdfTeX warning: pdflatex (file /home/gaetan/Documents/Projects/GAiA/article/images/misplaced/pos2.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >] (/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.bbl
@@ -805,17 +810,17 @@ LaTeX Font Warning: Size substitutions with differences
  ) 
 Here is how much of TeX's memory you used:
  11841 strings out of 481239
- 178384 string characters out of 5920378
- 482765 words of memory out of 5000000
+ 178432 string characters out of 5920378
+ 482766 words of memory out of 5000000
  26815 multiletter control sequences out of 15000+600000
  551252 words of font info for 96 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  62i,10n,56p,17427b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb>
-Output written on "/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" (4 pages, 753709 bytes).
+Output written on "/home/gaetan/Documents/Projects/GAiA/article/Performing Regression on Complex Data.pdf" (4 pages, 766271 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
+ 725 PDF objects out of 1000 (max. 8388607)
+ 272 compressed objects within 3 object streams
  39 named destinations out of 1000 (max. 500000)
  104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

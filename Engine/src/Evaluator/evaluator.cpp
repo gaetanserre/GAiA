@@ -50,7 +50,6 @@ int Evaluator::get_piece_idx(const Piece& p) {
 
 std::array<float, NB_CHANNELS*8*8> Evaluator::encode_position(const Position& pos) {
   std::array<float, NB_CHANNELS*8*8> board{};
-  std::fill(board.begin(), board.end(), 0.0f);
 
   float side_to_move = pos.side_to_move() == WHITE ? 1.0 : 0.0;
   float castlings_rights = get_castling_rights(pos);
@@ -60,17 +59,16 @@ std::array<float, NB_CHANNELS*8*8> Evaluator::encode_position(const Position& po
   for (int square = 0; square < 64; square++){
     Square s = Square(square);
 
-    int idx = square * NB_CHANNELS;
+    int idx = square;
 
-    board[idx + 12] = side_to_move;
-    board[idx + 13] = castlings_rights;
-    board[idx + 14] = is_ep_square;
+    board[idx + 12 * 64] = side_to_move;
+    board[idx + 13 * 64] = castlings_rights;
+    board[idx + 14 * 64] = is_ep_square;
 
       int p_idx = get_piece_idx(pos.piece_on(s));
       if (p_idx != -1)
-        board[idx+p_idx] = 1;
+        board[idx + p_idx * 64] = 1;
   }
-
   return board;
 }
 

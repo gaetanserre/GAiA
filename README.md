@@ -1,5 +1,5 @@
 # GAiA
-GAiA is a UCI chess engine built with C++ 17, [ONNX](https://github.com/microsoft/onnxruntime) and [Tensorflow](https://github.com/tensorflow/tensorflow).
+GAiA is a UCI chess engine built with C++ 17, [ONNX](https://github.com/microsoft/onnxruntime) and [PyTorch](https://github.com/pytorch/pytorch).
 
 It performs an in-depth analysis and uses a complex squeeze-and-excitation residual network to evaluate each chess board.
 
@@ -60,7 +60,7 @@ Notebooks order:
 + [Lichess](https://database.lichess.org/)
 + [Stockfish](https://github.com/official-stockfish/Stockfish)
 + [ONNX](https://github.com/microsoft/onnxruntime)
-+ [Tensorflow](https://github.com/tensorflow/tensorflow)
++ [PyTorch](https://github.com/pytorch/pytorch)
 
 ## License
 [GPL v3](https://choosealicense.com/licenses/gpl-3.0/)

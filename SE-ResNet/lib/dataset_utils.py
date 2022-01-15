@@ -26,7 +26,7 @@ def piece_to_vec(piece, color):
   return res
 
 nb_channels = 15
-board_shape = (8, 8, nb_channels)
+board_shape = (nb_channels, 8, 8)
 
 def encode_position(board):
   res = np.zeros((8, 8, nb_channels), dtype=np.float32)

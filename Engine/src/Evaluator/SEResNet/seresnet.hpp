@@ -28,7 +28,7 @@ class SEResNet {
     std::array<float, NB_CHANNELS*8*8> input_data;
     std::array<float, 1> output_data;
 
-    std::array<int64_t, 4> input_shape{1, 8, 8, NB_CHANNELS};
+    std::array<int64_t, 4> input_shape{1, NB_CHANNELS, 8, 8};
     std::array<int64_t, 2> output_shape{1, 1};
 
     std::unique_ptr<Ort::Env> env;

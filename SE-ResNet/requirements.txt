@@ -1,8 +1,8 @@
-pandas
-numpy
-tqdm
-matplotlib
-tensorflow
-sklearn
-chess
-h5py
+pandas >= 1.3.5
+numpy >= 1.20.3
+tqdm >= 4.62.3
+matplotlib >= 3.5.1
+sklearn >= 0.0
+torch >= 1.10.1
+chess >= 1.8.0
+h5py >= 3.6.0

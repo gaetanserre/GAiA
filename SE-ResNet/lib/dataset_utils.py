@@ -72,7 +72,7 @@ def store_many_hdf5(images, labels, directory, tag=""):
   num_images = len(images)
 
   # Create a new HDF5 file
-  file = h5py.File(directory + f"{num_images}_position{tag}.h5", "w")
+  file = h5py.File(directory + f"{num_images}_positions{tag}.h5", "w")
 
   # Create a dataset in the file
   dataset = file.create_dataset(
@@ -84,7 +84,7 @@ def store_many_hdf5(images, labels, directory, tag=""):
   file.close()
 
 def read_many_hdf5(num_images, directory, tag=""):
-  file = h5py.File(directory + f"{num_images}_position{tag}.h5", "r+")
+  file = h5py.File(directory + f"{num_images}_positions{tag}.h5", "r+")
 
   images = np.array(file["/images"])
   labels = np.array(file["/label"])

@@ -23,7 +23,6 @@ class ScoreGetter():
   
   def get_score_sf(self, fen):
     self.write_position(fen)
-    self.engine.stdin.write(self.depth1)
     return self.get_score_eval(fen)
 
   def get_score_eval(self, fen):

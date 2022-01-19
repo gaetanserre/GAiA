@@ -15,4 +15,4 @@ GAiA.exe.stackdump
 Makefile
 *.a
 bin/
-lib/
+Engine/lib/

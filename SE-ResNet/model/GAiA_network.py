@@ -45,8 +45,9 @@ class SEResNet_Bottleneck(nn.Module):
     self.conv2d2 = nn.Conv2d(in_channels, filters, kernel_size=(1, 1))
     self.bn2 = nn.BatchNorm2d(filters)
   
-  def forward(self, input_tensor):
-    x = self.conv2d1(input_tensor)
+  def forward(self, x):
+    identity = x
+    x = self.conv2d1(x)
     x = self.bn1(x)
     nn.ReLU(inplace=True)(x)
 
@@ -55,7 +56,7 @@ class SEResNet_Bottleneck(nn.Module):
 
     x = self.se(x)
 
-    x = x + input_tensor
+    x = x + identity
 
     return nn.ReLU()(x)
 

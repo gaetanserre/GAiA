@@ -1,5 +1,6 @@
 # GAiA
 GAiA is a UCI chess engine built with C++ 17, [ONNX](https://github.com/microsoft/onnxruntime) and [PyTorch](https://github.com/pytorch/pytorch).
+It uses [Stockfish](https://github.com/official-stockfish/Stockfish) as a baseline and uses a deep neural network for the evaluation function.
 
 It performs an in-depth analysis and uses a complex squeeze-and-excitation residual network to evaluate each chess board.
 

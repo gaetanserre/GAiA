@@ -91,7 +91,7 @@ class TorchWrapper():
         history["metric"].append(train_metric.cpu().detach().numpy())
 
       if verbose:
-        print(f"Epoch: {epoch+1} Loss: {loss:.2f}", end="")
+        print(f"Epoch: {epoch+1}/{epochs} Loss: {loss:.2f}", end="")
 
         if self.metric is not None:
           print(f" Metric: {train_metric:.2f}", end="")

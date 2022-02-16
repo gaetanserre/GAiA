@@ -36,8 +36,9 @@ class TorchWrapper():
 
     preds = None
     for data in loader:
-      pred = self.nn(data.to(self.device))
-      pred = pred.cpu().detach().numpy()
+      with torch.no_grad():
+        pred = self.nn(data.to(self.device))
+      pred = pred.cpu().numpy()
       del data
       if preds is not None:
         preds = np.concatenate((preds, pred))

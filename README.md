@@ -10,7 +10,7 @@ It can perform an analysis in reasonable time between depth 10 and 14+ depending
 GAiA is not a complete chess program and requires a UCI-compatible graphical user interface (GUI) (e.g. XBoard with PolyGlot, Scid, Cute Chess, eboard, Arena, Sigma Chess, Shredder, Chess Partner or Fritz) in order to be used comfortably.
 
 ## Detailed Description
-I wrote an article about GAiA which describes in detail its creation process.
+I wrote an report about GAiA which describes in detail its creation process.
 You can read it here: [Performing Regression on Complex Data using a
   Squeeze-and-Excitation Residual Neural Network, Chess as a Model System](https://raw.githubusercontent.com/gaetanserre/GAiA/master/report/Performing%20Regression%20on%20Complex%20Data.pdf)
 
